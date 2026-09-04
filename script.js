@@ -70,6 +70,12 @@
     setText("template-note", meta.statusNote);
     setText("footer-tagline", meta.summary);
 
+    byId("theme-chips").innerHTML = (meta.themeLabels || [])
+      .map(function (label) {
+        return "<span>" + escapeHtml(label) + "</span>";
+      })
+      .join("");
+
     byId("hero-actions").innerHTML =
       registrationLink() +
       '<a class="button button-secondary" href="#program">View the program <span aria-hidden="true">↓</span></a>';
@@ -134,11 +140,36 @@
     setText("program-note", data.program.note);
     byId("program-list").innerHTML = data.program.items
       .map(function (item) {
+        if (item.type === "track") {
+          return (
+            '<div class="program-track"><span>' +
+            escapeHtml(item.label) +
+            "</span><div><h3>" +
+            escapeHtml(item.title) +
+            "</h3><p>" +
+            escapeHtml(item.description) +
+            "</p></div></div>"
+          );
+        }
+
+        if (item.type === "note") {
+          return (
+            '<div class="program-note-row"><span>' +
+            escapeHtml(item.label) +
+            "</span><strong>" +
+            escapeHtml(item.title) +
+            "</strong><p>" +
+            escapeHtml(item.description) +
+            "</p></div>"
+          );
+        }
+
+        var range = "<strong>" + escapeHtml(item.time) + "</strong>";
+        if (item.endTime) {
+          range += "<span>→ " + escapeHtml(item.endTime) + "</span>";
+        }
+
         if (item.type === "break") {
-          var range = escapeHtml(item.time);
-          if (item.endTime) {
-            range += " <span>— " + escapeHtml(item.endTime) + "</span>";
-          }
           return (
             '<div class="program-break"><time>' +
             range +
@@ -147,9 +178,10 @@
             "</strong></div>"
           );
         }
+
         return (
           '<article class="program-item"><time>' +
-          escapeHtml(item.time) +
+          range +
           '</time><div class="program-main"><h3>' +
           escapeHtml(item.title) +
           '</h3><p class="program-speaker">' +
@@ -160,7 +192,9 @@
           (item.description
             ? '<p class="program-description">' + escapeHtml(item.description) + "</p>"
             : "") +
-          '</div><span class="program-type">Session</span></article>'
+          '</div><span class="program-type">' +
+          escapeHtml(item.format || "Session") +
+          "</span></article>"
         );
       })
       .join("");
