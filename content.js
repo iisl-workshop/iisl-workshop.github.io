@@ -1,27 +1,27 @@
 /*
  * 이 파일의 내용만 바꾸면 페이지의 주요 정보가 자동으로 갱신됩니다.
- * 현재 행사명과 운영 정보는 미정이며, PPT에서 확인한 주제와 프로그램만 반영했습니다.
+ * 행사명과 등록 정보는 미정이며, PPT에서 확정된 날짜·장소·기관·프로그램을 반영했습니다.
  */
 
 const WORKSHOP_DATA = {
   meta: {
-    shortName: "Joint Workshop",
+    shortName: "IISL Workshop",
     year: "2026",
-    eyebrow: "2026 · Working research theme",
+    eyebrow: "2026 · Joint research workshop",
     title: "AI-Driven",
     titleAccent: "Autonomous Security",
     summary:
       "Exploring how communication, sensing, and human–AI collaboration can shape trustworthy, adaptive security for mission-critical connected systems.",
-    statusNote: "Workshop title & logistics to be announced",
+    statusNote: "Official workshop title to be announced",
     themeLabels: [
       "Semantic Communication",
       "Mission-Critical IoT",
       "Human–AI Teaming",
     ],
-    date: "To be announced",
+    date: "October 12, 2026",
     time: "10:00–14:30",
-    location: "Venue to be announced",
-    city: "",
+    location: "GIST Seoul Office",
+    city: "23, Sejong-daero, Jung-gu, Seoul",
     registrationUrl: "",
     registrationLabel: "Registration to open later",
     contactEmail: "",
@@ -65,7 +65,7 @@ const WORKSHOP_DATA = {
   program: {
     title: "A program in two connected arcs.",
     note:
-      "Draft program adapted from Joint_Workshop_Flyer_v2.pptx. The workshop title, logistics, and individual talk details may change.",
+      "Confirmed program · October 12, 2026 · 10:00–14:30 at GIST Seoul Office.",
     items: [
       {
         type: "note",
@@ -247,26 +247,74 @@ const WORKSHOP_DATA = {
   ],
 
   venue: {
-    name: "Venue to be announced",
-    address:
-      "The final venue and access information will be published after confirmation.",
+    name: "GIST Seoul Office",
+    address: "23, Sejong-daero, Jung-gu, Seoul",
     details: [
-      { label: "Date", value: "To be announced" },
-      { label: "Format", value: "To be announced" },
-      { label: "Program", value: "10:00–14:30 · Draft schedule" },
+      { label: "Date", value: "October 12, 2026" },
+      { label: "Time", value: "10:00–14:30" },
+      { label: "Program", value: "Keynotes, student talks, invited talks & panel" },
     ],
     mapUrl: "",
-    mapLabel: "Venue TBA",
+    mapLabel: "GIST Seoul Office",
   },
 
   contact: {
     copy:
-      "The workshop title, registration details, venue, and organizing contacts are still being finalized. This section can be updated as soon as they are confirmed.",
+      "The official workshop title, registration details, and organizing contacts will be added here as soon as they are confirmed.",
     organizers: [
       {
         name: "Organizing committee",
-        affiliation: "Details to be announced",
+        affiliation: "Contact details to be announced",
         email: "",
+      },
+    ],
+  },
+
+  institutions: {
+    hosts: [
+      {
+        name: "Gwangju Institute of Science and Technology",
+        displayName: "GIST",
+        logo: "",
+        url: "",
+      },
+      {
+        name: "University of Michigan",
+        displayName: "University of Michigan",
+        logo: "",
+        url: "",
+      },
+      {
+        name: "Korea Institute of Energy Technology",
+        displayName: "KENTECH",
+        logo: "",
+        url: "",
+      },
+      {
+        name: "Daegu Gyeongbuk Institute of Science and Technology",
+        displayName: "DGIST",
+        logo: "",
+        url: "",
+      },
+      {
+        name: "Inha University",
+        displayName: "Inha University",
+        logo: "",
+        url: "",
+      },
+    ],
+    supporters: [
+      {
+        name: "Institute of Electrical and Electronics Engineers",
+        displayName: "IEEE",
+        logo: "",
+        url: "",
+      },
+      {
+        name: "GIST AI Institute",
+        displayName: "GIST AI Institute",
+        logo: "",
+        url: "",
       },
     ],
   },

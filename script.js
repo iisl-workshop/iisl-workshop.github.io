@@ -293,6 +293,54 @@
       .join("");
   }
 
+  function renderInstitutionList(id, institutions) {
+    byId(id).innerHTML = institutions
+      .map(function (institution) {
+        var visual = institution.logo
+          ? '<img class="institution-logo" src="' +
+            escapeHtml(institution.logo) +
+            '" alt="' +
+            escapeHtml(institution.name) +
+            ' logo" loading="lazy" />'
+          : '<span class="institution-wordmark">' +
+            escapeHtml(institution.displayName || institution.name) +
+            "</span>";
+        var cardClass = "institution-card" + (institution.logo ? " has-logo" : "");
+
+        if (institution.url) {
+          return (
+            '<a class="' +
+            cardClass +
+            '" href="' +
+            escapeHtml(institution.url) +
+            '"' +
+            externalAttributes(institution.url) +
+            ' aria-label="' +
+            escapeHtml(institution.name) +
+            '">' +
+            visual +
+            "</a>"
+          );
+        }
+
+        return (
+          '<div class="' +
+          cardClass +
+          '" aria-label="' +
+          escapeHtml(institution.name) +
+          '">' +
+          visual +
+          "</div>"
+        );
+      })
+      .join("");
+  }
+
+  function renderInstitutions() {
+    renderInstitutionList("host-grid", data.institutions.hosts);
+    renderInstitutionList("support-grid", data.institutions.supporters);
+  }
+
   function renderFooter() {
     byId("footer-links").innerHTML = data.footerLinks
       .filter(function (link) {
@@ -336,6 +384,19 @@
     });
   }
 
+  function setupHomeReload() {
+    document.querySelectorAll('a.brand[href="./"]').forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        if ("scrollRestoration" in window.history) {
+          window.history.scrollRestoration = "manual";
+        }
+        window.scrollTo(0, 0);
+        window.location.assign(link.href);
+      });
+    });
+  }
+
   function setupReveal() {
     var items = document.querySelectorAll(".reveal");
     if (
@@ -369,7 +430,9 @@
   renderSpeakers();
   renderVenue();
   renderContact();
+  renderInstitutions();
   renderFooter();
   setupNavigation();
+  setupHomeReload();
   setupReveal();
 })();

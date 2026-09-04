@@ -19,9 +19,8 @@
 
     <header class="site-header" id="top">
       <nav class="nav shell" aria-label="Main navigation">
-        <a class="brand" href="#top" aria-label="Go to the top">
-          <span class="brand-mark" aria-hidden="true">I</span>
-          <span id="nav-brand">IISL Workshop</span>
+        <a class="brand" href="./" aria-label="Reload the workshop homepage">
+          <span id="nav-brand">IISL Workshop 2026</span>
         </a>
 
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">
@@ -35,6 +34,7 @@
           <a href="#speakers">Contributors</a>
           <a href="#venue">Venue</a>
           <a href="#organizers">Organizers</a>
+          <a href="#institutions">Institutions</a>
           <a class="nav-cta" id="nav-registration" href="#program">Registration</a>
         </div>
       </nav>
@@ -55,32 +55,28 @@
           <div class="hero-actions reveal" id="hero-actions"></div>
           <div class="event-facts reveal" id="event-facts"></div>
           <div class="security-map reveal" aria-hidden="true">
-            <div class="map-orbit map-orbit-outer"></div>
-            <div class="map-orbit map-orbit-inner"></div>
-            <div class="map-axis map-axis-x"></div>
-            <div class="map-axis map-axis-y"></div>
-            <div class="signal-node node-semantic">
-              <span>01</span>
-              <strong>Semantic</strong>
-              <small>communication</small>
+            <div class="security-globe">
+              <span class="globe-line globe-equator"></span>
+              <span class="globe-line globe-latitude latitude-one"></span>
+              <span class="globe-line globe-latitude latitude-two"></span>
+              <span class="globe-line globe-longitude longitude-one"></span>
+              <span class="globe-line globe-longitude longitude-two"></span>
+              <span class="globe-line globe-longitude longitude-three"></span>
+              <span class="globe-node globe-node-one"></span>
+              <span class="globe-node globe-node-two"></span>
+              <span class="globe-node globe-node-three"></span>
+              <span class="globe-node globe-node-four"></span>
             </div>
-            <div class="signal-node node-sensing">
-              <span>02</span>
-              <strong>Trusted</strong>
-              <small>IoT sensing</small>
+            <div class="security-lock">
+              <span class="lock-shackle"></span>
+              <span class="lock-body">
+                <span class="lock-keyhole"></span>
+              </span>
             </div>
-            <div class="signal-node node-human">
-              <span>03</span>
-              <strong>Human–AI</strong>
-              <small>teaming</small>
+            <div class="security-caption">
+              <span>Secure connected systems</span>
+              <strong>Trust at every layer</strong>
             </div>
-            <div class="security-core">
-              <span>Adaptive</span>
-              <strong>SECURE</strong>
-              <small>systems</small>
-            </div>
-            <span class="data-pulse pulse-one"></span>
-            <span class="data-pulse pulse-two"></span>
           </div>
         </div>
       </section>
@@ -130,7 +126,7 @@
             <div class="venue-details" id="venue-details"></div>
             <div class="venue-actions" id="venue-actions"></div>
           </div>
-          <div class="map-card reveal" aria-label="Venue placeholder">
+          <div class="map-card reveal" aria-label="GIST Seoul Office location graphic">
             <div class="map-grid" aria-hidden="true"></div>
             <div class="map-road map-road-horizontal" aria-hidden="true"></div>
             <div class="map-road map-road-vertical" aria-hidden="true"></div>
@@ -158,14 +154,31 @@
           </div>
         </div>
       </section>
+      <section class="section institutions-section" id="institutions">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="section-label">Institutions</p>
+            <h2>Hosted and supported by.</h2>
+          </div>
+          <div class="institution-groups">
+            <div class="institution-group reveal">
+              <p class="card-label">Hosted by</p>
+              <div class="institution-grid host-grid" id="host-grid"></div>
+            </div>
+            <div class="institution-group reveal">
+              <p class="card-label">Supported by</p>
+              <div class="institution-grid support-grid" id="support-grid"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <div class="shell footer-top">
         <div>
-          <a class="brand footer-brand" href="#top">
-            <span class="brand-mark" aria-hidden="true">I</span>
-            <span id="footer-brand">IISL Workshop</span>
+          <a class="brand footer-brand" href="./">
+            <span id="footer-brand">IISL Workshop 2026</span>
           </a>
           <p id="footer-tagline"></p>
         </div>

@@ -1,21 +1,20 @@
-# IISL Workshop website
+# Workshop website
 
-GitHub Pages에서 바로 동작하는 워크숍 안내 페이지입니다. 별도의 빌드나 설치 과정 없이 index.html을 열어 확인할 수 있습니다.
-
-현재 버전은 Joint_Workshop_Flyer_v2.pptx의 연구 주제와 프로그램만 반영했습니다. 확정되지 않은 워크숍 이름, 날짜, 장소, 등록, 운영진 정보는 임의로 채우지 않고 TBA 상태로 두었습니다.
+워크샵 홈페이지 틀
+바로 index.html을 열어 확인 가능
 
 ## 가장 자주 수정할 파일
 
-워크숍 제목, 날짜, 일정, 연사, 장소, 주최자 정보는 모두 content.js에 모여 있습니다.
+워크숍 제목, 날짜, 일정, 연사, 장소, 주최자 정보는 모두 content.js에 모여 있음
 
-1. 행사명이 정해지면 meta의 shortName, eyebrow, title, titleAccent를 바꿉니다.
-2. 날짜와 장소가 정해지면 meta와 venue를 함께 수정합니다.
-3. 연사 사진은 assets/speakers 폴더에 넣고 해당 연사의 image 값을 assets/speakers/파일명.jpg로 바꿉니다.
-4. 아직 정해지지 않은 링크는 빈 문자열로 두면 버튼이 자동으로 비활성화됩니다.
+1. 행사명이 정해지면 meta의 shortName, eyebrow, title, titleAccent를 바꾸기
+2. 날짜와 장소가 정해지면 meta와 venue를 함께 수정하기
+3. 연사 사진은 assets/speakers 폴더에 넣고 해당 연사의 image 값을 assets/speakers/파일명.jpg로 바꾸기
+4. 아직 정해지지 않은 링크는 빈 문자열로 두면 버튼이 자동으로 비활성화됨
 
 ### 일정 한 개 추가하기
 
-program.items 배열 안에 아래 형태의 블록을 복사해 추가합니다.
+program.items 배열 안에 아래 형태의 블록을 복사해 추가
 
     {
       type: "session",
@@ -28,11 +27,11 @@ program.items 배열 안에 아래 형태의 블록을 복사해 추가합니다
       description: "Short description (optional)",
     },
 
-휴식 시간은 type: "break"를 사용합니다.
+휴식 시간은 type: "break"를 사용
 
     { type: "break", time: "15:00", endTime: "15:30", title: "Coffee break" },
 
-오전·오후처럼 프로그램 묶음을 나누려면 type: "track"을 사용합니다.
+오전·오후처럼 프로그램 묶음을 나누려면 type: "track"을 사용
 
     {
       type: "track",
@@ -43,7 +42,7 @@ program.items 배열 안에 아래 형태의 블록을 복사해 추가합니다
 
 ### 연사 한 명 추가하기
 
-speakers 배열 안에 아래 형태의 블록을 복사해 추가합니다.
+speakers 배열 안에 아래 형태의 블록을 복사해 추가
 
     {
       name: "Speaker name",
@@ -55,14 +54,7 @@ speakers 배열 안에 아래 형태의 블록을 복사해 추가합니다.
       url: "https://speaker-website.example",
     },
 
-image 또는 url이 아직 없으면 빈 문자열로 두어도 됩니다.
-
-## 로컬에서 확인하기
-
-    cd /workspace/iisl-workshop
-    python3 -m http.server 8000
-
-브라우저에서 http://localhost:8000 을 엽니다.
+image 또는 url이 아직 없으면 빈 문자열로 두어도 됨
 
 ## 파일 구성
 
