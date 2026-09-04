@@ -79,7 +79,6 @@ const WORKSHOP_DATA = {
         type: "track",
         label: "01 · Morning",
         title: "Semantic Communication & Physical-Layer Security for IoT",
-        description: "Trust begins at the signal, sensing, and device layers.",
       },
       {
         type: "session",
@@ -136,7 +135,6 @@ const WORKSHOP_DATA = {
         type: "track",
         label: "02 · Afternoon",
         title: "Autonomous Security through Human–AI Collaboration",
-        description: "From collaborative decision-making to autonomous defense.",
       },
       {
         type: "session",

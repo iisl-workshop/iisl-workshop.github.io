@@ -152,9 +152,7 @@
             escapeHtml(item.label) +
             "</span><div><h3>" +
             escapeHtml(item.title) +
-            "</h3><p>" +
-            escapeHtml(item.description) +
-            "</p></div></div>"
+            "</h3></div></div>"
           );
         }
 

@@ -901,13 +901,14 @@ button {
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 24px;
-  padding: 20px 4px 17px;
+  align-items: center;
+  padding: 14px 4px;
   border-bottom: 1px solid rgba(93, 228, 242, 0.3);
   background: rgba(93, 228, 242, 0.018);
 }
 
 .program-track > span {
-  padding-top: 2px;
+  padding-top: 0;
   color: var(--lime);
   font-family: var(--mono);
   font-size: 8px;
@@ -918,7 +919,7 @@ button {
 
 .program-track h3 {
   max-width: 780px;
-  margin: 0 0 4px;
+  margin: 0;
   color: rgba(93, 228, 242, 0.82);
   font-family: var(--display);
   font-size: clamp(0.96rem, 1.4vw, 1.18rem);
@@ -928,11 +929,6 @@ button {
   text-transform: uppercase;
 }
 
-.program-track p {
-  margin: 0;
-  color: rgba(248, 251, 251, 0.42);
-  font-size: 11px;
-}
 
 .program-item {
   position: relative;
@@ -2188,7 +2184,7 @@ a.institution-card:hover {
   .program-track {
     grid-template-columns: 76px 1fr;
     gap: 13px;
-    padding: 18px 0 15px;
+    padding: 12px 0;
   }
 
   .program-summary {
