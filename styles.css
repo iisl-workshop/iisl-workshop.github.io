@@ -1033,7 +1033,7 @@ button {
 
 .speaker-photo {
   position: relative;
-  aspect-ratio: 1.15 / 1;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   display: grid;
   place-items: center;
@@ -2186,8 +2186,13 @@ a.institution-card:hover {
     grid-template-columns: 1fr;
   }
 
+  .speaker-card {
+    width: min(100%, 390px);
+    justify-self: center;
+  }
+
   .speaker-photo {
-    aspect-ratio: 1.4 / 1;
+    aspect-ratio: 4 / 5;
   }
 
   .venue-layout {
