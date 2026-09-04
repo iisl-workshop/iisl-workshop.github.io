@@ -244,6 +244,8 @@ button {
 .template-note,
 .eyebrow,
 .hero-title,
+.hero-theme,
+.hero-eventline,
 .hero-summary,
 .theme-chips,
 .hero-actions {
@@ -315,6 +317,36 @@ button {
   color: var(--cyan);
   font-style: normal;
   font-weight: 260;
+}
+
+.hero-theme {
+  margin: 27px 0 0;
+  color: rgba(248, 251, 251, 0.94);
+  font-family: var(--display);
+  font-size: clamp(1.25rem, 2.4vw, 2rem);
+  font-weight: 620;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.hero-eventline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 0 0;
+  color: var(--lime);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.07em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.hero-event-separator {
+  color: rgba(248, 251, 251, 0.35);
 }
 
 .hero-summary {
@@ -401,7 +433,7 @@ button {
 .security-map {
   position: relative;
   grid-column: 2;
-  grid-row: 2 / span 6;
+  grid-row: 2 / span 8;
   width: min(100%, 470px);
   aspect-ratio: 1;
   justify-self: end;
@@ -2025,8 +2057,25 @@ a.institution-card:hover {
     line-height: 0.9;
   }
 
+  .hero-theme {
+    margin-top: 23px;
+    font-size: clamp(1.15rem, 6vw, 1.55rem);
+  }
+
+  .hero-eventline {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 14px;
+    font-size: 9px;
+  }
+
+  .hero-event-separator {
+    display: none;
+  }
+
   .hero-summary {
-    margin-top: 25px;
+    margin-top: 23px;
     font-size: 15px;
   }
 

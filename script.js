@@ -52,11 +52,14 @@
   function renderMeta() {
     var meta = data.meta;
     document.title =
-      meta.title + " " + meta.titleAccent + " — " + meta.shortName + " " + meta.year;
+      meta.themeTitle + " — " + meta.shortName + " " + meta.year;
     document.querySelector('meta[name="description"]').setAttribute("content", meta.summary);
     document
       .querySelector('meta[property="og:title"]')
-      .setAttribute("content", meta.title + " " + meta.titleAccent);
+      .setAttribute(
+        "content",
+        meta.title + " " + meta.titleAccent + " · " + meta.themeTitle
+      );
     document
       .querySelector('meta[property="og:description"]')
       .setAttribute("content", meta.summary);
@@ -66,6 +69,9 @@
     setText("hero-eyebrow", meta.eyebrow);
     setText("hero-title", meta.title);
     setText("hero-title-accent", meta.titleAccent);
+    setText("hero-theme", meta.themeTitle);
+    setText("hero-date", meta.date);
+    setText("hero-location", meta.location + ", " + meta.cityName);
     setText("hero-summary", meta.summary);
     setText("template-note", meta.statusNote);
     setText("footer-tagline", meta.summary);

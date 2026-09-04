@@ -7,9 +7,10 @@ const WORKSHOP_DATA = {
   meta: {
     shortName: "IISL Workshop",
     year: "2026",
-    eyebrow: "2026 · Joint research workshop",
-    title: "AI-Driven",
-    titleAccent: "Autonomous Security",
+    eyebrow: "IISL · Joint research workshop",
+    title: "2026 Joint",
+    titleAccent: "Workshop",
+    themeTitle: "AI-Driven Autonomous Security",
     summary:
       "Exploring how communication, sensing, and human–AI collaboration can shape trustworthy, adaptive security for mission-critical connected systems.",
     statusNote: "Official workshop title to be announced",
@@ -21,6 +22,7 @@ const WORKSHOP_DATA = {
     date: "October 12, 2026",
     time: "10:00–14:30",
     location: "GIST Seoul Office",
+    cityName: "Seoul",
     city: "23, Sejong-daero, Jung-gu, Seoul",
     registrationUrl: "",
     registrationLabel: "Registration to open later",
