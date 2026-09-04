@@ -1,1 +1,1 @@
-# IISL-workshop
+# iisl-workshop
