@@ -139,7 +139,7 @@
     setText("program-title", data.program.title);
     setText("program-note", data.program.note);
     byId("program-list").innerHTML = data.program.items
-      .map(function (item) {
+      .map(function (item, index) {
         if (item.type === "track") {
           return (
             '<div class="program-track"><span>' +
@@ -179,8 +179,11 @@
           );
         }
 
+        var detail = item.description || "Session description will be announced.";
+        var detailId = "program-detail-" + index;
+
         return (
-          '<article class="program-item"><time>' +
+          '<details class="program-item"><summary class="program-summary"><time>' +
           range +
           '</time><div class="program-main"><h3>' +
           escapeHtml(item.title) +
@@ -188,13 +191,13 @@
           escapeHtml(item.speaker) +
           " <span>· " +
           escapeHtml(item.affiliation) +
-          "</span></p>" +
-          (item.description
-            ? '<p class="program-description">' + escapeHtml(item.description) + "</p>"
-            : "") +
-          '</div><span class="program-type">' +
-          escapeHtml(item.format || "Session") +
-          "</span></article>"
+          "</span></p></div>" +
+          '<span class="program-expand" aria-hidden="true"></span></summary>' +
+          '<div class="program-detail" id="' +
+          detailId +
+          '"><p>' +
+          escapeHtml(detail) +
+          "</p></div></details>"
         );
       })
       .join("");
@@ -244,7 +247,11 @@
     var venue = data.venue;
     setText("venue-name", venue.name);
     setText("venue-address", venue.address);
-    setText("map-label", venue.mapLabel);
+    var map = byId("venue-map");
+    if (map && venue.mapEmbedUrl) {
+      map.src = venue.mapEmbedUrl;
+      map.title = "Interactive map showing " + venue.name;
+    }
     byId("venue-details").innerHTML = venue.details
       .map(function (detail) {
         return (
@@ -342,22 +349,6 @@
   }
 
   function renderFooter() {
-    byId("footer-links").innerHTML = data.footerLinks
-      .filter(function (link) {
-        return link.url;
-      })
-      .map(function (link) {
-        return (
-          '<a href="' +
-          escapeHtml(link.url) +
-          '"' +
-          externalAttributes(link.url) +
-          ">" +
-          escapeHtml(link.label) +
-          ' <span aria-hidden="true">↗</span></a>'
-        );
-      })
-      .join("");
     setText(
       "copyright",
       "© " +

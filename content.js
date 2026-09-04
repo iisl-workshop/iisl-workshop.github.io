@@ -63,7 +63,7 @@ const WORKSHOP_DATA = {
   },
 
   program: {
-    title: "A program in two connected arcs.",
+    title: "Program",
     note:
       "Confirmed program · October 12, 2026 · 10:00–14:30 at GIST Seoul Office.",
     items: [
@@ -254,8 +254,9 @@ const WORKSHOP_DATA = {
       { label: "Time", value: "10:00–14:30" },
       { label: "Program", value: "Keynotes, student talks, invited talks & panel" },
     ],
-    mapUrl: "",
-    mapLabel: "GIST Seoul Office",
+    mapUrl: "https://www.openstreetmap.org/?mlat=37.5560962&mlon=126.9753153#map=17/37.5560962/126.9753153",
+    mapEmbedUrl:
+      "https://www.openstreetmap.org/export/embed.html?bbox=126.9728%2C37.5544%2C126.9778%2C37.5578&layer=mapnik&marker=37.5560962%2C126.9753153",
   },
 
   contact: {
@@ -319,7 +320,4 @@ const WORKSHOP_DATA = {
     ],
   },
 
-  footerLinks: [
-    { label: "GitHub", url: "https://github.com/iisl-workshop" },
-  ],
 };

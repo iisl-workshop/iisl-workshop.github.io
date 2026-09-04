@@ -31,7 +31,7 @@
         <div class="nav-links" id="nav-links">
           <a href="#about">Scope</a>
           <a href="#program">Program</a>
-          <a href="#speakers">Contributors</a>
+          <a href="#speakers">Speakers</a>
           <a href="#venue">Venue</a>
           <a href="#organizers">Organizers</a>
           <a href="#institutions">Institutions</a>
@@ -110,7 +110,7 @@
       <section class="section speakers-section" id="speakers">
         <div class="shell">
           <div class="section-heading reveal">
-            <p class="section-label">Program contributors</p>
+            <p class="section-label">Speakers</p>
             <h2>Across systems, signals, and security.</h2>
           </div>
           <div class="speaker-grid" id="speaker-grid"></div>
@@ -126,12 +126,14 @@
             <div class="venue-details" id="venue-details"></div>
             <div class="venue-actions" id="venue-actions"></div>
           </div>
-          <div class="map-card reveal" aria-label="GIST Seoul Office location graphic">
-            <div class="map-grid" aria-hidden="true"></div>
-            <div class="map-road map-road-horizontal" aria-hidden="true"></div>
-            <div class="map-road map-road-vertical" aria-hidden="true"></div>
-            <div class="map-pin" aria-hidden="true"><span></span></div>
-            <p id="map-label"></p>
+          <div class="map-card reveal">
+            <iframe
+              class="venue-map"
+              id="venue-map"
+              title="Interactive map showing GIST Seoul Office"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -182,11 +184,9 @@
           </a>
           <p id="footer-tagline"></p>
         </div>
-        <div class="footer-links" id="footer-links"></div>
       </div>
       <div class="shell footer-bottom">
         <span id="copyright"></span>
-        <span>Hosted with GitHub Pages</span>
       </div>
     </footer>
   </body>
