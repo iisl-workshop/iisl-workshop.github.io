@@ -8,9 +8,10 @@
 워크숍 제목, 날짜, 일정, 연사, 장소, 주최자 정보는 모두 content.js에 모여 있음
 
 1. 행사명이 정해지면 meta의 shortName, eyebrow, title, titleAccent를 바꾸기
-2. 날짜와 장소가 정해지면 meta와 venue를 함께 수정하기
+2. 날짜, 시간, 장소, 주소는 meta의 date, time, location, cityName, city에서 수정하기
 3. 연사 사진은 assets/speakers 폴더에 넣고 해당 연사의 image 값을 assets/speakers/파일명.jpg로 바꾸기
 4. 아직 정해지지 않은 링크는 빈 문자열로 두면 버튼이 자동으로 비활성화됨
+5. Venue에 표시되는 프로그램 구성은 venue의 programSummary에서 수정하기
 
 ### 일정 한 개 추가하기
 
@@ -20,7 +21,6 @@ program.items 배열 안에 아래 형태의 블록을 복사해 추가
       type: "session",
       time: "14:00",
       endTime: "14:30",
-      format: "Invited Talk",
       title: "Talk title",
       speaker: "Speaker name",
       affiliation: "Affiliation",
@@ -37,7 +37,6 @@ program.items 배열 안에 아래 형태의 블록을 복사해 추가
       type: "track",
       label: "03 · Evening",
       title: "Track title",
-      description: "One-line track description",
     },
 
 ### 연사 한 명 추가하기

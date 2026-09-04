@@ -28,6 +28,9 @@ const WORKSHOP_DATA = {
     registrationLabel: "Registration to open later",
     contactEmail: "",
   },
+  sections: {
+    speakers: "Speakers",
+  },
 
   about: {
     label: "Research scope",
@@ -66,8 +69,6 @@ const WORKSHOP_DATA = {
 
   program: {
     title: "Program",
-    note:
-      "Confirmed program · October 12, 2026 · 10:00–14:30 at GIST Seoul Office.",
     items: [
       {
         type: "note",
@@ -84,7 +85,6 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "10:00",
         endTime: "10:30",
-        format: "Keynote I",
         title: "RF/EM Sensing for Trustworthy IoT",
         speaker: "Prof. Alanson Sample",
         affiliation: "University of Michigan",
@@ -95,7 +95,6 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "10:30",
         endTime: "11:00",
-        format: "Keynote II",
         title:
           "Semantic Communication–Enabled Physical-Layer Security for Mission-Critical IoT",
         speaker: "Prof. Euiseok Hwang",
@@ -107,7 +106,6 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "11:00",
         endTime: "11:20",
-        format: "Student Talk",
         title:
           "Sensing-Driven IoT Systems: Toward Secure Device-Level Data Integrity",
         speaker: "Cameron Daniel Haire",
@@ -118,7 +116,6 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "11:20",
         endTime: "11:40",
-        format: "Student Talk",
         title:
           "Session Binding for Bio-based Multi-modal Sensing via Homomorphic Encryption",
         speaker: "Heehun Jung",
@@ -140,7 +137,6 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:00",
         endTime: "13:20",
-        format: "Invited Talk",
         title: "Human–AI Teaming Security: Overview",
         speaker: "Prof. Hyuk Lim",
         affiliation: "KENTECH",
@@ -150,7 +146,6 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:20",
         endTime: "13:40",
-        format: "Invited Talk",
         title: "Title to be announced",
         speaker: "Prof. Youngsik Kim",
         affiliation: "DGIST",
@@ -160,7 +155,6 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:40",
         endTime: "14:00",
-        format: "Invited Talk",
         title: "Title to be announced",
         speaker: "Prof. Yongwoo Lee",
         affiliation: "Inha University",
@@ -170,7 +164,6 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "14:00",
         endTime: "14:30",
-        format: "Panel & Closing",
         title: "Toward Autonomous Cyber Defense",
         speaker: "All speakers",
         affiliation: "Joint panel discussion",
@@ -247,13 +240,7 @@ const WORKSHOP_DATA = {
   ],
 
   venue: {
-    name: "GIST Seoul Office",
-    address: "23, Sejong-daero, Jung-gu, Seoul",
-    details: [
-      { label: "Date", value: "October 12, 2026" },
-      { label: "Time", value: "10:00–14:30" },
-      { label: "Program", value: "Keynotes, student talks, invited talks & panel" },
-    ],
+    programSummary: "Keynotes, student talks, invited talks & panel",
     mapUrl: "https://www.openstreetmap.org/?mlat=37.5560962&mlon=126.9753153#map=17/37.5560962/126.9753153",
     mapEmbedUrl:
       "https://www.openstreetmap.org/export/embed.html?bbox=126.9728%2C37.5544%2C126.9778%2C37.5578&layer=mapnik&marker=37.5560962%2C126.9753153",

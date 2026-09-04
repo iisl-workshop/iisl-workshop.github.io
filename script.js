@@ -17,7 +17,9 @@
     return String(url).startsWith("http://") || String(url).startsWith("https://");
   };
   var externalAttributes = function (url) {
-    return isExternal(url) ? ' target="_blank" rel="noreferrer"' : "";
+    return isExternal(url)
+      ? ' target="_blank" rel="noopener noreferrer"'
+      : "";
   };
 
   function setText(id, value) {
@@ -143,9 +145,18 @@
 
   function renderProgram() {
     setText("program-title", data.program.title);
-    setText("program-note", data.program.note);
+    setText(
+      "program-note",
+      "Confirmed program · " +
+        data.meta.date +
+        " · " +
+        data.meta.time +
+        " at " +
+        data.meta.location +
+        "."
+    );
     byId("program-list").innerHTML = data.program.items
-      .map(function (item, index) {
+      .map(function (item) {
         if (item.type === "track") {
           return (
             '<div class="program-track"><span>' +
@@ -184,7 +195,6 @@
         }
 
         var detail = item.description || "Session description will be announced.";
-        var detailId = "program-detail-" + index;
 
         return (
           '<details class="program-item"><summary class="program-summary"><time>' +
@@ -197,9 +207,7 @@
           escapeHtml(item.affiliation) +
           "</span></p></div>" +
           '<span class="program-expand" aria-hidden="true"></span></summary>' +
-          '<div class="program-detail" id="' +
-          detailId +
-          '"><p>' +
+          '<div class="program-detail"><p>' +
           escapeHtml(detail) +
           "</p></div></details>"
         );
@@ -208,6 +216,7 @@
   }
 
   function renderSpeakers() {
+    setText("speakers-title", data.sections.speakers);
     byId("speaker-grid").innerHTML = data.speakers
       .map(function (speaker, index) {
         var image = speaker.image
@@ -248,15 +257,21 @@
   }
 
   function renderVenue() {
+    var meta = data.meta;
     var venue = data.venue;
-    setText("venue-name", venue.name);
-    setText("venue-address", venue.address);
+    var details = [
+      { label: "Date", value: meta.date },
+      { label: "Time", value: meta.time },
+      { label: "Program", value: venue.programSummary },
+    ];
+    setText("venue-name", meta.location);
+    setText("venue-address", meta.city);
     var map = byId("venue-map");
     if (map && venue.mapEmbedUrl) {
       map.src = venue.mapEmbedUrl;
-      map.title = "Interactive map showing " + venue.name;
+      map.title = "Interactive map showing " + meta.location;
     }
-    byId("venue-details").innerHTML = venue.details
+    byId("venue-details").innerHTML = details
       .map(function (detail) {
         return (
           "<div><span>" +
@@ -366,15 +381,28 @@
   function setupNavigation() {
     var button = document.querySelector(".menu-button");
     var links = byId("nav-links");
+    var label = byId("menu-label");
+    var setOpen = function (isOpen) {
+      button.setAttribute("aria-expanded", String(isOpen));
+      links.classList.toggle("is-open", isOpen);
+      label.textContent = isOpen ? "Close navigation" : "Open navigation";
+    };
+
     button.addEventListener("click", function () {
-      var isOpen = button.getAttribute("aria-expanded") === "true";
-      button.setAttribute("aria-expanded", String(!isOpen));
-      links.classList.toggle("is-open", !isOpen);
+      setOpen(button.getAttribute("aria-expanded") !== "true");
     });
     links.addEventListener("click", function (event) {
       if (event.target.closest("a")) {
-        button.setAttribute("aria-expanded", "false");
-        links.classList.remove("is-open");
+        setOpen(false);
+      }
+    });
+    document.addEventListener("keydown", function (event) {
+      if (
+        event.key === "Escape" &&
+        button.getAttribute("aria-expanded") === "true"
+      ) {
+        setOpen(false);
+        button.focus();
       }
     });
   }
