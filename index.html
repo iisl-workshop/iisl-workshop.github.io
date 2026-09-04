@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="IISL Workshop 2026 — workshop information, program, speakers, and venue." />
+    <meta name="theme-color" content="#f6f3ed" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="IISL Workshop 2026" />
+    <meta property="og:description" content="Workshop information, program, speakers, and venue." />
+    <title>IISL Workshop 2026</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="content.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <nav class="nav shell" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Go to the top">
+          <span class="brand-mark" aria-hidden="true">I</span>
+          <span id="nav-brand">IISL Workshop</span>
+        </a>
+
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+          <span class="sr-only">Open navigation</span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#about">About</a>
+          <a href="#program">Program</a>
+          <a href="#speakers">Speakers</a>
+          <a href="#venue">Venue</a>
+          <a href="#organizers">Organizers</a>
+          <a class="nav-cta" id="nav-registration" href="#program">Registration</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-pattern" aria-hidden="true"></div>
+        <div class="shell hero-inner">
+          <div class="template-note" id="template-note"></div>
+          <p class="eyebrow reveal" id="hero-eyebrow"></p>
+          <h1 class="hero-title reveal">
+            <span id="hero-title"></span>
+            <em id="hero-title-accent"></em>
+          </h1>
+          <p class="hero-summary reveal" id="hero-summary"></p>
+          <div class="hero-actions reveal" id="hero-actions"></div>
+          <div class="event-facts reveal" id="event-facts"></div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="section-label" id="about-label"></p>
+            <h2 id="about-title"></h2>
+          </div>
+          <div class="about-layout">
+            <div class="about-copy reveal" id="about-copy"></div>
+            <div class="topic-list" id="topic-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section program-section" id="program">
+        <div class="shell">
+          <div class="section-heading split-heading reveal">
+            <div>
+              <p class="section-label">Program</p>
+              <h2 id="program-title"></h2>
+            </div>
+            <p class="section-note" id="program-note"></p>
+          </div>
+          <div class="program-list reveal" id="program-list"></div>
+        </div>
+      </section>
+
+      <section class="section speakers-section" id="speakers">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="section-label">Speakers</p>
+            <h2>Invited speakers.</h2>
+          </div>
+          <div class="speaker-grid" id="speaker-grid"></div>
+        </div>
+      </section>
+
+      <section class="section venue-section" id="venue">
+        <div class="shell venue-layout">
+          <div class="venue-copy reveal">
+            <p class="section-label">Venue</p>
+            <h2 id="venue-name"></h2>
+            <p class="venue-address" id="venue-address"></p>
+            <div class="venue-details" id="venue-details"></div>
+            <div class="venue-actions" id="venue-actions"></div>
+          </div>
+          <div class="map-card reveal" aria-label="Venue placeholder">
+            <div class="map-grid" aria-hidden="true"></div>
+            <div class="map-road map-road-horizontal" aria-hidden="true"></div>
+            <div class="map-road map-road-vertical" aria-hidden="true"></div>
+            <div class="map-pin" aria-hidden="true"><span></span></div>
+            <p id="map-label"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section organizers-section" id="organizers">
+        <div class="shell">
+          <div class="organizer-intro reveal">
+            <div>
+              <p class="section-label">Contact</p>
+              <h2>Reach the organizers.</h2>
+            </div>
+            <div>
+              <p id="contact-copy"></p>
+              <div id="contact-action"></div>
+            </div>
+          </div>
+          <div class="organizer-card reveal">
+            <p class="card-label">Organizing committee</p>
+            <div class="organizer-grid" id="organizer-grid"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-top">
+        <div>
+          <a class="brand footer-brand" href="#top">
+            <span class="brand-mark" aria-hidden="true">I</span>
+            <span id="footer-brand">IISL Workshop</span>
+          </a>
+          <p id="footer-tagline"></p>
+        </div>
+        <div class="footer-links" id="footer-links"></div>
+      </div>
+      <div class="shell footer-bottom">
+        <span id="copyright"></span>
+        <span>Hosted with GitHub Pages</span>
+      </div>
+    </footer>
+  </body>
+</html>
