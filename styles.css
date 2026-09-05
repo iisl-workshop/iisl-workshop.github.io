@@ -100,9 +100,8 @@ button {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.025em;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 
@@ -147,8 +146,7 @@ button {
   color: var(--cyan);
   font-family: var(--mono);
   font-size: 10px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
 .menu-button {
@@ -241,9 +239,8 @@ button {
   color: rgba(248, 251, 251, 0.62);
   font-family: var(--mono);
   font-size: 9px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.025em;
   line-height: 1.4;
-  text-transform: uppercase;
 }
 
 .template-note::before {
@@ -264,8 +261,7 @@ button {
   font-family: var(--mono);
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.17em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .hero .eyebrow {
@@ -281,7 +277,6 @@ button {
   font-weight: 300;
   letter-spacing: -0.055em;
   line-height: 0.9;
-  text-transform: uppercase;
 }
 
 .hero-title span,
@@ -302,7 +297,6 @@ button {
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.15;
-  text-transform: uppercase;
 }
 
 .hero-eventline {
@@ -315,9 +309,8 @@ button {
   font-family: var(--mono);
   font-size: 10px;
   font-weight: 750;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.02em;
   line-height: 1.5;
-  text-transform: uppercase;
 }
 
 .hero-event-separator {
@@ -346,8 +339,7 @@ button {
   color: rgba(225, 229, 255, 0.84);
   font-family: var(--mono);
   font-size: 9px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
 .hero-actions,
@@ -370,9 +362,8 @@ button {
   font-family: var(--mono);
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.015em;
   text-decoration: none;
-  text-transform: uppercase;
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
 }
 
@@ -436,8 +427,7 @@ button {
   font-family: var(--mono);
   font-size: 8px;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .hero .fact-label {
@@ -478,7 +468,6 @@ button {
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 1.04;
-  text-transform: uppercase;
 }
 
 .about-section {
@@ -568,7 +557,6 @@ button {
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.15;
-  text-transform: uppercase;
 }
 
 .topic p {
@@ -638,8 +626,7 @@ button {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .program-note-row strong {
@@ -647,7 +634,6 @@ button {
   color: rgba(248, 251, 251, 0.82);
   font-size: 13px;
   letter-spacing: -0.01em;
-  text-transform: uppercase;
 }
 
 .program-note-row p {
@@ -672,8 +658,7 @@ button {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .program-track h3 {
@@ -685,7 +670,6 @@ button {
   font-weight: 560;
   letter-spacing: 0;
   line-height: 1.25;
-  text-transform: uppercase;
 }
 
 
@@ -857,7 +841,6 @@ button {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
 .speakers-section {
@@ -951,8 +934,7 @@ button {
   font-family: var(--mono);
   font-size: 8px;
   font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .speaker-meta h3 {
@@ -963,7 +945,6 @@ button {
   font-weight: 720;
   letter-spacing: -0.035em;
   line-height: 1.1;
-  text-transform: uppercase;
 }
 
 .speaker-meta h3 a {
@@ -1047,7 +1028,6 @@ button {
   font-size: 10px;
   font-weight: 700;
   text-underline-offset: 5px;
-  text-transform: uppercase;
 }
 
 .map-card {
@@ -1130,7 +1110,6 @@ button {
   font-family: var(--display);
   font-size: 17px;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 .organizer-person span {
@@ -1182,8 +1161,7 @@ button {
   color: rgba(248, 251, 251, 0.31);
   font-family: var(--mono);
   font-size: 8px;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .reveal {
@@ -1451,8 +1429,7 @@ button {
   color: rgba(93, 228, 242, 0.55);
   font-family: var(--mono);
   font-size: 7px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .security-caption strong {
@@ -1460,8 +1437,7 @@ button {
   font-family: var(--mono);
   font-size: 8px;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .institutions-section {
@@ -1542,7 +1518,6 @@ a.institution-card:hover {
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.12;
-  text-transform: uppercase;
 }
 
 @keyframes globe-breathe {
