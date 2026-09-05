@@ -275,8 +275,7 @@ const WORKSHOP_DATA = {
       {
         name: "Daegu Gyeongbuk Institute of Science and Technology",
         displayName: "DGIST",
-        logo: "assets/logos/DGIST.jpg",
-        logoScale: "large",
+        logo: "assets/logos/DGIST.png",
         url: "https://www.dgist.ac.kr/eng/index.do",
       },
       {

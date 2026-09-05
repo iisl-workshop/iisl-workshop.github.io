@@ -1598,11 +1598,7 @@ a.institution-card:hover {
   }
 
   .security-map {
-    grid-column: 1;
-    grid-row: auto;
-    width: min(100%, 500px);
-    margin: 53px auto 0;
-    justify-self: center;
+    display: none;
   }
 
   .event-facts {
@@ -1704,12 +1700,6 @@ a.institution-card:hover {
   .hero-actions .button {
     flex: 1 1 100%;
   }
-
-
-  .security-map {
-    display: none;
-  }
-
 
   .event-facts {
     grid-template-columns: 1fr;
