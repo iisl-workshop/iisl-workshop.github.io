@@ -85,7 +85,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "10:00",
         endTime: "10:30",
-        title: "RF/EM Sensing for Trustworthy IoT",
+        title: "Keynote I — RF/EM Sensing for Trustworthy IoT",
         speaker: "Prof. Alanson Sample",
         affiliation: "University of Michigan",
         description:
@@ -96,7 +96,7 @@ const WORKSHOP_DATA = {
         time: "10:30",
         endTime: "11:00",
         title:
-          "Semantic Communication–Enabled Physical-Layer Security for Mission-Critical IoT",
+          "Keynote II — Semantic Communication–Enabled Physical-Layer Security for Mission-Critical IoT",
         speaker: "Prof. Euiseok Hwang",
         affiliation: "GIST",
         description:
@@ -107,7 +107,7 @@ const WORKSHOP_DATA = {
         time: "11:00",
         endTime: "11:20",
         title:
-          "Sensing-Driven IoT Systems: Toward Secure Device-Level Data Integrity",
+          "Student Talk I — Sensing-Driven IoT Systems: Toward Secure Device-Level Data Integrity",
         speaker: "Cameron Daniel Haire",
         affiliation: "PhD Candidate · University of Michigan",
         description: "",
@@ -117,7 +117,7 @@ const WORKSHOP_DATA = {
         time: "11:20",
         endTime: "11:40",
         title:
-          "Session Binding for Bio-based Multi-modal Sensing via Homomorphic Encryption",
+          "Student Talk II — Session Binding for Bio-based Multi-modal Sensing via Homomorphic Encryption",
         speaker: "Heehun Jung",
         affiliation: "PhD Candidate · GIST",
         description: "",
@@ -137,7 +137,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:00",
         endTime: "13:20",
-        title: "Invited Talk 1 — Human–AI Teaming Security: Overview",
+        title: "Invited Talk I — Human–AI Teaming Security: Overview",
         speaker: "Prof. Hyuk Lim",
         affiliation: "KENTECH",
         description: "",
@@ -146,7 +146,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:20",
         endTime: "13:40",
-        title: "Invited Talk 2 — Title to be announced",
+        title: "Invited Talk II — Title to be announced",
         speaker: "Prof. Youngsik Kim",
         affiliation: "DGIST",
         description: "",
@@ -155,7 +155,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:40",
         endTime: "14:00",
-        title: "Invited Talk 3 — Title to be announced",
+        title: "Invited Talk III — Title to be announced",
         speaker: "Prof. Yongwoo Lee",
         affiliation: "Inha University",
         description: "",
