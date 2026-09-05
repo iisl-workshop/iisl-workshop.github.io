@@ -335,8 +335,13 @@
   function renderInstitutionList(id, institutions) {
     byId(id).innerHTML = institutions
       .map(function (institution) {
+        var logoClass =
+          "institution-logo" +
+          (institution.logoScale === "large" ? " institution-logo-large" : "");
         var visual = institution.logo
-          ? '<img class="institution-logo" src="' +
+          ? '<img class="' +
+            logoClass +
+            '" src="' +
             escapeHtml(institution.logo) +
             '" alt="' +
             escapeHtml(institution.name) +

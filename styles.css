@@ -439,13 +439,12 @@ button {
   font-family: var(--display);
   font-size: clamp(1.85rem, 3vw, 2.9rem);
   font-weight: 400;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.012em;
   line-height: 1.04;
 }
 
 .organizers-section .organizer-intro h2,
 .institutions-section .section-heading h2 {
-  letter-spacing: -0.012em;
   line-height: 1.1;
 }
 
@@ -1498,6 +1497,11 @@ a.institution-card:hover {
   max-height: 66px;
   object-fit: contain;
   filter: none;
+}
+
+.institution-logo-large {
+  max-width: 100%;
+  max-height: 80px;
 }
 
 .institution-wordmark {
