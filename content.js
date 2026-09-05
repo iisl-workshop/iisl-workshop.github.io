@@ -41,25 +41,19 @@ const WORKSHOP_DATA = {
     topics: [
       {
         number: "01",
-        title: "Semantic communication",
+        title: "Semantic Communication",
         description:
           "Security mechanisms that use task meaning and context, not only transmitted bits, to protect critical communication.",
       },
       {
         number: "02",
-        title: "Trusted sensing & IoT",
+        title: "Mission-Critical IoT",
         description:
-          "RF/EM and multimodal sensing approaches for device integrity, session binding, and trustworthy connected environments.",
+          "RF/EM and multimodal sensing with physical-layer protection for device integrity and resilient mission-critical IoT.",
       },
       {
         number: "03",
-        title: "Physical-layer security",
-        description:
-          "Resilient communication and sensing foundations for mission-critical IoT at the intersection of cyber and physical systems.",
-      },
-      {
-        number: "04",
-        title: "Human–AI teaming",
+        title: "Human–AI Teaming",
         description:
           "Collaborative intelligence, operational oversight, and the path toward adaptive and autonomous cyber defense.",
       },
@@ -88,7 +82,7 @@ const WORKSHOP_DATA = {
         speaker: "Prof. Alanson Sample",
         affiliation: "University of Michigan",
         description:
-          "A sensing-centered view of trust for connected and embedded systems.",
+          "설명 넣어야 함...",
       },
       {
         type: "session",
@@ -99,7 +93,7 @@ const WORKSHOP_DATA = {
         speaker: "Prof. Euiseok Hwang",
         affiliation: "GIST",
         description:
-          "Connecting semantic communication with physical-layer protection in critical IoT settings.",
+          "설명 넣어야 함...",
       },
       {
         type: "session",
@@ -109,7 +103,7 @@ const WORKSHOP_DATA = {
           "Student Talk I — Sensing-Driven IoT Systems: Toward Secure Device-Level Data Integrity",
         speaker: "Cameron Daniel Haire",
         affiliation: "PhD Candidate · University of Michigan",
-        description: "",
+        description: "설명 넣어야 함...",
       },
       {
         type: "session",
@@ -119,7 +113,7 @@ const WORKSHOP_DATA = {
           "Student Talk II — Session Binding for Bio-based Multi-modal Sensing via Homomorphic Encryption",
         speaker: "Heehun Jung",
         affiliation: "PhD Candidate · GIST",
-        description: "",
+        description: "설명 넣어야 함...",
       },
       {
         type: "break",
@@ -139,7 +133,7 @@ const WORKSHOP_DATA = {
         title: "Invited Talk I — Human–AI Teaming Security: Overview",
         speaker: "Prof. Hyuk Lim",
         affiliation: "KENTECH",
-        description: "",
+        description: "설명 넣어야 함...",
       },
       {
         type: "session",
@@ -148,7 +142,7 @@ const WORKSHOP_DATA = {
         title: "Invited Talk II — Title to be announced",
         speaker: "Prof. Youngsik Kim",
         affiliation: "DGIST",
-        description: "",
+        description: "설명 넣어야 함...",
       },
       {
         type: "session",
@@ -157,7 +151,7 @@ const WORKSHOP_DATA = {
         title: "Invited Talk III — Title to be announced",
         speaker: "Prof. Yongwoo Lee",
         affiliation: "Inha University",
-        description: "",
+        description: "설명 넣어야 함...",
       },
       {
         type: "session",
@@ -167,7 +161,7 @@ const WORKSHOP_DATA = {
         speaker: "All speakers",
         affiliation: "Closing session",
         description:
-          "A closing conversation connecting communication, sensing, and human–AI collaboration.",
+          "설명 넣어야 함...",
       },
     ],
   },
@@ -248,7 +242,7 @@ const WORKSHOP_DATA = {
 
   contact: {
     copy:
-      "The official workshop title, registration details, and organizing contacts will be added here as soon as they are confirmed.",
+      "궁금한 점이 있다면 저희에게 문의 주세용 ^^, 여기 넣을지 뺄지, 넣는다면 누구 넣을지",
     organizers: [
       {
         name: "Organizing committee",

@@ -497,17 +497,18 @@ button {
 
 .topic-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   border-top: 1px solid rgba(93, 228, 242, 0.32);
   border-left: 1px solid rgba(93, 228, 242, 0.32);
 }
 
 .topic {
-  min-height: 205px;
+  min-height: 138px;
   display: grid;
   grid-template-columns: 35px 1fr;
   gap: 12px;
-  padding: 25px 22px;
+  align-content: center;
+  padding: 20px 22px;
   border-right: 1px solid var(--rule-dark);
   border-bottom: 1px solid var(--rule-dark);
   background: rgba(11, 31, 46, 0.72);
