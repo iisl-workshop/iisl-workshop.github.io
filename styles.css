@@ -1464,25 +1464,16 @@ button {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  border: 1px solid var(--rule-dark);
-  background: rgba(10, 27, 42, 0.8);
+  border: 1px solid transparent;
+  background: transparent;
   color: rgba(248, 251, 251, 0.82);
   text-align: center;
   text-decoration: none;
-  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
-}
-
-a.institution-card.has-logo:hover {
-  background: rgba(248, 251, 251, 0.98);
-}
-
-.institution-card.has-logo {
-  background: rgba(248, 251, 251, 0.94);
+  transition: opacity 180ms ease, transform 180ms ease;
 }
 
 a.institution-card:hover {
-  border-color: rgba(93, 228, 242, 0.55);
-  background: rgba(16, 44, 61, 0.92);
+  opacity: 0.78;
   transform: translateY(-3px);
 }
 

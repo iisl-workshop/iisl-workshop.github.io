@@ -269,7 +269,7 @@ const WORKSHOP_DATA = {
       {
         name: "Korea Institute of Energy Technology",
         displayName: "KENTECH",
-        logo: "assets/logos/KENTECH.jpg",
+        logo: "assets/logos/KENTECH.png",
         url: "https://www.kentech.ac.kr/main.do",
       },
       {
