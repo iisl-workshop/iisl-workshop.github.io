@@ -278,7 +278,7 @@ button {
   font-family: var(--display);
   font-size: clamp(3.35rem, 6.4vw, 5.85rem);
   font-stretch: condensed;
-  font-weight: 600;
+  font-weight: 300;
   letter-spacing: -0.055em;
   line-height: 0.9;
   text-transform: uppercase;
@@ -292,7 +292,6 @@ button {
 .hero-title em {
   color: var(--cyan);
   font-style: normal;
-  font-weight: 300;
 }
 
 .hero-theme {
@@ -637,7 +636,7 @@ button {
 .program-note-row > span {
   color: var(--cyan);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -670,7 +669,7 @@ button {
   padding-top: 0;
   color: var(--lime);
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -745,7 +744,9 @@ button {
 
 .program-item time span,
 .program-break time span {
-  color: rgba(248, 251, 251, 0.35);
+  color: rgba(248, 251, 251, 0.7);
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .program-main h3 {
