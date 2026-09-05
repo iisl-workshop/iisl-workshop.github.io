@@ -269,13 +269,14 @@ const WORKSHOP_DATA = {
       {
         name: "Korea Institute of Energy Technology",
         displayName: "KENTECH",
-        logo: "assets/logos/KENTECH.png",
+        logo: "assets/logos/KENTECH.jpg",
         url: "https://www.kentech.ac.kr/main.do",
       },
       {
         name: "Daegu Gyeongbuk Institute of Science and Technology",
         displayName: "DGIST",
         logo: "assets/logos/DGIST.png",
+        logoScale: "expanded",
         url: "https://www.dgist.ac.kr/eng/index.do",
       },
       {

@@ -1504,6 +1504,11 @@ a.institution-card:hover {
   max-height: 80px;
 }
 
+.institution-logo-expanded {
+  clip-path: inset(20% 24%);
+  transform: scale(1.85);
+}
+
 .institution-wordmark {
   max-width: 190px;
   font-family: var(--display);
