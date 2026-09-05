@@ -198,8 +198,8 @@ const WORKSHOP_DATA = {
       affiliation: "University of Michigan",
       role: "PhD Candidate · Student Talk",
       talk: "Sensing-Driven IoT Systems",
-      image: "",
-      url: "",
+      image: "assets/speakers/Cameron-Haire.jpeg",
+      url: "https://callmeron7.github.io/about/",
     },
     {
       name: "Heehun Jung",
@@ -216,8 +216,8 @@ const WORKSHOP_DATA = {
       affiliation: "KENTECH",
       role: "Professor · Invited Talk",
       talk: "Human–AI Teaming Security: Overview",
-      image: "",
-      url: "",
+      image: "assets/speakers/Hyuk-Lim.jpg",
+      url: "https://hlim.kentech.ac.kr/",
     },
     {
       name: "Youngsik Kim",
@@ -225,8 +225,8 @@ const WORKSHOP_DATA = {
       affiliation: "DGIST",
       role: "Professor · Invited Talk",
       talk: "Title to be announced",
-      image: "",
-      url: "",
+      image: "assets/speakers/Youngsik-Kim.jpg",
+      url: "https://sites.google.com/site/mypurist/",
     },
     {
       name: "Yongwoo Lee",
@@ -234,8 +234,8 @@ const WORKSHOP_DATA = {
       affiliation: "Inha University",
       role: "Professor · Invited Talk",
       talk: "Title to be announced",
-      image: "",
-      url: "",
+      image: "assets/speakers/Youngwoo-Lee.png",
+      url: "https://yongwoo-lee-ccl.github.io/online-cv/",
     },
   ],
 
