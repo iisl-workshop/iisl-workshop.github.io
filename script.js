@@ -42,7 +42,7 @@
   }
 
   function registrationLink(className) {
-    var cssClass = className || "button button-primary";
+    var cssClass = className || "button button-registration";
     if (!data.meta.registrationUrl) {
       return (
         '<span class="' +
@@ -118,19 +118,6 @@
         );
       })
       .join("");
-
-    var navRegistration = byId("nav-registration");
-    if (meta.registrationUrl) {
-      navRegistration.hidden = false;
-      navRegistration.href = meta.registrationUrl;
-      navRegistration.textContent = meta.registrationLabel;
-      if (isExternal(meta.registrationUrl)) {
-        navRegistration.target = "_blank";
-        navRegistration.rel = "noreferrer";
-      }
-    } else {
-      navRegistration.hidden = true;
-    }
   }
 
   function renderAbout() {

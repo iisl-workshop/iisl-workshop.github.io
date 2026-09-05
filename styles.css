@@ -119,7 +119,7 @@ button {
   text-decoration: none;
 }
 
-.nav-links a:not(.nav-cta)::after {
+.nav-links a::after {
   content: "";
   position: absolute;
   right: 0;
@@ -138,15 +138,6 @@ button {
 
 .nav-links a:hover::after {
   transform: scaleX(1);
-}
-
-.nav-links .nav-cta {
-  padding: 10px 15px;
-  border: 1px solid rgba(93, 228, 242, 0.48);
-  color: var(--cyan);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.01em;
 }
 
 .menu-button {
@@ -351,6 +342,18 @@ button {
 
 .button-primary:hover:not(.is-disabled) {
   background: #dcff85;
+}
+
+.button-registration {
+  border-color: rgba(127, 199, 207, 0.32);
+  background: rgba(93, 228, 242, 0.08);
+  color: #afd6da;
+}
+
+.button-registration:hover:not(.is-disabled) {
+  border-color: rgba(127, 199, 207, 0.5);
+  background: rgba(93, 228, 242, 0.13);
+  color: #d4eaec;
 }
 
 .button-secondary {
@@ -1581,12 +1584,6 @@ a.institution-card:hover {
 
   .nav-links a::after {
     display: none;
-  }
-
-  .nav-links .nav-cta {
-    margin-top: 7px;
-    padding: 11px 15px;
-    text-align: center;
   }
 
   .menu-button {
