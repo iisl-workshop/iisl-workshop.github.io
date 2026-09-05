@@ -474,8 +474,8 @@ button {
 .organizer-intro h2 {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(2.05rem, 3.6vw, 3.35rem);
-  font-weight: 520;
+  font-size: clamp(1.85rem, 3vw, 2.9rem);
+  font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 1.04;
   text-transform: uppercase;
@@ -644,7 +644,7 @@ button {
 
 .program-note-row strong {
   font-family: var(--display);
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: -0.01em;
   text-transform: uppercase;
 }
@@ -753,8 +753,8 @@ button {
   max-width: 780px;
   margin: -5px 0 10px;
   font-family: var(--display);
-  font-size: clamp(1.25rem, 2.25vw, 1.75rem);
-  font-weight: 620;
+  font-size: clamp(1.15rem, 1.9vw, 1.55rem);
+  font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 1.18;
 }
@@ -853,8 +853,8 @@ button {
 .program-break > strong {
   color: rgba(248, 251, 251, 0.62);
   font-family: var(--display);
-  font-size: 14px;
-  font-weight: 550;
+  font-size: 13px;
+  font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
@@ -1769,7 +1769,7 @@ a.institution-card:hover {
   .section-heading h2,
   .venue-copy h2,
   .organizer-intro h2 {
-    font-size: clamp(1.9rem, 8vw, 2.55rem);
+    font-size: clamp(1.72rem, 7vw, 2.25rem);
   }
 
   .split-heading {

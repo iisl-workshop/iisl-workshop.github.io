@@ -108,6 +108,7 @@
 
     var navRegistration = byId("nav-registration");
     if (meta.registrationUrl) {
+      navRegistration.hidden = false;
       navRegistration.href = meta.registrationUrl;
       navRegistration.textContent = meta.registrationLabel;
       if (isExternal(meta.registrationUrl)) {
@@ -115,8 +116,7 @@
         navRegistration.rel = "noreferrer";
       }
     } else {
-      navRegistration.href = "#program";
-      navRegistration.textContent = "Program";
+      navRegistration.hidden = true;
     }
   }
 
