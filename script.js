@@ -489,13 +489,14 @@
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.12) {
             entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
+          } else if (!entry.isIntersecting) {
+            entry.target.classList.remove("is-visible");
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: [0, 0.12] }
     );
     items.forEach(function (item) {
       observer.observe(item);
