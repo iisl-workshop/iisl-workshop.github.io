@@ -486,13 +486,36 @@
       });
       return;
     }
+
+    var lastScrollY = Math.max(window.scrollY, 0);
+    var scrollDirection = "down";
+    window.addEventListener(
+      "scroll",
+      function () {
+        var currentScrollY = Math.max(window.scrollY, 0);
+        if (currentScrollY !== lastScrollY) {
+          scrollDirection = currentScrollY > lastScrollY ? "down" : "up";
+          lastScrollY = currentScrollY;
+        }
+      },
+      { passive: true }
+    );
+
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting && entry.intersectionRatio >= 0.12) {
+            if (scrollDirection === "up") {
+              entry.target.classList.add("is-reveal-static");
+            } else {
+              entry.target.classList.remove("is-reveal-static");
+            }
             entry.target.classList.add("is-visible");
           } else if (!entry.isIntersecting) {
-            entry.target.classList.remove("is-visible");
+            entry.target.classList.remove(
+              "is-visible",
+              "is-reveal-static"
+            );
           }
         });
       },

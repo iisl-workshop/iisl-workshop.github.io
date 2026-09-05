@@ -1157,6 +1157,11 @@ button {
   transition-delay: calc(var(--card-index) * 35ms);
 }
 
+.reveal.is-reveal-static {
+  transition-duration: 0s;
+  transition-delay: 0s;
+}
+
 /* PPT-inspired globe lock */
 
 .security-map {
