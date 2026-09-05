@@ -345,15 +345,15 @@ button {
 }
 
 .button-registration {
-  border-color: rgba(127, 199, 207, 0.32);
-  background: rgba(93, 228, 242, 0.08);
-  color: #afd6da;
+  border-color: rgba(201, 244, 91, 0.34);
+  background: rgba(201, 244, 91, 0.12);
+  color: #d5e5aa;
 }
 
 .button-registration:hover:not(.is-disabled) {
-  border-color: rgba(127, 199, 207, 0.5);
-  background: rgba(93, 228, 242, 0.13);
-  color: #d4eaec;
+  border-color: rgba(201, 244, 91, 0.48);
+  background: rgba(201, 244, 91, 0.18);
+  color: #e1edc1;
 }
 
 .button-secondary {
