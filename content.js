@@ -13,7 +13,6 @@ const WORKSHOP_DATA = {
     themeTitle: "AI-Driven Autonomous Security",
     summary:
       "Exploring how communication, sensing, and human–AI collaboration can shape trustworthy, adaptive security for mission-critical connected systems.",
-    statusNote: "Official workshop title to be announced",
     themeLabels: [
       "Semantic Communication",
       "Mission-Critical IoT",

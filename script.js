@@ -89,7 +89,6 @@
     setText("hero-date", meta.date);
     setText("hero-location", meta.location + ", " + meta.cityName);
     setText("hero-summary", meta.summary);
-    setText("template-note", meta.statusNote);
     setText("footer-tagline", meta.summary);
 
     byId("theme-chips").innerHTML = (meta.themeLabels || [])
