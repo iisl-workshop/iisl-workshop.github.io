@@ -23,8 +23,8 @@ const WORKSHOP_DATA = {
     location: "GIST Seoul Office",
     cityName: "Seoul",
     city: "23, Sejong-daero, Jung-gu, Seoul",
-    registrationUrl: "",
-    registrationLabel: "Registration to open later",
+    registrationUrl: "https://forms.gle/V22FsKEZS7BCbzuP7",
+    registrationLabel: "Register now",
     contactEmail: "",
   },
   sections: {
