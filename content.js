@@ -180,8 +180,8 @@ const WORKSHOP_DATA = {
       affiliation: "University of Michigan",
       role: "Professor · Keynote I",
       talk: "RF/EM Sensing for Trustworthy IoT",
-      image: "",
-      url: "",
+      image: "assets/speakers/Alanson-Sample.jpeg",
+      url: "https://alansonsample.com/",
     },
     {
       name: "Euiseok Hwang",
@@ -189,8 +189,8 @@ const WORKSHOP_DATA = {
       affiliation: "GIST",
       role: "Professor · Keynote II",
       talk: "Semantic Communication–Enabled Physical-Layer Security",
-      image: "",
-      url: "",
+      image: "assets/speakers/Euiseok-Hwang.jpg",
+      url: "https://iis.gist.ac.kr/prog/gsPerson/isp/P/view.do?siteCode=isp&mno=sub02_01_01&tmplId=template_d1&personId=P00001644",
     },
     {
       name: "Cameron Daniel Haire",
@@ -207,8 +207,8 @@ const WORKSHOP_DATA = {
       affiliation: "GIST",
       role: "PhD Candidate · Student Talk",
       talk: "Bio-based Multi-modal Sensing & Homomorphic Encryption",
-      image: "",
-      url: "",
+      image: "assets/speakers/Heehun-Jung.jpg",
+      url: "https://iis.gist.ac.kr/prog/gsPerson/isp/S/view.do",
     },
     {
       name: "Hyuk Lim",
