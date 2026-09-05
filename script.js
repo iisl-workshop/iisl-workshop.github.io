@@ -22,6 +22,20 @@
       : "";
   };
 
+  function renderTrackLabel(value) {
+    var parts = String(value || "").split(" · ");
+    if (parts.length < 2) {
+      return escapeHtml(value);
+    }
+
+    return (
+      '<span class="program-track-index">' +
+      escapeHtml(parts.shift()) +
+      " · </span>" +
+      escapeHtml(parts.join(" · "))
+    );
+  }
+
   function setText(id, value) {
     var element = byId(id);
     if (element) element.textContent = value || "";
@@ -160,7 +174,7 @@
         if (item.type === "track") {
           return (
             '<div class="program-track"><span>' +
-            escapeHtml(item.label) +
+            renderTrackLabel(item.label) +
             "</span><div><h3>" +
             escapeHtml(item.title) +
             "</h3></div></div>"
