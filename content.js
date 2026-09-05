@@ -241,9 +241,10 @@ const WORKSHOP_DATA = {
 
   venue: {
     programSummary: "Keynotes, student talks, invited talks & panel",
-    mapUrl: "https://www.openstreetmap.org/?mlat=37.5560962&mlon=126.9753153#map=17/37.5560962/126.9753153",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=GIST%20Seoul%20Office%2C%2023%20Sejong-daero%2C%20Jung-gu%2C%20Seoul",
     mapEmbedUrl:
-      "https://www.openstreetmap.org/export/embed.html?bbox=126.9728%2C37.5544%2C126.9778%2C37.5578&layer=mapnik&marker=37.5560962%2C126.9753153",
+      "https://www.google.com/maps?q=GIST%20Seoul%20Office%2C%2023%20Sejong-daero%2C%20Jung-gu%2C%20Seoul&z=17&output=embed",
   },
 
   contact: {

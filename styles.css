@@ -172,7 +172,6 @@ button {
 
 .hero {
   position: relative;
-  min-height: calc(100vh - 72px);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -215,7 +214,7 @@ button {
   grid-template-columns: minmax(0, 1.17fr) minmax(350px, 0.83fr);
   column-gap: clamp(42px, 6vw, 92px);
   align-items: center;
-  padding-block: 74px 48px;
+  padding-block: 64px 28px;
 }
 
 .template-note,
@@ -412,14 +411,14 @@ button {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 62px;
+  margin-top: 44px;
   border-top: 1px solid var(--rule-dark);
   border-bottom: 1px solid var(--rule-dark);
 }
 
 .fact {
-  min-height: 99px;
-  padding: 22px 27px;
+  min-height: 88px;
+  padding: 18px 24px;
   border-right: 1px solid var(--rule-dark);
 }
 
@@ -449,7 +448,7 @@ button {
 .fact strong {
   color: rgba(248, 251, 251, 0.88);
   font-family: var(--display);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.35;
