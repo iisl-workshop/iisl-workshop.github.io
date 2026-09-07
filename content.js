@@ -22,7 +22,7 @@ const WORKSHOP_DATA = {
     titleAccent: "Workshop",
     themeTitle: "AI-Driven Autonomous Security",
     summary:
-      "Exploring how communication, sensing, and human–AI collaboration can shape trustworthy, adaptive security for mission-critical connected systems.",
+      "전반적으로 코멘트 주시면 전부 수정하겠습니다!\ Exploring how communication, sensing, and human–AI collaboration can shape trustworthy, adaptive security for mission-critical connected systems.",
     themeLabels: [
       "Semantic Communication",
       "Mission-Critical IoT",
@@ -88,7 +88,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "10:00",
         endTime: "10:30",
-        title: "Keynote I — RF/EM Sensing for Trustworthy IoT",
+        title: "!!! 상세설명 넣을까요? 내용은 어떻게 구성할까요? !!! Keynote I — RF/EM Sensing for Trustworthy IoT",
         speaker: "Prof. Alanson Sample",
         affiliation: "University of Michigan",
         description:
@@ -149,7 +149,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:20",
         endTime: "13:40",
-        title: "Invited Talk II — Title to be announced",
+        title: "Invited Talk II — ???",
         speaker: "Prof. Youngsik Kim",
         affiliation: "DGIST",
         description: "설명 넣어야 함...",
@@ -158,7 +158,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:40",
         endTime: "14:00",
-        title: "Invited Talk III — Title to be announced",
+        title: "Invited Talk III — ???",
         speaker: "Prof. Yongwoo Lee",
         affiliation: "Inha University",
         description: "설명 넣어야 함...",
@@ -178,7 +178,7 @@ const WORKSHOP_DATA = {
 
   speakers: [
     {
-      name: "Alanson Sample",
+      name: "지금은 프로그램 순으로 배치했는데\ 교수님분들을 앞에 배치할까요?",
       initials: "AS",
       affiliation: "University of Michigan",
       role: "Professor · Keynote I",
@@ -227,7 +227,7 @@ const WORKSHOP_DATA = {
       initials: "YK",
       affiliation: "DGIST",
       role: "Professor · Invited Talk",
-      talk: "Title to be announced",
+      talk: "???Title???",
       image: "assets/speakers/Youngsik-Kim.jpg",
       url: "https://sites.google.com/site/mypurist/",
     },
@@ -236,7 +236,7 @@ const WORKSHOP_DATA = {
       initials: "YL",
       affiliation: "Inha University",
       role: "Professor · Invited Talk",
-      talk: "Title to be announced",
+      talk: "???Title???",
       image: "assets/speakers/Youngwoo-Lee.png",
       url: "https://yongwoo-lee-ccl.github.io/online-cv/",
     },
@@ -252,7 +252,7 @@ const WORKSHOP_DATA = {
 
   contact: {
     copy:
-      "궁금한 점이 있다면 저희에게 문의 주세용 ^^, 여기 넣을지 뺄지, 넣는다면 누구 넣을지",
+      "Organazers 부분(지금 이 part)을 넣을지 안 넣을지 궁금합니다!\ 넣는다면 인원 구성을 어떻게 할까요?",
     organizers: [
       {
         name: "Organizing committee",
