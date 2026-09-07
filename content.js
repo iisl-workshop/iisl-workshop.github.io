@@ -22,7 +22,7 @@ const WORKSHOP_DATA = {
     titleAccent: "Workshop",
     themeTitle: "AI-Driven Autonomous Security",
     summary:
-      "전반적으로 코멘트 주시면 전부 수정하겠습니다!\ Exploring how communication, sensing, and human–AI collaboration can shape trustworthy, adaptive security for mission-critical connected systems.",
+      "전반적으로 코멘트 주시면 전부 수정하겠습니다!\n홈페이지 이름이랑 홈페이지 로고도 수정 가능합니다!\n Exploring how communication, sensing, and human–AI collaboration can shape trustworthy, adaptive security for mission-critical connected systems.",
     themeLabels: [
       "Semantic Communication",
       "Mission-Critical IoT",
