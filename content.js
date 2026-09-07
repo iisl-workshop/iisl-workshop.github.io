@@ -81,7 +81,7 @@ const WORKSHOP_DATA = {
       },
       {
         type: "track",
-        label: "01 · Morning",
+        label: "Morning",
         title: "Semantic Communication & Physical-Layer Security for IoT",
       },
       {
@@ -133,7 +133,7 @@ const WORKSHOP_DATA = {
       },
       {
         type: "track",
-        label: "02 · Afternoon",
+        label: "Afternoon",
         title: "Autonomous Security through Human–AI Collaboration",
       },
       {
