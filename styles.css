@@ -1038,31 +1038,12 @@ button {
   border: 0;
 }
 
-.map-card .venue-actions {
-  position: absolute;
-  right: clamp(12px, 2vw, 18px);
-  bottom: clamp(12px, 2vw, 18px);
-  z-index: 2;
-  margin: 0;
+.venue-map-column {
+  min-width: 0;
 }
 
-.map-card .text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 11px 14px;
-  border: 1px solid rgba(93, 228, 242, 0.42);
-  background: rgba(7, 17, 31, 0.86);
-  color: rgba(248, 251, 251, 0.9);
-  text-decoration: none;
-  backdrop-filter: blur(8px);
-  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
-}
-
-.map-card .text-link:hover {
-  border-color: rgba(93, 228, 242, 0.72);
-  background: rgba(7, 17, 31, 0.96);
-  color: var(--white);
+.venue-map-column .venue-actions {
+  justify-content: flex-end;
 }
 
 .organizers-section {

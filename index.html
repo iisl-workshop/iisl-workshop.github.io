@@ -15,10 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;family=Roboto+Condensed:wght@300;400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=40" />
+    <link rel="stylesheet" href="styles.css?v=41" />
     <link rel="icon" href="data:," />
-    <script src="content.js?v=40" defer></script>
-    <script src="script.js?v=40" defer></script>
+    <script src="content.js?v=41" defer></script>
+    <script src="script.js?v=41" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -134,14 +134,16 @@
             <p class="venue-address" id="venue-address"></p>
             <div class="venue-details" id="venue-details"></div>
           </div>
-          <div class="map-card reveal">
-            <iframe
-              class="venue-map"
-              id="venue-map"
-              title="Interactive map showing GIST Seoul Office"
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
-            ></iframe>
+          <div class="venue-map-column reveal">
+            <div class="map-card">
+              <iframe
+                class="venue-map"
+                id="venue-map"
+                title="Interactive map showing GIST Seoul Office"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </div>
             <div class="venue-actions" id="venue-actions"></div>
           </div>
         </div>
