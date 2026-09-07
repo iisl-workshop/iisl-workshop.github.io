@@ -211,7 +211,7 @@ const WORKSHOP_DATA = {
       role: "PhD Candidate · Student Talk",
       talk: "Bio-based Multi-modal Sensing & Homomorphic Encryption",
       image: "assets/speakers/Heehun-Jung.jpg",
-      url: "https://iis.gist.ac.kr/prog/gsPerson/isp/S/view.do",
+      url: "https://me.gist.ac.kr/prog/gsPerson/isp/S/B000000056829Rv7dW0b/sub02_01_02/view.do",
     },
     {
       name: "Hyuk Lim",
