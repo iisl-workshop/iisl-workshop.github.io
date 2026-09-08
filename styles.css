@@ -1153,11 +1153,6 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   gap: 10px;
 }
 
-.support-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: calc(40% - 3px);
-}
-
 .institution-card {
   min-height: 96px;
   display: flex;
@@ -1211,12 +1206,13 @@ a.institution-card:hover {
 
 /* Optical spacing when all five host logos share one row. */
 @media (min-width: 861px) {
-  .host-grid .institution-logo[src$="/Michigan.png"] {
+  .host-grid .institution-logo[src$="/Michigan.png"],
+  .support-grid .institution-card:nth-child(2) .institution-logo {
     transform: translateX(-18px);
   }
 
   .host-grid .institution-logo-expanded {
-    transform: translate(18px, -6px);
+    transform: translate(26px, -6px);
   }
 }
 
@@ -1327,10 +1323,6 @@ a.institution-card:hover {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .support-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: none;
-  }
 }
 
 @media (max-width: 640px) {
