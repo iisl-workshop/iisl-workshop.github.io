@@ -1100,21 +1100,21 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   transition-delay: 0s;
 }
 
-/* Decorative background: soft edges blend the artwork into the hero. */
+/* Match the layer to the image bounds so the fade cannot expose a hard edge. */
 .hero-art {
   position: absolute;
   z-index: -1;
-  top: 0;
+  top: 50%;
   right: -70px;
-  bottom: 0;
   width: 60%;
+  aspect-ratio: 735 / 503;
   pointer-events: none;
   background: url("assets/Intro.jpeg") center / contain no-repeat;
-  transform: translateY(-32px);
+  transform: translateY(calc(-50% - 80px));
   opacity: 0.82;
   mix-blend-mode: screen;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 32%, transparent 72%);
-  mask-image: radial-gradient(ellipse at center, black 32%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 64% 64% at 50% 40%, black 30%, rgba(0, 0, 0, 0.85) 45%, transparent 78%);
+  mask-image: radial-gradient(ellipse 64% 64% at 50% 40%, black 30%, rgba(0, 0, 0, 0.85) 45%, transparent 78%);
 }
 
 .institutions-section {
