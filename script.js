@@ -228,8 +228,7 @@
             externalAttributes(speaker.url) +
             ' aria-label="' + escapeHtml(speaker.name) + ' — Visit website"'
           : "";
-        var name = escapeHtml(speaker.name) +
-          (speaker.url ? ' <span aria-hidden="true">↗</span>' : "");
+        var name = escapeHtml(speaker.name);
         return (
           '<' + cardTag + cardAttributes +
           ' class="speaker-card reveal" style="--card-index:' +

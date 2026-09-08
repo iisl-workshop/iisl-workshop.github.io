@@ -1202,7 +1202,7 @@ a.institution-card:hover {
   aspect-ratio: 343 / 105;
   overflow: hidden;
   flex-shrink: 0;
-  transform: translateY(-3px);
+  transform: translateY(-6px);
 }
 
 .institution-logo-extra-large {
@@ -1212,11 +1212,11 @@ a.institution-card:hover {
 /* Optical spacing when all five host logos share one row. */
 @media (min-width: 861px) {
   .host-grid .institution-logo[src$="/Michigan.png"] {
-    transform: translateX(-10px);
+    transform: translateX(-18px);
   }
 
   .host-grid .institution-logo-expanded {
-    transform: translate(10px, -3px);
+    transform: translate(18px, -6px);
   }
 }
 
