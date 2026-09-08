@@ -1110,6 +1110,7 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   width: 60%;
   pointer-events: none;
   background: url("assets/Intro.jpeg") center / contain no-repeat;
+  transform: translateY(-32px);
   opacity: 0.82;
   mix-blend-mode: screen;
   -webkit-mask-image: radial-gradient(ellipse at center, black 32%, transparent 72%);
