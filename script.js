@@ -173,9 +173,7 @@
             escapeHtml(item.label) +
             "</span><strong>" +
             escapeHtml(item.title) +
-            "</strong><p>" +
-            escapeHtml(item.description) +
-            "</p></div>"
+            "</strong></div>"
           );
         }
 
@@ -194,10 +192,8 @@
           );
         }
 
-        var detail = item.description || "Session description will be announced.";
-
         return (
-          '<details class="program-item"><summary class="program-summary"><time>' +
+          '<div class="program-item"><div class="program-summary"><time>' +
           range +
           '</time><div class="program-main"><h3>' +
           escapeHtml(item.title) +
@@ -205,11 +201,7 @@
           escapeHtml(item.speaker) +
           " <span>· " +
           escapeHtml(item.affiliation) +
-          "</span></p></div>" +
-          '<span class="program-expand" aria-hidden="true"></span></summary>' +
-          '<div class="program-detail"><p>' +
-          escapeHtml(detail) +
-          "</p></div></details>"
+          "</span></p></div></div></div>"
         );
       })
       .join("");
