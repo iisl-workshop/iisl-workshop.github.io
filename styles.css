@@ -204,6 +204,7 @@ button {
 .hero-inner {
   position: relative;
   z-index: 1;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1.17fr) minmax(350px, 0.83fr);
   column-gap: clamp(42px, 6vw, 92px);
@@ -1099,120 +1100,20 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   transition-delay: 0s;
 }
 
-/* Original CSS artwork: a padlock, a tilted frame, and two signal paths. */
-
-.security-map {
-  position: relative;
-  grid-column: 2;
-  grid-row: 2 / span 6;
-  width: min(100%, 425px);
-  aspect-ratio: 1;
-  justify-self: end;
-  isolation: isolate;
-  pointer-events: none;
-  background: radial-gradient(ellipse at center, rgba(93, 228, 242, 0.09), transparent 66%);
-}
-
-.security-frame {
+/* Decorative background: soft edges blend the artwork into the hero. */
+.hero-art {
   position: absolute;
-  inset: 17%;
-  border: 1px solid rgba(93, 228, 242, 0.18);
-  border-radius: 32px;
-  background: linear-gradient(135deg, rgba(93, 228, 242, 0.025), transparent 60%);
-  transform: rotate(-12deg);
-}
-
-.security-frame::after {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border: 1px solid rgba(93, 228, 242, 0.06);
-  border-radius: 22px;
-}
-
-.security-trace {
-  position: absolute;
-  top: 47%;
-  width: 21%;
-  height: 13%;
-  border-top: 1px solid rgba(93, 228, 242, 0.3);
-}
-
-.security-trace-left {
-  left: 10%;
-  border-left: 1px solid rgba(93, 228, 242, 0.3);
-  border-radius: 12px 0 0 0;
-}
-
-.security-trace-right {
-  right: 10%;
-  transform: rotate(180deg);
-  border-left: 1px solid rgba(93, 228, 242, 0.3);
-  border-radius: 12px 0 0 0;
-}
-
-.security-trace::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: -3px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #79c7cc;
-  box-shadow: 0 0 12px rgba(93, 228, 242, 0.25);
-}
-
-.security-padlock {
-  position: absolute;
-  top: 26%;
-  left: 31%;
-  width: 38%;
-  height: 45%;
-}
-
-.security-shackle {
-  position: absolute;
+  z-index: -1;
   top: 0;
-  left: 22%;
-  width: 56%;
-  height: 59%;
-  border: 8px solid #81bfc5;
-  border-bottom: 0;
-  border-radius: 64px 64px 0 0;
-  box-shadow: 0 -5px 24px rgba(93, 228, 242, 0.08);
-}
-
-.security-lock-body {
-  position: absolute;
-  inset: 40% 0 0;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(146, 220, 222, 0.62);
-  border-radius: 20px;
-  background: linear-gradient(145deg, #24525e, #112d3c 75%);
-  box-shadow: inset 0 1px 0 rgba(207, 247, 245, 0.12), 0 20px 45px rgba(0, 0, 0, 0.25);
-}
-
-.security-keyhole {
-  position: relative;
-  width: 15px;
-  height: 15px;
-  margin-top: -9px;
-  border-radius: 50%;
-  background: #9ccdd0;
-}
-
-.security-keyhole::after {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 5px;
-  width: 5px;
-  height: 14px;
-  display: block;
-  border-radius: 0 0 2px 2px;
-  background: inherit;
+  right: -70px;
+  bottom: 0;
+  width: 60%;
+  pointer-events: none;
+  background: url("assets/Intro.jpeg") center / contain no-repeat;
+  opacity: 0.82;
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 32%, transparent 72%);
+  mask-image: radial-gradient(ellipse at center, black 32%, transparent 72%);
 }
 
 .institutions-section {
@@ -1340,8 +1241,9 @@ a.institution-card:hover {
     column-gap: 35px;
   }
 
-  .security-map {
-    width: 330px;
+  .hero-art {
+    right: -45px;
+    width: 55%;
   }
 
 
@@ -1390,7 +1292,7 @@ a.institution-card:hover {
     padding-block: 63px 46px;
   }
 
-  .security-map {
+  .hero-art {
     display: none;
   }
 
