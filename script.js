@@ -220,17 +220,19 @@
           : '<span class="speaker-initials" aria-hidden="true">' +
             escapeHtml(speaker.initials || speaker.name.slice(0, 2)) +
             "</span>";
-        var name = speaker.url
-          ? '<a href="' +
+        var cardTag = speaker.url ? "a" : "article";
+        var cardAttributes = speaker.url
+          ? ' href="' +
             escapeHtml(speaker.url) +
             '"' +
             externalAttributes(speaker.url) +
-            ">" +
-            escapeHtml(speaker.name) +
-            ' <span aria-hidden="true">↗</span></a>'
-          : escapeHtml(speaker.name);
+            ' aria-label="' + escapeHtml(speaker.name) + ' — Visit website"'
+          : "";
+        var name = escapeHtml(speaker.name) +
+          (speaker.url ? ' <span aria-hidden="true">↗</span>' : "");
         return (
-          '<article class="speaker-card reveal" style="--card-index:' +
+          '<' + cardTag + cardAttributes +
+          ' class="speaker-card reveal" style="--card-index:' +
           index +
           '"><div class="speaker-photo">' +
           image +
@@ -242,7 +244,7 @@
           escapeHtml(speaker.role) +
           '</span></div><p class="speaker-talk">' +
           escapeHtml(speaker.talk) +
-          "</p></article>"
+          "</p></" + cardTag + ">"
         );
       })
       .join("");

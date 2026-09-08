@@ -766,7 +766,14 @@ button {
   padding: 11px;
   border: 1px solid var(--rule-dark);
   background: rgba(11, 28, 43, 0.82);
+  color: inherit;
+  text-decoration: none;
   transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.speaker-card:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
 }
 
 .speaker-card:hover {
@@ -849,11 +856,8 @@ button {
   line-height: 1.1;
 }
 
-.speaker-meta h3 a {
-  text-decoration: none;
-}
-
-.speaker-meta h3 a:hover {
+a.speaker-card:hover .speaker-meta h3,
+a.speaker-card:focus-visible .speaker-meta h3 {
   color: var(--cyan-deep);
 }
 
@@ -1198,10 +1202,22 @@ a.institution-card:hover {
   aspect-ratio: 343 / 105;
   overflow: hidden;
   flex-shrink: 0;
+  transform: translateY(-3px);
 }
 
 .institution-logo-extra-large {
-  height: 72px;
+  height: 78px;
+}
+
+/* Optical spacing when all five host logos share one row. */
+@media (min-width: 861px) {
+  .host-grid .institution-logo[src$="/Michigan.png"] {
+    transform: translateX(-10px);
+  }
+
+  .host-grid .institution-logo-expanded {
+    transform: translate(10px, -3px);
+  }
 }
 
 .institution-wordmark {
