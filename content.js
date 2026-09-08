@@ -87,7 +87,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "10:00",
         endTime: "10:30",
-        title: "Keynote I — RF/EM Sensing for Trustworthy IoT",
+        title: "Keynote I — (TBD)RF/EM Sensing for Trustworthy IoT",
         speaker: "Prof. Alanson Sample",
         affiliation: "University of Michigan",
       },
@@ -133,7 +133,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:00",
         endTime: "13:20",
-        title: "Invited Talk I — (TBD)Human–AI Teaming Security: Overview",
+        title: "Invited Talk I   — (TBD)Human–AI Teaming Security: Overview",
         speaker: "Prof. Hyuk Lim",
         affiliation: "KENTECH",
       },
@@ -141,7 +141,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:20",
         endTime: "13:40",
-        title: "Invited Talk II — (TBD)",
+        title: "Invited Talk II  — (TBD)",
         speaker: "Prof. Youngsik Kim",
         affiliation: "DGIST",
       },
@@ -255,7 +255,7 @@ const WORKSHOP_DATA = {
       {
         name: "Gwangju Institute of Science and Technology",
         displayName: "GIST",
-        logo: "assets/logos/GIST.svg",
+        logo: "assets/logos/GIST.png",
         url: "https://www.gist.ac.kr/en/main.html",
       },
       {
@@ -267,7 +267,7 @@ const WORKSHOP_DATA = {
       {
         name: "Korea Institute of Energy Technology",
         displayName: "KENTECH",
-        logo: "assets/logos/KENTECH.jpg",
+        logo: "assets/logos/KENTECH.png",
         url: "https://www.kentech.ac.kr/main.do",
       },
       {
@@ -289,7 +289,7 @@ const WORKSHOP_DATA = {
       {
         name: "Institute of Electrical and Electronics Engineers",
         displayName: "IEEE",
-        logo: "assets/logos/IEEE.svg",
+        logo: "assets/logos/IEEE.png",
         url: "https://www.ieee.org/",
       },
       {

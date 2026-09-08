@@ -673,14 +673,8 @@ button {
   padding: 28px 4px;
   list-style: none;
   cursor: default;
-  transition: background 180ms ease, padding 180ms ease;
 }
 
-.program-summary:hover {
-  padding-right: 16px;
-  padding-left: 16px;
-  background: rgba(255, 255, 255, 0.05);
-}
 
 .program-item time,
 .program-break time {
@@ -1451,10 +1445,6 @@ a.institution-card:hover {
     padding: 24px 0;
   }
 
-  .program-summary:hover {
-    padding-right: 0;
-    padding-left: 0;
-  }
 
   .program-break {
     grid-template-columns: 76px 1fr;
