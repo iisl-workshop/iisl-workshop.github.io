@@ -1105,12 +1105,12 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   position: absolute;
   z-index: -1;
   top: 50%;
-  right: -30px;
+  right: -100px;
   width: 60%;
   aspect-ratio: 735 / 503;
   pointer-events: none;
   background: url("assets/Intro.jpeg") center / contain no-repeat;
-  transform: translateY(calc(-50% - 44px));
+  transform: translateY(calc(-50% - 38px));
   opacity: 0.82;
   mix-blend-mode: screen;
   -webkit-mask-image: radial-gradient(ellipse 64% 64% at 50% 40%, black 30%, rgba(0, 0, 0, 0.85) 45%, transparent 78%);
