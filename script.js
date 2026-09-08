@@ -321,6 +321,8 @@
           logoClass += " institution-logo-expanded";
         } else if (institution.logoScale === "small") {
           logoClass += " institution-logo-small";
+        } else if (institution.logoScale === "extra-large") {
+          logoClass += " institution-logo-extra-large";
         }
 
         var visual = institution.logo
@@ -334,6 +336,16 @@
           : '<span class="institution-wordmark">' +
             escapeHtml(institution.displayName || institution.name) +
             "</span>";
+        if (institution.logo && institution.logoScale === "expanded") {
+          // DGIST's visible artwork occupies this region of the 760 × 201 PNG.
+          // Frame that region directly so transparent padding cannot shift alignment.
+          visual =
+            '<svg class="' + logoClass +
+            '" viewBox="209 48 343 105" width="343" height="105" role="img" aria-label="' +
+            escapeHtml(institution.name) + ' logo">' +
+            '<image href="' + escapeHtml(institution.logo) +
+            '" width="760" height="201" /></svg>';
+        }
         var cardClass = "institution-card" + (institution.logo ? " has-logo" : "");
 
         if (institution.url) {

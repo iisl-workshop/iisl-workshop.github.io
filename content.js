@@ -233,9 +233,9 @@ const WORKSHOP_DATA = {
   venue: {
     programSummary: "Keynotes, student talks, invited talks & panel",
     mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=GIST%20Seoul%20Office%2C%2023%20Sejong-daero%2C%20Jung-gu%2C%20Seoul",
+      "https://www.google.com/maps/search/?api=1&query=23%20Sejong-daero%2C%20Jung-gu%2C%20Seoul",
     mapEmbedUrl:
-      "https://www.google.com/maps?q=GIST%20Seoul%20Office%2C%2023%20Sejong-daero%2C%20Jung-gu%2C%20Seoul&z=17&output=embed",
+      "https://www.google.com/maps?q=23%20Sejong-daero%2C%20Jung-gu%2C%20Seoul&z=17&output=embed",
   },
 
   contact: {
@@ -255,7 +255,7 @@ const WORKSHOP_DATA = {
       {
         name: "Gwangju Institute of Science and Technology",
         displayName: "GIST",
-        logo: "assets/logos/GIST.png",
+        logo: "assets/logos/GIST.png?v=49",
         logoScale: "small",
         url: "https://www.gist.ac.kr/en/main.html",
       },
@@ -268,7 +268,7 @@ const WORKSHOP_DATA = {
       {
         name: "Korea Institute of Energy Technology",
         displayName: "KENTECH",
-        logo: "assets/logos/KENTECH.png",
+        logo: "assets/logos/KENTECK.png?v=49",
         logoScale: "small",
         url: "https://www.kentech.ac.kr/main.do",
       },
@@ -283,7 +283,7 @@ const WORKSHOP_DATA = {
         name: "Inha University",
         displayName: "Inha University",
         logo: "assets/logos/INHA.svg",
-        logoScale: "large",
+        logoScale: "extra-large",
         url: "https://www.inha.ac.kr/eng/index.do",
       },
     ],
