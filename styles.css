@@ -1184,8 +1184,12 @@ a.institution-card:hover {
 
 .institution-logo-large {
   max-width: 94%;
-  height: 52px;
+  height: 64px;
   max-height: none;
+}
+
+.institution-logo-small {
+  height: 42px;
 }
 
 .institution-logo-expanded {

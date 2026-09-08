@@ -319,6 +319,8 @@
           logoClass += " institution-logo-large";
         } else if (institution.logoScale === "expanded") {
           logoClass += " institution-logo-expanded";
+        } else if (institution.logoScale === "small") {
+          logoClass += " institution-logo-small";
         }
 
         var visual = institution.logo

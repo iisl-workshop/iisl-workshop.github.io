@@ -256,6 +256,7 @@ const WORKSHOP_DATA = {
         name: "Gwangju Institute of Science and Technology",
         displayName: "GIST",
         logo: "assets/logos/GIST.png",
+        logoScale: "small",
         url: "https://www.gist.ac.kr/en/main.html",
       },
       {
@@ -268,6 +269,7 @@ const WORKSHOP_DATA = {
         name: "Korea Institute of Energy Technology",
         displayName: "KENTECH",
         logo: "assets/logos/KENTECH.png",
+        logoScale: "small",
         url: "https://www.kentech.ac.kr/main.do",
       },
       {
@@ -290,12 +292,14 @@ const WORKSHOP_DATA = {
         name: "Institute of Electrical and Electronics Engineers",
         displayName: "IEEE",
         logo: "assets/logos/IEEE.png",
+        logoScale: "small",
         url: "https://www.ieee.org/",
       },
       {
         name: "GIST AI Institute",
         displayName: "GIST AI Institute",
         logo: "assets/logos/GIST_AI.png",
+        logoScale: "large",
         url: "https://mseeng.gist.ac.kr/aieng/index.do",
       },
     ],
