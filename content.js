@@ -224,7 +224,7 @@ const WORKSHOP_DATA = {
       affiliation: "GIST",
       role: "Professor · Invited Talk",
       talk: "(TBD)",
-      image: "assets/speakers/Duk-jo Kong.png",
+      image: "assets/speakers/Duk-jo-Kong.png",
       url: "https://impact.gist.ac.kr/team/professor.php",
     },
     {

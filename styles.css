@@ -577,7 +577,7 @@ button {
   font-family: var(--mono);
   font-size: 150px;
   font-weight: 800;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.03em;
 }
 
 
@@ -822,6 +822,10 @@ button {
   height: 100%;
   object-fit: cover;
   filter: grayscale(18%);
+}
+
+.speaker-photo img[src="assets/speakers/Duk-jo-Kong.png"] {
+  background: #fff;
 }
 
 .speaker-initials {
