@@ -243,7 +243,7 @@ button {
   font-family: var(--display);
   font-size: clamp(3.35rem, 6.4vw, 5.85rem);
   font-stretch: condensed;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: -0.055em;
   line-height: 0.9;
   text-transform: uppercase;
@@ -264,7 +264,7 @@ button {
   color: rgba(248, 251, 251, 0.94);
   font-family: var(--display);
   font-size: clamp(1.15rem, 2vw, 1.75rem);
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1.15;
 }
@@ -1108,12 +1108,12 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   position: absolute;
   z-index: -1;
   top: 50%;
-  right: -1%;
-  width: 48%;
+  right: 0.5%;
+  width: 42%;
   aspect-ratio: 1;
   pointer-events: none;
   background: url("assets/Intro_latest.jpg") center / contain no-repeat;
-  transform: translateY(calc(-50% - 50px));
+  transform: translateY(calc(-50% - 70px));
   opacity: 0.9;
   mix-blend-mode: screen;
   -webkit-mask-image: radial-gradient(ellipse 50% 50% at center, black 50%, transparent 100%);
