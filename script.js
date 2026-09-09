@@ -155,98 +155,98 @@
         data.meta.location +
         "."
     );
-    byId("program-list").innerHTML = data.program.items
-      .map(function (item) {
-        if (item.type === "track") {
-          return (
-            '<div class="program-track"><span>' +
-            renderTrackLabel(item.label) +
-            "</span><div><h3>" +
-            escapeHtml(item.title) +
-            "</h3></div></div>"
-          );
-        }
+    byId("program-list").innerHTML = data.program.items.map(renderProgramItem).join("");
+  }
 
-        if (item.type === "note") {
-          return (
-            '<div class="program-note-row"><span>' +
-            escapeHtml(item.label) +
-            "</span><strong>" +
-            escapeHtml(item.title) +
-            "</strong></div>"
-          );
-        }
+  function renderProgramItem(item) {
+    if (item.type === "track") {
+      return (
+        '<div class="program-track"><span>' +
+        renderTrackLabel(item.label) +
+        "</span><div><h3>" +
+        escapeHtml(item.title) +
+        "</h3></div></div>"
+      );
+    }
 
-        var range = "<strong>" + escapeHtml(item.time) + "</strong>";
-        if (item.endTime) {
-          range += "<span>→ " + escapeHtml(item.endTime) + "</span>";
-        }
+    if (item.type === "note") {
+      return (
+        '<div class="program-note-row"><span>' +
+        escapeHtml(item.label) +
+        "</span><strong>" +
+        escapeHtml(item.title) +
+        "</strong></div>"
+      );
+    }
 
-        if (item.type === "break") {
-          return (
-            '<div class="program-break"><time>' +
-            range +
-            "</time><strong>" +
-            escapeHtml(item.title) +
-            "</strong></div>"
-          );
-        }
+    var range = "<strong>" + escapeHtml(item.time) + "</strong>";
+    if (item.endTime) {
+      range += "<span>→ " + escapeHtml(item.endTime) + "</span>";
+    }
 
-        return (
-          '<div class="program-item"><div class="program-summary"><time>' +
-          range +
-          '</time><div class="program-main"><h3>' +
-          escapeHtml(item.title) +
-          '</h3><p class="program-speaker">' +
-          escapeHtml(item.speaker) +
-          " <span>· " +
-          escapeHtml(item.affiliation) +
-          "</span></p></div></div></div>"
-        );
-      })
-      .join("");
+    if (item.type === "break") {
+      return (
+        '<div class="program-break"><time>' +
+        range +
+        "</time><strong>" +
+        escapeHtml(item.title) +
+        "</strong></div>"
+      );
+    }
+
+    return (
+      '<div class="program-item"><div class="program-summary"><time>' +
+      range +
+      '</time><div class="program-main"><h3>' +
+      escapeHtml(item.title) +
+      '</h3><p class="program-speaker">' +
+      escapeHtml(item.speaker) +
+      " <span>· " +
+      escapeHtml(item.affiliation) +
+      "</span></p></div></div></div>"
+    );
   }
 
   function renderSpeakers() {
     setText("speakers-title", data.sections.speakers);
-    byId("speaker-grid").innerHTML = data.speakers
-      .map(function (speaker, index) {
-        var image = speaker.image
-          ? '<img src="' +
-            escapeHtml(speaker.image) +
-            '" alt="' +
-            escapeHtml(speaker.name) +
-            '" loading="lazy" />'
-          : '<span class="speaker-initials" aria-hidden="true">' +
-            escapeHtml(speaker.initials || speaker.name.slice(0, 2)) +
-            "</span>";
-        var cardTag = speaker.url ? "a" : "article";
-        var cardAttributes = speaker.url
-          ? ' href="' +
-            escapeHtml(speaker.url) +
-            '"' +
-            externalAttributes(speaker.url) +
-            ' aria-label="' + escapeHtml(speaker.name) + ' — Visit website"'
-          : "";
-        var name = escapeHtml(speaker.name);
-        return (
-          '<' + cardTag + cardAttributes +
-          ' class="speaker-card reveal" style="--card-index:' +
-          index +
-          '"><div class="speaker-photo">' +
-          image +
-          '</div><div class="speaker-meta"><p>' +
-          escapeHtml(speaker.affiliation) +
-          "</p><h3>" +
-          name +
-          "</h3><span>" +
-          escapeHtml(speaker.role) +
-          '</span></div><p class="speaker-talk">' +
-          escapeHtml(speaker.talk) +
-          "</p></" + cardTag + ">"
-        );
-      })
-      .join("");
+    byId("speaker-grid").innerHTML = data.speakers.map(renderSpeakerCard).join("");
+  }
+
+  function renderSpeakerCard(speaker, index) {
+    var image = speaker.image
+      ? '<img src="' +
+        escapeHtml(speaker.image) +
+        '" alt="' +
+        escapeHtml(speaker.name) +
+        '" loading="lazy" />'
+      : '<span class="speaker-initials" aria-hidden="true">' +
+        escapeHtml(speaker.name.slice(0, 2)) +
+        "</span>";
+    var cardTag = speaker.url ? "a" : "article";
+    var cardAttributes = speaker.url
+      ? ' href="' +
+        escapeHtml(speaker.url) +
+        '"' +
+        externalAttributes(speaker.url) +
+        ' aria-label="' + escapeHtml(speaker.name) + ' — Visit website"'
+      : "";
+    var name = escapeHtml(speaker.name);
+    return (
+      '<' + cardTag + cardAttributes +
+      ' class="speaker-card reveal" style="--card-index:' +
+      index +
+      '"><div class="speaker-photo">' +
+      image +
+      '</div><div class="speaker-meta"><p>' +
+      escapeHtml(speaker.affiliation) +
+      "</p><h3>" +
+      name +
+      "</h3><span>" +
+      escapeHtml(speaker.role) +
+      '</span></div><p class="speaker-talk">' +
+      escapeHtml(speaker.talk) +
+      "</p></" + cardTag + ">"
+    );
   }
 
   function renderVenue() {
@@ -312,70 +312,68 @@
       .join("");
   }
 
+  function renderInstitutionVisual(institution) {
+    var logoClass = "institution-logo";
+    var supportedScales = ["large", "expanded", "small", "extra-large"];
+    if (supportedScales.includes(institution.logoScale)) {
+      logoClass += " institution-logo-" + institution.logoScale;
+    }
+
+    if (!institution.logo) {
+      return '<span class="institution-wordmark">' +
+        escapeHtml(institution.displayName || institution.name) +
+        "</span>";
+    }
+    if (institution.logoScale === "expanded") {
+      // DGIST's visible artwork occupies this region of the 760 × 201 PNG.
+      // Frame that region directly so transparent padding cannot shift alignment.
+      return (
+        '<svg class="' + logoClass +
+        '" viewBox="209 48 343 105" width="343" height="105" role="img" aria-label="' +
+        escapeHtml(institution.name) + ' logo">' +
+        '<image href="' + escapeHtml(institution.logo) +
+        '" width="760" height="201" /></svg>'
+      );
+    }
+    return '<img class="' + logoClass +
+      '" src="' + escapeHtml(institution.logo) +
+      '" alt="' + escapeHtml(institution.name) +
+      ' logo" loading="lazy" />';
+  }
+
+  function renderInstitutionCard(institution) {
+    var visual = renderInstitutionVisual(institution);
+    var cardClass = "institution-card" + (institution.logo ? " has-logo" : "");
+
+    if (institution.url) {
+      return (
+        '<a class="' +
+        cardClass +
+        '" href="' +
+        escapeHtml(institution.url) +
+        '"' +
+        externalAttributes(institution.url) +
+        ' aria-label="' +
+        escapeHtml(institution.name) +
+        '">' +
+        visual +
+        "</a>"
+      );
+    }
+
+    return (
+      '<div class="' +
+      cardClass +
+      '" aria-label="' +
+      escapeHtml(institution.name) +
+      '">' +
+      visual +
+      "</div>"
+    );
+  }
+
   function renderInstitutionList(id, institutions) {
-    byId(id).innerHTML = institutions
-      .map(function (institution) {
-        var logoClass = "institution-logo";
-        if (institution.logoScale === "large") {
-          logoClass += " institution-logo-large";
-        } else if (institution.logoScale === "expanded") {
-          logoClass += " institution-logo-expanded";
-        } else if (institution.logoScale === "small") {
-          logoClass += " institution-logo-small";
-        } else if (institution.logoScale === "extra-large") {
-          logoClass += " institution-logo-extra-large";
-        }
-
-        var visual = institution.logo
-          ? '<img class="' +
-            logoClass +
-            '" src="' +
-            escapeHtml(institution.logo) +
-            '" alt="' +
-            escapeHtml(institution.name) +
-            ' logo" loading="lazy" />'
-          : '<span class="institution-wordmark">' +
-            escapeHtml(institution.displayName || institution.name) +
-            "</span>";
-        if (institution.logo && institution.logoScale === "expanded") {
-          // DGIST's visible artwork occupies this region of the 760 × 201 PNG.
-          // Frame that region directly so transparent padding cannot shift alignment.
-          visual =
-            '<svg class="' + logoClass +
-            '" viewBox="209 48 343 105" width="343" height="105" role="img" aria-label="' +
-            escapeHtml(institution.name) + ' logo">' +
-            '<image href="' + escapeHtml(institution.logo) +
-            '" width="760" height="201" /></svg>';
-        }
-        var cardClass = "institution-card" + (institution.logo ? " has-logo" : "");
-
-        if (institution.url) {
-          return (
-            '<a class="' +
-            cardClass +
-            '" href="' +
-            escapeHtml(institution.url) +
-            '"' +
-            externalAttributes(institution.url) +
-            ' aria-label="' +
-            escapeHtml(institution.name) +
-            '">' +
-            visual +
-            "</a>"
-          );
-        }
-
-        return (
-          '<div class="' +
-          cardClass +
-          '" aria-label="' +
-          escapeHtml(institution.name) +
-          '">' +
-          visual +
-          "</div>"
-        );
-      })
-      .join("");
+    byId(id).innerHTML = institutions.map(renderInstitutionCard).join("");
   }
 
   function renderInstitutions() {

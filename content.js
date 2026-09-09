@@ -175,7 +175,6 @@ const WORKSHOP_DATA = {
   speakers: [
     {
       name: "Alanson Sample",
-      initials: "AS",
       affiliation: "University of Michigan",
       role: "Professor · Keynote I",
       talk: "(TBD) RF/EM Sensing for Trustworthy IoT",
@@ -184,7 +183,6 @@ const WORKSHOP_DATA = {
     },
     {
       name: "Euiseok Hwang",
-      initials: "EH",
       affiliation: "GIST",
       role: "Professor · Keynote II",
       talk: "(TBD) Semantic Communication–Enabled Physical-Layer Security",
@@ -193,7 +191,6 @@ const WORKSHOP_DATA = {
     },
     {
       name: "Hyuk Lim",
-      initials: "HL",
       affiliation: "KENTECH",
       role: "Professor · Invited Talk",
       talk: "(TBD) Human–AI Teaming Security: Overview",
@@ -202,7 +199,6 @@ const WORKSHOP_DATA = {
     },
     {
       name: "Youngsik Kim",
-      initials: "YK",
       affiliation: "DGIST",
       role: "Professor · Invited Talk",
       talk: "(TBD)",
@@ -211,7 +207,6 @@ const WORKSHOP_DATA = {
     },
     {
       name: "Yongwoo Lee",
-      initials: "YL",
       affiliation: "Inha University",
       role: "Professor · Invited Talk",
       talk: "(TBD)",
@@ -220,7 +215,6 @@ const WORKSHOP_DATA = {
     },
     {
       name: "Duk-jo Kong",
-      initials: "DK",
       affiliation: "GIST",
       role: "Professor · Invited Talk",
       talk: "(TBD)",
@@ -229,7 +223,6 @@ const WORKSHOP_DATA = {
     },
     {
       name: "Cameron Daniel Haire",
-      initials: "CH",
       affiliation: "University of Michigan",
       role: "PhD Candidate · Student Talk",
       talk: "(TBD) Sensing-Driven IoT Systems",
@@ -238,7 +231,6 @@ const WORKSHOP_DATA = {
     },
     {
       name: "Heehun Jung",
-      initials: "HJ",
       affiliation: "GIST",
       role: "PhD Candidate · Student Talk",
       talk: "(TBD) Bio-based Multi-modal Sensing & Homomorphic Encryption",

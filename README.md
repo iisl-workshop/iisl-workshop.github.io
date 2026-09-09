@@ -24,7 +24,6 @@ program.items 배열 안에 아래 형태의 블록을 복사해 추가
       title: "Talk title",
       speaker: "Speaker name",
       affiliation: "Affiliation",
-      description: "Short description (optional)",
     },
 
 휴식 시간은 type: "break"를 사용
@@ -35,7 +34,7 @@ program.items 배열 안에 아래 형태의 블록을 복사해 추가
 
     {
       type: "track",
-      label: "03 · Evening",
+      label: "Evening",
       title: "Track title",
     },
 
@@ -45,7 +44,6 @@ speakers 배열 안에 아래 형태의 블록을 복사해 추가
 
     {
       name: "Speaker name",
-      initials: "SN",
       affiliation: "University or organization",
       role: "Title",
       talk: "Talk title",
@@ -54,6 +52,13 @@ speakers 배열 안에 아래 형태의 블록을 복사해 추가
     },
 
 image 또는 url이 아직 없으면 빈 문자열로 두어도 됨
+사진이 없으면 이름의 앞 두 글자가 자동으로 표시됨. initials는 따로 입력하지 않음.
+
+## 수정 후 확인
+
+- `node --test tests/site.test.cjs`: 콘텐츠 렌더링, 이미지 경로, 메뉴·스크롤 동작 검사
+- CSS나 JS를 수정하면 index.html의 해당 파일 `?v=` 숫자도 올려 캐시 갱신
+- 파비콘은 사용하지 않으며, index.html의 빈 아이콘 설정을 유지
 
 ## 파일 구성
 
