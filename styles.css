@@ -1104,6 +1104,20 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   transition-delay: 0s;
 }
 
+/* The PNG's own transparency blends the artwork into the hero background. */
+.hero-art {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: -12%;
+  width: 70%;
+  aspect-ratio: 2400 / 1339;
+  pointer-events: none;
+  background: url("assets/Intro_latest.png") center / contain no-repeat;
+  transform: translateY(calc(-50% - 50px));
+  opacity: 0.9;
+}
+
 .institutions-section {
   padding-top: 88px;
   padding-bottom: 76px;
@@ -1217,6 +1231,11 @@ a.institution-card:hover {
     column-gap: 35px;
   }
 
+  .hero-art {
+    right: -10%;
+    width: 65%;
+  }
+
   .speaker-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1260,6 +1279,10 @@ a.institution-card:hover {
   .hero-inner {
     grid-template-columns: 1fr;
     padding-block: 63px 46px;
+  }
+
+  .hero-art {
+    display: none;
   }
 
   .event-facts {
