@@ -171,7 +171,6 @@ button {
   align-items: center;
   border-bottom: 1px solid var(--rule-dark);
   background:
-    radial-gradient(circle at 76% 43%, rgba(93, 228, 242, 0.1), transparent 28%),
     radial-gradient(circle at 8% 100%, rgba(156, 168, 255, 0.08), transparent 33%),
     var(--night);
   color: var(--white);
