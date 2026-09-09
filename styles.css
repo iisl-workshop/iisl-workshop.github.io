@@ -1104,23 +1104,6 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   transition-delay: 0s;
 }
 
-/* Match the layer to the image bounds so the fade cannot expose a hard edge. */
-.hero-art {
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  right: -100px;
-  width: 60%;
-  aspect-ratio: 735 / 503;
-  pointer-events: none;
-  background: url("assets/Intro.jpeg") center / contain no-repeat;
-  transform: translateY(calc(-50% - 50px));
-  opacity: 0.82;
-  mix-blend-mode: screen;
-  -webkit-mask-image: radial-gradient(ellipse 64% 64% at 50% 40%, black 30%, rgba(0, 0, 0, 0.85) 45%, transparent 78%);
-  mask-image: radial-gradient(ellipse 64% 64% at 50% 40%, black 30%, rgba(0, 0, 0, 0.85) 45%, transparent 78%);
-}
-
 .institutions-section {
   padding-top: 88px;
   padding-bottom: 76px;
@@ -1234,12 +1217,6 @@ a.institution-card:hover {
     column-gap: 35px;
   }
 
-  .hero-art {
-    right: -55px;
-    width: 55%;
-  }
-
-
   .speaker-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1283,10 +1260,6 @@ a.institution-card:hover {
   .hero-inner {
     grid-template-columns: 1fr;
     padding-block: 63px 46px;
-  }
-
-  .hero-art {
-    display: none;
   }
 
   .event-facts {
