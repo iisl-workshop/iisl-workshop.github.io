@@ -173,9 +173,7 @@
             escapeHtml(item.label) +
             "</span><strong>" +
             escapeHtml(item.title) +
-            "</strong><p>" +
-            escapeHtml(item.description) +
-            "</p></div>"
+            "</strong></div>"
           );
         }
 
@@ -194,10 +192,8 @@
           );
         }
 
-        var detail = item.description || "Session description will be announced.";
-
         return (
-          '<details class="program-item"><summary class="program-summary"><time>' +
+          '<div class="program-item"><div class="program-summary"><time>' +
           range +
           '</time><div class="program-main"><h3>' +
           escapeHtml(item.title) +
@@ -205,11 +201,7 @@
           escapeHtml(item.speaker) +
           " <span>· " +
           escapeHtml(item.affiliation) +
-          "</span></p></div>" +
-          '<span class="program-expand" aria-hidden="true"></span></summary>' +
-          '<div class="program-detail"><p>' +
-          escapeHtml(detail) +
-          "</p></div></details>"
+          "</span></p></div></div></div>"
         );
       })
       .join("");
@@ -228,17 +220,18 @@
           : '<span class="speaker-initials" aria-hidden="true">' +
             escapeHtml(speaker.initials || speaker.name.slice(0, 2)) +
             "</span>";
-        var name = speaker.url
-          ? '<a href="' +
+        var cardTag = speaker.url ? "a" : "article";
+        var cardAttributes = speaker.url
+          ? ' href="' +
             escapeHtml(speaker.url) +
             '"' +
             externalAttributes(speaker.url) +
-            ">" +
-            escapeHtml(speaker.name) +
-            ' <span aria-hidden="true">↗</span></a>'
-          : escapeHtml(speaker.name);
+            ' aria-label="' + escapeHtml(speaker.name) + ' — Visit website"'
+          : "";
+        var name = escapeHtml(speaker.name);
         return (
-          '<article class="speaker-card reveal" style="--card-index:' +
+          '<' + cardTag + cardAttributes +
+          ' class="speaker-card reveal" style="--card-index:' +
           index +
           '"><div class="speaker-photo">' +
           image +
@@ -250,7 +243,7 @@
           escapeHtml(speaker.role) +
           '</span></div><p class="speaker-talk">' +
           escapeHtml(speaker.talk) +
-          "</p></article>"
+          "</p></" + cardTag + ">"
         );
       })
       .join("");
@@ -327,6 +320,10 @@
           logoClass += " institution-logo-large";
         } else if (institution.logoScale === "expanded") {
           logoClass += " institution-logo-expanded";
+        } else if (institution.logoScale === "small") {
+          logoClass += " institution-logo-small";
+        } else if (institution.logoScale === "extra-large") {
+          logoClass += " institution-logo-extra-large";
         }
 
         var visual = institution.logo
@@ -340,6 +337,16 @@
           : '<span class="institution-wordmark">' +
             escapeHtml(institution.displayName || institution.name) +
             "</span>";
+        if (institution.logo && institution.logoScale === "expanded") {
+          // DGIST's visible artwork occupies this region of the 760 × 201 PNG.
+          // Frame that region directly so transparent padding cannot shift alignment.
+          visual =
+            '<svg class="' + logoClass +
+            '" viewBox="209 48 343 105" width="343" height="105" role="img" aria-label="' +
+            escapeHtml(institution.name) + ' logo">' +
+            '<image href="' + escapeHtml(institution.logo) +
+            '" width="760" height="201" /></svg>';
+        }
         var cardClass = "institution-card" + (institution.logo ? " has-logo" : "");
 
         if (institution.url) {

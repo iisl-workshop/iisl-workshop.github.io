@@ -15,10 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;family=Roboto+Condensed:wght@300;400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=38" />
+    <link rel="stylesheet" href="styles.css?v=57" />
     <link rel="icon" href="data:," />
-    <script src="content.js?v=38" defer></script>
-    <script src="script.js?v=38" defer></script>
+    <script src="content.js?v=49" defer></script>
+    <script src="script.js?v=51" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -49,6 +49,7 @@
       <section class="hero">
         <div class="hero-pattern" aria-hidden="true"></div>
         <div class="shell hero-inner">
+          <div class="hero-art" aria-hidden="true"></div>
           <p class="eyebrow reveal" id="hero-eyebrow"></p>
           <h1 class="hero-title reveal">
             <span id="hero-title"></span>
@@ -64,29 +65,6 @@
           <div class="theme-chips reveal" id="theme-chips"></div>
           <div class="hero-actions reveal" id="hero-actions"></div>
           <div class="event-facts reveal" id="event-facts"></div>
-          <div class="security-map reveal" aria-hidden="true">
-            <div class="security-globe">
-              <span class="globe-line globe-equator"></span>
-              <span class="globe-line globe-latitude latitude-one"></span>
-              <span class="globe-line globe-latitude latitude-two"></span>
-              <span class="globe-line globe-longitude longitude-one"></span>
-              <span class="globe-line globe-longitude longitude-two"></span>
-              <span class="globe-node globe-node-one"></span>
-              <span class="globe-node globe-node-two"></span>
-              <span class="globe-node globe-node-three"></span>
-              <span class="globe-node globe-node-four"></span>
-            </div>
-            <div class="security-lock">
-              <span class="lock-shackle"></span>
-              <span class="lock-body">
-                <span class="lock-keyhole"></span>
-              </span>
-            </div>
-            <div class="security-caption">
-              <span>Secure connected systems</span>
-              <strong>Trust at every layer</strong>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -133,16 +111,18 @@
             <h2 id="venue-name"></h2>
             <p class="venue-address" id="venue-address"></p>
             <div class="venue-details" id="venue-details"></div>
-            <div class="venue-actions" id="venue-actions"></div>
           </div>
-          <div class="map-card reveal">
-            <iframe
-              class="venue-map"
-              id="venue-map"
-              title="Interactive map showing GIST Seoul Office"
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
-            ></iframe>
+          <div class="venue-map-column reveal">
+            <div class="map-card">
+              <iframe
+                class="venue-map"
+                id="venue-map"
+                title="Interactive map showing GIST Seoul Office"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </div>
+            <div class="venue-actions" id="venue-actions"></div>
           </div>
         </div>
       </section>
