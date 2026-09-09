@@ -243,7 +243,7 @@ button {
   font-family: var(--display);
   font-size: clamp(3.35rem, 6.4vw, 5.85rem);
   font-stretch: condensed;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 0.9;
   text-transform: uppercase;
@@ -1104,18 +1104,20 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   transition-delay: 0s;
 }
 
-/* The PNG's own transparency blends the artwork into the hero background. */
 .hero-art {
   position: absolute;
   z-index: -1;
   top: 50%;
-  right: -12%;
-  width: 70%;
-  aspect-ratio: 2400 / 1339;
+  right: -1%;
+  width: 48%;
+  aspect-ratio: 1;
   pointer-events: none;
-  background: url("assets/Intro_latest.png") center / contain no-repeat;
+  background: url("assets/Intro_latest.jpg") center / contain no-repeat;
   transform: translateY(calc(-50% - 50px));
   opacity: 0.9;
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at center, black 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 50% at center, black 50%, transparent 100%);
 }
 
 .institutions-section {
@@ -1232,8 +1234,8 @@ a.institution-card:hover {
   }
 
   .hero-art {
-    right: -10%;
-    width: 65%;
+    right: -2.5%;
+    width: 50%;
   }
 
   .speaker-grid {
