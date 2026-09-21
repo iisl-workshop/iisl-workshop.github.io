@@ -152,7 +152,7 @@ test('language defaults to English, translates the whole page and restores the E
   assert.ok(ids['venue-actions'].innerHTML.includes(dictionary['Open in maps']));
   assert.ok(ids['hero-actions'].innerHTML.includes(dictionary[data.meta.registrationLabel]));
   assert.match(ids['event-facts'].innerHTML, /날짜/);
-  assert.equal(document.title, dictionary[data.meta.themeTitle] + ' — ' + data.meta.shortName + ' ' + data.meta.year);
+  assert.equal(document.title, data.meta.themeTitle + ' — ' + data.meta.shortName + ' ' + data.meta.year);
   assert.equal(metas['meta[name="description"]'].getAttribute('content'), dictionary[data.meta.summary]);
   for (const item of site.translatedElements) {
     assert.equal(item.textContent, dictionary[item.getAttribute('data-i18n')]);
@@ -340,6 +340,20 @@ test('blank Korean hero subtitle is hidden and English subtitle is restored', ()
   const withSubtitle = loadSite({ data });
   withSubtitle.ids['language-toggle'].events.click();
   assert.equal(withSubtitle.ids['hero-theme'].hidden, false);
+});
+
+test('browser tab title stays in English across language switches and Korean reloads', () => {
+  const site = loadSite();
+  const meta = loadData().meta;
+  const title = meta.themeTitle + ' — ' + meta.shortName + ' ' + meta.year;
+  assert.equal(site.document.title, title);
+  assert.ok(read('index.html').includes('<title>' + title + '</title>'));
+  site.ids['language-toggle'].events.click();
+  assert.equal(site.document.documentElement.lang, 'ko');
+  assert.equal(site.document.title, title);
+  assert.equal(loadSite({ storage: site.storage }).document.title, title);
+  site.ids['language-toggle'].events.click();
+  assert.equal(site.document.title, title);
 });
 
 test('invalid or blocked language storage never prevents rendering or switching', () => {

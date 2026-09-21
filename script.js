@@ -131,8 +131,9 @@
 
   function renderMeta() {
     var meta = data.meta;
+    var titleMeta = WORKSHOP_DATA.meta;
     document.title =
-      meta.themeTitle + " — " + meta.shortName + " " + meta.year;
+      titleMeta.themeTitle + " — " + titleMeta.shortName + " " + titleMeta.year;
     document.querySelector('meta[name="description"]').setAttribute("content", meta.summary);
     document
       .querySelector('meta[property="og:title"]')
