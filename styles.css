@@ -1188,16 +1188,13 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   position: absolute;
   z-index: -1;
   top: 50%;
-  right: 0.5%;
-  width: 42%;
+  right: 5%;
+  width: 36%;
   aspect-ratio: 1;
   pointer-events: none;
-  background: url("assets/Intro_latest.jpg") center / contain no-repeat;
-  transform: translateY(calc(-50% - 70px));
+  background: url("assets/Intro_real_latest.png") center / contain no-repeat;
+  transform: translateY(calc(-50% - 90px));
   opacity: 0.9;
-  mix-blend-mode: screen;
-  -webkit-mask-image: radial-gradient(ellipse 50% 50% at center, black 50%, transparent 100%);
-  mask-image: radial-gradient(ellipse 50% 50% at center, black 50%, transparent 100%);
 }
 
 .institutions-section {

@@ -233,7 +233,7 @@ const WORKSHOP_DATA = {
       name: "Heehun Jung",
       affiliation: "GIST",
       role: "PhD Candidate · Student Talk",
-      talk: "(TBD) Bio-based Multi-modal Sensing & Homomorphic Encryption",
+      talk: "(TBD) Session Binding for Bio-based Multi-modal Sensing via Homomorphic Encryption",
       image: "assets/speakers/Heehun-Jung.jpg",
       url: "https://me.gist.ac.kr/prog/gsPerson/isp/S/B000000056829Rv7dW0b/sub02_01_02/view.do",
     },

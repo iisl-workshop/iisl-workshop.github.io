@@ -51,18 +51,17 @@ const WORKSHOP_TRANSLATIONS = {
     "Seoul": "서울",
     "23, Sejong-daero, Jung-gu, Seoul": "서울특별시 중구 세종대로 23",
     "Register now": "등록 사이트",
-    "https://forms.gle/V22FsKEZS7BCbzuP7": "https://forms.gle/DaWMjkYDSiJNpDraA",
 
     "Research scope": "연구 주제",
     "From trusted signals to autonomous cyber defense.": "신뢰할 수 있는 신호에서 자율 사이버 방어까지",
     "Future connected systems need to understand more than packets. They must reason about meaning, sense their physical environment, and adapt to threats without losing human oversight.":
       "미래의 연결 시스템은 단순한 패킷 처리를 넘어야 합니다. 정보의 의미를 추론하고, 물리적 환경을 감지하며, 인간의 감독 아래 위협에 적응할 수 있어야 합니다.",
     "This joint workshop links work in semantic communication and physical-layer security with secure IoT sensing and human–AI teaming. The program is designed to move from device-level trust toward system-level autonomous defense.":
-      "이번 공동 워크숍에서는 의미 기반 통신과 물리 계층 보안 연구를 안전한 IoT 센싱 및 인간–AI 협업과 연결합니다. 기기 수준의 신뢰에서 시스템 수준의 자율 방어로 확장하는 방향으로 프로그램을 구성했습니다.",
+      "이번 공동 워크숍에서는 시맨틱 통신과 물리 계층 보안 연구를 안전한 IoT 센싱 및 인간–AI 협업과 연결합니다. 단말 수준의 신뢰에서 시스템 수준의 자율 방어로 확장하는 방향으로 프로그램을 구성했습니다.",
     "Security mechanisms that use task meaning and context, not only transmitted bits, to protect critical communication.":
       "전송되는 비트뿐 아니라 과업의 의미와 맥락을 활용하여 핵심 통신을 보호하는 보안 기법을 다룹니다.",
     "RF/EM and multimodal sensing with physical-layer protection for device integrity and resilient mission-critical IoT.":
-      "RF/EM 및 멀티모달 센싱과 물리 계층 보호를 통해 기기의 무결성과 미션 크리티컬 IoT의 복원력을 높입니다.",
+      "RF/EM 및 멀티모달 센싱과 물리 계층 보호를 통해 단말의 무결성과 미션 크리티컬 IoT의 복원력을 높입니다.",
     "Collaborative intelligence, operational oversight, and the path toward adaptive and autonomous cyber defense.":
       "협업 지능과 운영 감독을 바탕으로 적응형·자율형 사이버 방어로 나아가는 방향을 모색합니다.",
 
@@ -70,12 +69,12 @@ const WORKSHOP_TRANSLATIONS = {
     "Welcome & opening": "환영 인사 및 개회",
     "Morning": "오전",
     "Afternoon": "오후",
-    "Semantic Communication & Physical-Layer Security for IoT": "IoT를 위한 의미 기반 통신 및 물리 계층 보안",
+    "Semantic Communication & Physical-Layer Security for IoT": "IoT를 위한 시맨틱 통신 및 물리 계층 보안",
     "Keynote I — (TBD) RF/EM Sensing for Trustworthy IoT": "기조강연 I — (가제) 신뢰할 수 있는 IoT를 위한 RF/EM 센싱",
     "Keynote II — (TBD) Semantic Communication–Enabled Physical-Layer Security for Mission-Critical IoT":
-      "기조강연 II — (가제) 미션 크리티컬 IoT를 위한 의미 기반 통신 활용 물리 계층 보안",
+      "기조강연 II — (가제) 미션 크리티컬 IoT를 위한 시맨틱 통신 활용 물리 계층 보안",
     "Student Talk — (TBD) Sensing-Driven IoT Systems: Toward Secure Device-Level Data Integrity":
-      "학생 발표 — (가제) 센싱 기반 IoT 시스템: 안전한 기기 수준 데이터 무결성을 향하여",
+      "학생 발표 — (가제) 센싱 기반 IoT 시스템: 안전한 단말 수준 데이터 무결성을 향하여",
     "Student Talk — (TBD) Session Binding for Bio-based Multi-modal Sensing via Homomorphic Encryption":
       "학생 발표 — (가제) 동형암호를 활용한 생체 기반 멀티모달 센싱의 세션 바인딩",
     "Networking lunch": "점심 식사 및 교류",
@@ -106,10 +105,10 @@ const WORKSHOP_TRANSLATIONS = {
     "Professor · Invited Talk": "교수 · 초청강연",
     "PhD Candidate · Student Talk": "박사과정 · 학생 발표",
     "(TBD) RF/EM Sensing for Trustworthy IoT": "(가제) 신뢰할 수 있는 IoT를 위한 RF/EM 센싱",
-    "(TBD) Semantic Communication–Enabled Physical-Layer Security": "(가제) 의미 기반 통신을 활용한 물리 계층 보안",
+    "(TBD) Semantic Communication–Enabled Physical-Layer Security": "(가제) 시맨틱 통신을 활용한 물리 계층 보안",
     "(TBD) Human–AI Teaming Security: Overview": "(가제) 인간–AI 협업 보안 개요",
     "(TBD) Sensing-Driven IoT Systems": "(가제) 센싱 기반 IoT 시스템",
-    "(TBD) Bio-based Multi-modal Sensing & Homomorphic Encryption": "(가제) 생체 기반 멀티모달 센싱 및 동형암호",
+    "(TBD) Session Binding for Bio-based Multi-modal Sensing via Homomorphic Encryption": "(가제) 동형암호화를 활용한 생체 기반 멀티모달 센싱의 세션 바인딩",
     "(TBD)": "(추후 안내)",
     "Keynotes, student talks, invited talks & panel": "기조강연, 학생 발표, 초청강연 및 패널 토론",
     "Organizing committee": "조직위원회",

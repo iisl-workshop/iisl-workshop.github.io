@@ -21,6 +21,9 @@ test('content has no initials fields and all local assets exist', () => {
   for (const [, file] of read('index.html').matchAll(/(?:href|src)="([^"?#]+\.(?:css|js))/g)) {
     assert.ok(fs.existsSync(path.join(root, file)), file);
   }
+  for (const [, file] of read('styles.css').matchAll(/url\("([^"?#]+)(?:\?[^\"]*)?"\)/g)) {
+    assert.ok(fs.existsSync(path.join(root, file)), file);
+  }
   assert.match(read('index.html'), /rel="icon" href="data:,"/);
   assert.doesNotMatch(read('index.html') + read('script.js') + read('styles.css'), /assets\/favicon/);
 });
@@ -290,8 +293,8 @@ test('Korean professor names appear in speaker cards and match the program trans
 
 test('registration buttons use the correct absolute URL in each language', () => {
   const englishUrl = loadData().meta.registrationUrl;
-  const koreanUrl = loadTranslations().ko[englishUrl];
-  assert.ok(koreanUrl, 'The translation key must exactly match registrationUrl, including https://');
+  // A Korean-specific URL is optional; without one both pages share the base URL.
+  const koreanUrl = loadTranslations().ko[englishUrl] || englishUrl;
   assert.equal(new URL(koreanUrl).protocol, 'https:');
   const site = loadSite();
   const registrationHref = () => site.ids['hero-actions'].innerHTML.match(/class="button button-registration" href="([^"]+)"/)[1];
