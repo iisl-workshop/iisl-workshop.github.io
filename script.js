@@ -2,6 +2,9 @@
   "use strict";
 
   var data = WORKSHOP_DATA;
+  var languageStorageKey = "iisl-workshop-language";
+  var language = readLanguage();
+  var cleanupReveal = null;
   var byId = function (id) {
     return document.getElementById(id);
   };
@@ -21,6 +24,67 @@
       ? ' target="_blank" rel="noopener noreferrer"'
       : "";
   };
+
+  function readLanguage() {
+    try {
+      return window.sessionStorage.getItem(languageStorageKey) === "ko" ? "ko" : "en";
+    } catch (error) {
+      // Storage can be unavailable in restricted browsers or local-file previews.
+      return "en";
+    }
+  }
+
+  function saveLanguage() {
+    try {
+      window.sessionStorage.setItem(languageStorageKey, language);
+    } catch (error) {
+      // Switching still works on the current page when storage is blocked.
+    }
+  }
+
+  function translate(value, replacements) {
+    var dictionary = WORKSHOP_TRANSLATIONS[language] || {};
+    var text = Object.prototype.hasOwnProperty.call(dictionary, value)
+      ? dictionary[value]
+      : value;
+    return replacements
+      ? text.replace(/\{(\w+)\}/g, function (match, key) {
+          return Object.prototype.hasOwnProperty.call(replacements, key)
+            ? replacements[key]
+            : match;
+        })
+      : text;
+  }
+
+  // Build a translated copy so switching back never mutates the English source.
+  function localizeData(value) {
+    if (typeof value === "string") return translate(value);
+    if (Array.isArray(value)) return value.map(localizeData);
+    if (value && typeof value === "object") {
+      var localized = {};
+      Object.keys(value).forEach(function (key) {
+        localized[key] = localizeData(value[key]);
+      });
+      return localized;
+    }
+    return value;
+  }
+
+  function renderLanguage() {
+    document.documentElement.lang = language;
+    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+      element.textContent = translate(element.getAttribute("data-i18n"));
+    });
+    document.querySelectorAll("[data-i18n-aria-label]").forEach(function (element) {
+      element.setAttribute("aria-label", translate(element.getAttribute("data-i18n-aria-label")));
+    });
+    var toggle = byId("language-toggle");
+    toggle.textContent = language === "en" ? "KO" : "EN";
+    toggle.setAttribute("lang", language === "en" ? "ko" : "en");
+    toggle.setAttribute("aria-label", language === "en" ? "한국어로 전환" : "Switch to English");
+    var menuOpen = document.querySelector(".menu-button").getAttribute("aria-expanded") === "true";
+    setText("menu-label", translate(menuOpen ? "Close navigation" : "Open navigation"));
+  }
 
   function renderTrackLabel(value) {
     var parts = String(value || "").split(" · ");
@@ -99,12 +163,13 @@
 
     byId("hero-actions").innerHTML =
       registrationLink() +
-      '<a class="button button-secondary" href="#program">View the program <span aria-hidden="true">↓</span></a>';
+      '<a class="button button-secondary" href="#program">' +
+      escapeHtml(translate("View the program")) + ' <span aria-hidden="true">↓</span></a>';
 
     var facts = [
-      { label: "Date", value: meta.date, detail: "" },
-      { label: "Time", value: meta.time, detail: "" },
-      { label: "Location", value: meta.location, detail: meta.city },
+      { label: translate("Date"), value: meta.date, detail: "" },
+      { label: translate("Time"), value: meta.time, detail: "" },
+      { label: translate("Location"), value: meta.location, detail: meta.city },
     ];
     byId("event-facts").innerHTML = facts
       .map(function (fact) {
@@ -147,13 +212,7 @@
     setText("program-title", data.program.title);
     setText(
       "program-note",
-      "Confirmed program · " +
-        data.meta.date +
-        " · " +
-        data.meta.time +
-        " at " +
-        data.meta.location +
-        "."
+      translate("Confirmed program · {date} · {time} at {location}.", data.meta)
     );
     byId("program-list").innerHTML = data.program.items.map(renderProgramItem).join("");
   }
@@ -228,7 +287,7 @@
         escapeHtml(speaker.url) +
         '"' +
         externalAttributes(speaker.url) +
-        ' aria-label="' + escapeHtml(speaker.name) + ' — Visit website"'
+        ' aria-label="' + escapeHtml(speaker.name) + ' — ' + escapeHtml(translate("Visit website")) + '"'
       : "";
     var name = escapeHtml(speaker.name);
     return (
@@ -253,16 +312,17 @@
     var meta = data.meta;
     var venue = data.venue;
     var details = [
-      { label: "Date", value: meta.date },
-      { label: "Time", value: meta.time },
-      { label: "Program", value: venue.programSummary },
+      { label: translate("Date"), value: meta.date },
+      { label: translate("Time"), value: meta.time },
+      { label: translate("Program"), value: venue.programSummary },
     ];
     setText("venue-name", meta.location);
     setText("venue-address", meta.city);
     var map = byId("venue-map");
     if (map && venue.mapEmbedUrl) {
-      map.src = venue.mapEmbedUrl;
-      map.title = "Interactive map showing " + meta.location;
+      // Keep the existing map (and its zoom/pan state) when only the language changes.
+      if (map.getAttribute("src") !== venue.mapEmbedUrl) map.setAttribute("src", venue.mapEmbedUrl);
+      map.title = translate("Interactive map showing {location}", meta);
     }
     byId("venue-details").innerHTML = details
       .map(function (detail) {
@@ -280,8 +340,8 @@
         escapeHtml(venue.mapUrl) +
         '"' +
         externalAttributes(venue.mapUrl) +
-        '>Open in maps <span aria-hidden="true">↗</span></a>'
-      : '<span class="text-link is-disabled">Map link coming soon</span>';
+        '>' + escapeHtml(translate("Open in maps")) + ' <span aria-hidden="true">↗</span></a>'
+      : '<span class="text-link is-disabled">' + escapeHtml(translate("Map link coming soon")) + '</span>';
   }
 
   function renderContact() {
@@ -289,7 +349,7 @@
     byId("contact-action").innerHTML = data.meta.contactEmail
       ? '<a class="button button-primary" href="mailto:' +
         escapeHtml(data.meta.contactEmail) +
-        '">Email the organizers</a>'
+        '">' + escapeHtml(translate("Email the organizers")) + '</a>'
       : "";
     byId("organizer-grid").innerHTML = data.contact.organizers
       .map(function (organizer) {
@@ -330,7 +390,7 @@
       return (
         '<svg class="' + logoClass +
         '" viewBox="209 48 343 105" width="343" height="105" role="img" aria-label="' +
-        escapeHtml(institution.name) + ' logo">' +
+        escapeHtml(institution.name) + ' ' + escapeHtml(translate("logo")) + '">' +
         '<image href="' + escapeHtml(institution.logo) +
         '" width="760" height="201" /></svg>'
       );
@@ -338,7 +398,7 @@
     return '<img class="' + logoClass +
       '" src="' + escapeHtml(institution.logo) +
       '" alt="' + escapeHtml(institution.name) +
-      ' logo" loading="lazy" />';
+      ' ' + escapeHtml(translate("logo")) + '" loading="lazy" />';
   }
 
   function renderInstitutionCard(institution) {
@@ -388,7 +448,7 @@
         new Date().getFullYear() +
         " " +
         data.meta.shortName +
-        ". All rights reserved."
+        ". " + translate("All rights reserved.")
     );
   }
 
@@ -399,7 +459,7 @@
     var setOpen = function (isOpen) {
       button.setAttribute("aria-expanded", String(isOpen));
       links.classList.toggle("is-open", isOpen);
-      label.textContent = isOpen ? "Close navigation" : "Open navigation";
+      label.textContent = translate(isOpen ? "Close navigation" : "Open navigation");
     };
 
     button.addEventListener("click", function () {
@@ -433,23 +493,24 @@
       );
     };
 
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-      link.addEventListener("click", function (event) {
-        var targetId = link.getAttribute("href").slice(1);
-        var target = targetId ? byId(targetId) : null;
-        if (!target) return;
+    // Delegation also handles the hero link recreated by a language switch.
+    document.addEventListener("click", function (event) {
+      var link = event.target.closest('a[href^="#"]');
+      if (!link) return;
+      var targetId = link.getAttribute("href").slice(1);
+      var target = targetId ? byId(targetId) : null;
+      if (!target) return;
 
-        event.preventDefault();
-        target.scrollIntoView({
-          behavior: prefersReducedMotion ? "auto" : "smooth",
-          block: "start",
-        });
-        if (link.classList.contains("skip-link")) {
-          target.setAttribute("tabindex", "-1");
-          target.focus({ preventScroll: true });
-        }
-        if (window.location.hash) cleanUrl();
+      event.preventDefault();
+      target.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "start",
       });
+      if (link.classList.contains("skip-link")) {
+        target.setAttribute("tabindex", "-1");
+        target.focus({ preventScroll: true });
+      }
+      if (window.location.hash) cleanUrl();
     });
 
     if (window.location.hash) {
@@ -490,17 +551,14 @@
 
     var lastScrollY = Math.max(window.scrollY, 0);
     var scrollDirection = "down";
-    window.addEventListener(
-      "scroll",
-      function () {
-        var currentScrollY = Math.max(window.scrollY, 0);
-        if (currentScrollY !== lastScrollY) {
-          scrollDirection = currentScrollY > lastScrollY ? "down" : "up";
-          lastScrollY = currentScrollY;
-        }
-      },
-      { passive: true }
-    );
+    var onScroll = function () {
+      var currentScrollY = Math.max(window.scrollY, 0);
+      if (currentScrollY !== lastScrollY) {
+        scrollDirection = currentScrollY > lastScrollY ? "down" : "up";
+        lastScrollY = currentScrollY;
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     var observer = new IntersectionObserver(
       function (entries) {
@@ -525,18 +583,34 @@
     items.forEach(function (item) {
       observer.observe(item);
     });
+    return function () {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
   }
 
-  renderMeta();
-  renderAbout();
-  renderProgram();
-  renderSpeakers();
-  renderVenue();
-  renderContact();
-  renderInstitutions();
-  renderFooter();
+  function renderPage() {
+    if (cleanupReveal) cleanupReveal();
+    data = language === "en" ? WORKSHOP_DATA : localizeData(WORKSHOP_DATA);
+    renderLanguage();
+    renderMeta();
+    renderAbout();
+    renderProgram();
+    renderSpeakers();
+    renderVenue();
+    renderContact();
+    renderInstitutions();
+    renderFooter();
+    cleanupReveal = setupReveal();
+  }
+
+  renderPage();
+  byId("language-toggle").addEventListener("click", function () {
+    language = language === "en" ? "ko" : "en";
+    saveLanguage();
+    renderPage();
+  });
   setupNavigation();
   setupSectionNavigation();
   setupHomeReload();
-  setupReveal();
 })();

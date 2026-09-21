@@ -15,17 +15,18 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;family=Roboto+Condensed:wght@300;400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=65" />
+    <link rel="stylesheet" href="styles.css?v=68" />
     <link rel="icon" href="data:," />
     <script src="content.js?v=61" defer></script>
-    <script src="script.js?v=61" defer></script>
+    <script src="translations.js?v=4" defer></script>
+    <script src="script.js?v=64" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content" data-i18n="Skip to content">Skip to content</a>
 
     <header class="site-header" id="top">
-      <nav class="nav shell" aria-label="Main navigation">
-        <a class="brand" href="./" aria-label="Reload the workshop homepage">
+      <nav class="nav shell" aria-label="Main navigation" data-i18n-aria-label="Main navigation">
+        <a class="brand" href="./" aria-label="Reload the workshop homepage" data-i18n-aria-label="Reload the workshop homepage">
           <span id="nav-brand">IISL Workshop 2026</span>
         </a>
 
@@ -35,12 +36,13 @@
         </button>
 
         <div class="nav-links" id="nav-links">
-          <a href="#about">Scope</a>
-          <a href="#program">Program</a>
-          <a href="#speakers">Speakers</a>
-          <a href="#venue">Venue</a>
-          <a href="#organizers">Organizers</a>
-          <a href="#institutions">Institutions</a>
+          <a href="#about" data-i18n="Scope">Scope</a>
+          <a href="#program" data-i18n="Program">Program</a>
+          <a href="#speakers" data-i18n="Speakers">Speakers</a>
+          <a href="#venue" data-i18n="Venue">Venue</a>
+          <a href="#organizers" data-i18n="Organizers">Organizers</a>
+          <a href="#institutions" data-i18n="Institutions">Institutions</a>
+          <button class="language-toggle" id="language-toggle" type="button" lang="ko" aria-label="한국어로 전환">KO</button>
         </div>
       </nav>
     </header>
@@ -85,7 +87,7 @@
         <div class="shell">
           <div class="section-heading split-heading reveal">
             <div>
-              <p class="section-label">Workshop schedule</p>
+              <p class="section-label" data-i18n="Workshop schedule">Workshop schedule</p>
               <h2 id="program-title"></h2>
             </div>
             <p class="section-note" id="program-note"></p>
@@ -97,7 +99,7 @@
       <section class="section speakers-section" id="speakers">
         <div class="shell">
           <div class="section-heading reveal">
-            <p class="section-label">Speaker lineup</p>
+            <p class="section-label" data-i18n="Speaker lineup">Speaker lineup</p>
             <h2 id="speakers-title"></h2>
           </div>
           <div class="speaker-grid" id="speaker-grid"></div>
@@ -107,7 +109,7 @@
       <section class="section venue-section" id="venue">
         <div class="shell venue-layout">
           <div class="venue-copy reveal">
-            <p class="section-label">Venue</p>
+            <p class="section-label" data-i18n="Venue">Venue</p>
             <h2 id="venue-name"></h2>
             <p class="venue-address" id="venue-address"></p>
             <div class="venue-details" id="venue-details"></div>
@@ -131,8 +133,8 @@
         <div class="shell">
           <div class="organizer-intro reveal">
             <div>
-              <p class="section-label">Contact</p>
-              <h2>Organizing the exchange.</h2>
+              <p class="section-label" data-i18n="Contact">Contact</p>
+              <h2 data-i18n="Organizing the exchange.">Organizing the exchange.</h2>
             </div>
             <div>
               <p id="contact-copy"></p>
@@ -140,7 +142,7 @@
             </div>
           </div>
           <div class="organizer-card reveal">
-            <p class="card-label">Organizing information</p>
+            <p class="card-label" data-i18n="Organizing information">Organizing information</p>
             <div class="organizer-grid" id="organizer-grid"></div>
           </div>
         </div>
@@ -148,16 +150,16 @@
       <section class="section institutions-section" id="institutions">
         <div class="shell">
           <div class="section-heading reveal">
-            <p class="section-label">Institutions</p>
-            <h2>Hosted and supported by.</h2>
+            <p class="section-label" data-i18n="Institutions">Institutions</p>
+            <h2 data-i18n="Hosted and supported by.">Hosted and supported by.</h2>
           </div>
           <div class="institution-groups">
             <div class="institution-group reveal">
-              <p class="card-label">Hosted by</p>
+              <p class="card-label" data-i18n="Hosted by">Hosted by</p>
               <div class="institution-grid host-grid" id="host-grid"></div>
             </div>
             <div class="institution-group reveal">
-              <p class="card-label">Supported by</p>
+              <p class="card-label" data-i18n="Supported by">Supported by</p>
               <div class="institution-grid support-grid" id="support-grid"></div>
             </div>
           </div>
