@@ -293,8 +293,9 @@ test('Korean professor names appear in speaker cards and match the program trans
 
 test('registration buttons use the correct absolute URL in each language', () => {
   const englishUrl = loadData().meta.registrationUrl;
-  // A Korean-specific URL is optional; without one both pages share the base URL.
-  const koreanUrl = loadTranslations().ko[englishUrl] || englishUrl;
+  const koreanUrl = loadTranslations().ko[englishUrl];
+  assert.ok(koreanUrl, 'The Korean registration form must be configured');
+  assert.notEqual(koreanUrl, englishUrl, 'Each language must use its own registration form');
   assert.equal(new URL(koreanUrl).protocol, 'https:');
   const site = loadSite();
   const registrationHref = () => site.ids['hero-actions'].innerHTML.match(/class="button button-registration" href="([^"]+)"/)[1];

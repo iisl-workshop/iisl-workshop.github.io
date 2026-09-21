@@ -51,6 +51,7 @@ const WORKSHOP_TRANSLATIONS = {
     "Seoul": "서울",
     "23, Sejong-daero, Jung-gu, Seoul": "서울특별시 중구 세종대로 23",
     "Register now": "등록 사이트",
+    "https://forms.gle/V22FsKEZS7BCbzuP7": "https://forms.gle/DaWMjkYDSiJNpDraA",
 
     "Research scope": "연구 주제",
     "From trusted signals to autonomous cyber defense.": "신뢰할 수 있는 신호에서 자율 사이버 방어까지",
