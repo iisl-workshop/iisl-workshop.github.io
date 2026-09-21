@@ -149,7 +149,9 @@ html[lang="ko"] body {
 }
 
 html[lang="ko"] .hero-title {
-  letter-spacing: -0.035em;
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
   line-height: 1.08;
 }
 
@@ -177,6 +179,7 @@ html[lang="ko"] .speaker-meta p {
 }
 
 html[lang="ko"] .hero-eventline {
+  margin-top: 12px;
   font-size: 14px;
 }
 

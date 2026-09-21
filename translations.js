@@ -7,7 +7,7 @@ const WORKSHOP_TRANSLATIONS = {
   ko: {
     "Skip to content": "본문 바로가기",
     "Main navigation": "주요 메뉴",
-    "Reload the workshop homepage": "워크숍 홈페이지 다시 열기",
+    "Reload the workshop homepage": "워크샵 홈페이지 다시 열기",
     "Open navigation": "메뉴 열기",
     "Close navigation": "메뉴 닫기",
     "Scope": "연구 주제",
@@ -16,10 +16,10 @@ const WORKSHOP_TRANSLATIONS = {
     "Venue": "오시는 길",
     "Organizers": "조직위원회",
     "Institutions": "참여 기관",
-    "Workshop schedule": "워크숍 일정",
+    "Workshop schedule": "워크샵 일정",
     "Speaker lineup": "연사 소개",
     "Contact": "문의",
-    "Organizing the exchange.": "워크숍 운영 및 문의",
+    "Organizing the exchange.": "워크샵 운영 및 문의",
     "Organizing information": "조직위원회 안내",
     "Hosted and supported by.": "주최 및 후원 기관",
     "Hosted by": "주최",
@@ -39,8 +39,8 @@ const WORKSHOP_TRANSLATIONS = {
 
     "IISL · Joint research workshop": "IISL · Joint research workshop",
     "2026 Joint": "2026",
-    "Workshop": "공동 워크샵",
-    "AI-Driven Autonomous Security": "AI 기반 자율 보안",
+    "Workshop": "AI 기반 자율 보안",
+    "AI-Driven Autonomous Security": " ",
     "Exploring how communication, sensing, and human–AI collaboration can shape trustworthy, adaptive security for mission-critical connected systems.":
       "통신, 센싱, 인간-AI 협엽을 통해 미션 크리티컬한 연결 시스템을 위한 신뢰할 수 있고 적응적인 보안을 어떻게 구현할 수 있는지 탐구합니다.",
     "Semantic Communication": "시맨틱 통신",
@@ -48,7 +48,7 @@ const WORKSHOP_TRANSLATIONS = {
     "Human–AI Teaming": "인간-AI 협업",
     "October 12, 2026": "2026년 10월 12일",
     "GIST Seoul Office": "GIST 서울사무소",
-    "Seoul": "서울",
+    "Seoul": " ",
     "23, Sejong-daero, Jung-gu, Seoul": "서울특별시 중구 세종대로 23",
     "Register now": "등록 사이트",
     "https://forms.gle/V22FsKEZS7BCbzuP7": "https://forms.gle/DaWMjkYDSiJNpDraA",
@@ -58,7 +58,7 @@ const WORKSHOP_TRANSLATIONS = {
     "Future connected systems need to understand more than packets. They must reason about meaning, sense their physical environment, and adapt to threats without losing human oversight.":
       "미래의 연결 시스템은 단순한 패킷 처리를 넘어야 합니다. 정보의 의미를 추론하고, 물리적 환경을 감지하며, 인간의 감독 아래 위협에 적응할 수 있어야 합니다.",
     "This joint workshop links work in semantic communication and physical-layer security with secure IoT sensing and human–AI teaming. The program is designed to move from device-level trust toward system-level autonomous defense.":
-      "이번 공동 워크숍에서는 시맨틱 통신과 물리 계층 보안 연구를 안전한 IoT 센싱 및 인간–AI 협업과 연결합니다. 단말 수준의 신뢰에서 시스템 수준의 자율 방어로 확장하는 방향으로 프로그램을 구성했습니다.",
+      "이번 공동 워크샵에서는 시맨틱 통신과 물리 계층 보안 연구를 안전한 IoT 센싱 및 인간–AI 협업과 연결합니다. 단말 수준의 신뢰에서 시스템 수준의 자율 방어로 확장하는 방향으로 프로그램을 구성했습니다.",
     "Security mechanisms that use task meaning and context, not only transmitted bits, to protect critical communication.":
       "전송되는 비트뿐 아니라 과업의 의미와 맥락을 활용하여 핵심 통신을 보호하는 보안 기법을 다룹니다.",
     "RF/EM and multimodal sensing with physical-layer protection for device integrity and resilient mission-critical IoT.":

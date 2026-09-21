@@ -150,8 +150,12 @@
     setText("hero-title", meta.title);
     setText("hero-title-accent", meta.titleAccent);
     setText("hero-theme", meta.themeTitle);
+    byId("hero-theme").hidden = language === "ko" && !String(meta.themeTitle || "").trim();
     setText("hero-date", meta.date);
-    setText("hero-location", meta.location + ", " + meta.cityName);
+    setText("hero-location", [meta.location, meta.cityName]
+      .map(function (part) { return String(part || "").trim(); })
+      .filter(Boolean)
+      .join(", "));
     setText("hero-summary", meta.summary);
     setText("footer-tagline", meta.summary);
 

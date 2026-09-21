@@ -139,7 +139,7 @@ test('language defaults to English, translates the whole page and restores the E
   assert.equal(toggle.textContent, 'EN');
   assert.equal(toggle.getAttribute('aria-label'), 'Switch to English');
   assert.equal(toggle.getAttribute('lang'), 'en');
-  assert.equal(ids['hero-theme'].textContent, 'AI 기반 자율 보안');
+  assert.equal(ids['hero-theme'].textContent, dictionary[data.meta.themeTitle]);
   assert.equal(ids['hero-title-accent'].textContent, dictionary[data.meta.titleAccent]);
   assert.equal(ids['hero-date'].textContent, '2026년 10월 12일');
   assert.match(ids['about-copy'].innerHTML, /미래의 연결 시스템/);
@@ -152,7 +152,7 @@ test('language defaults to English, translates the whole page and restores the E
   assert.ok(ids['venue-actions'].innerHTML.includes(dictionary['Open in maps']));
   assert.ok(ids['hero-actions'].innerHTML.includes(dictionary[data.meta.registrationLabel]));
   assert.match(ids['event-facts'].innerHTML, /날짜/);
-  assert.match(document.title, /AI 기반 자율 보안/);
+  assert.equal(document.title, dictionary[data.meta.themeTitle] + ' — ' + data.meta.shortName + ' ' + data.meta.year);
   assert.equal(metas['meta[name="description"]'].getAttribute('content'), dictionary[data.meta.summary]);
   for (const item of site.translatedElements) {
     assert.equal(item.textContent, dictionary[item.getAttribute('data-i18n')]);
@@ -261,7 +261,7 @@ test('language starts in English and survives reloads in the same tab in both di
   const koreanReload = loadSite({ storage });
   assert.equal(koreanReload.document.documentElement.lang, 'ko');
   assert.equal(koreanReload.ids['language-toggle'].textContent, 'EN');
-  assert.equal(koreanReload.ids['hero-theme'].textContent, 'AI 기반 자율 보안');
+  assert.equal(koreanReload.ids['hero-theme'].textContent, loadTranslations().ko[loadData().meta.themeTitle]);
   koreanReload.ids['language-toggle'].events.click();
   assert.equal(storage.get('iisl-workshop-language'), 'en');
 
@@ -307,6 +307,39 @@ test('registration buttons use the correct absolute URL in each language', () =>
   assert.ok(reloaded.ids['hero-actions'].innerHTML.includes('href="' + koreanUrl + '"'));
   site.ids['language-toggle'].events.click();
   assert.equal(registrationHref(), englishUrl);
+});
+
+test('hero location omits separators for empty or whitespace-only city names', () => {
+  const site = loadSite();
+  const data = loadData();
+  assert.equal(site.ids['hero-location'].textContent, data.meta.location + ', ' + data.meta.cityName);
+  site.ids['language-toggle'].events.click();
+  assert.equal(site.ids['hero-location'].textContent, 'GIST 서울사무소');
+  for (const cityName of ['', '  ', undefined]) {
+    const draft = loadData();
+    draft.meta.cityName = cityName;
+    assert.equal(loadSite({ data: draft }).ids['hero-location'].textContent, draft.meta.location);
+  }
+});
+
+test('blank Korean hero subtitle is hidden and English subtitle is restored', () => {
+  const site = loadSite();
+  const subtitle = site.ids['hero-theme'];
+  assert.equal(subtitle.hidden, false);
+  site.ids['language-toggle'].events.click();
+  assert.equal(subtitle.textContent.trim(), '');
+  assert.equal(subtitle.hidden, true);
+  const reloaded = loadSite({ storage: site.storage });
+  assert.equal(reloaded.ids['hero-theme'].hidden, true);
+  site.ids['language-toggle'].events.click();
+  assert.equal(subtitle.hidden, false);
+  assert.equal(subtitle.textContent, loadData().meta.themeTitle);
+
+  const data = loadData();
+  data.meta.themeTitle = 'Updated theme';
+  const withSubtitle = loadSite({ data });
+  withSubtitle.ids['language-toggle'].events.click();
+  assert.equal(withSubtitle.ids['hero-theme'].hidden, false);
 });
 
 test('invalid or blocked language storage never prevents rendering or switching', () => {
