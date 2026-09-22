@@ -1423,18 +1423,9 @@ a.institution-card:hover {
     line-height: 1.2;
   }
 
-  .speaker-meta > span {
-    display: block;
-    font-size: clamp(7px, 1.25vw, 10px);
-    line-height: 1.4;
-  }
-
+  .speaker-meta > span,
   .speaker-talk {
-    min-height: 0;
-    margin-inline: 0;
-    padding-top: clamp(6px, 1.5vw, 12px);
-    font-size: clamp(8px, 1.4vw, 12px);
-    line-height: 1.45;
+    display: none;
   }
 
   .speaker-initials {
@@ -1476,6 +1467,14 @@ a.institution-card:hover {
   .institution-wordmark {
     font-size: clamp(9px, 1.65vw, 14px);
     overflow-wrap: anywhere;
+  }
+
+  .institutions-section {
+    padding-bottom: 28px;
+  }
+
+  .site-footer {
+    padding-top: 28px;
   }
 
   .map-card {
@@ -1660,7 +1659,7 @@ a.institution-card:hover {
 
   .institutions-section {
     padding-top: 64px;
-    padding-bottom: 58px;
+    padding-bottom: 28px;
   }
 
 }
