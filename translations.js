@@ -38,9 +38,9 @@ const WORKSHOP_TRANSLATIONS = {
     "All rights reserved.": "All rights reserved.",
 
     "IISL · Joint research workshop": "IISL · Joint research workshop",
-    "2026 Joint": "2026",
+    "2026 Joint": "2026 공동 워크샵",
     "Workshop": "AI 기반 자율 보안",
-    "AI-Driven Autonomous Security": " ",
+    "AI-Driven Autonomous Security": "AI-Driven Autonomous Security",
     "Exploring how communication, sensing, and human–AI collaboration can shape trustworthy, adaptive security for mission-critical connected systems.":
       "통신, 센싱, 인간-AI 협엽을 통해 미션 크리티컬한 연결 시스템을 위한 신뢰할 수 있고 적응적인 보안을 어떻게 구현할 수 있는지 탐구합니다.",
     "Semantic Communication": "시맨틱 통신",
@@ -50,7 +50,7 @@ const WORKSHOP_TRANSLATIONS = {
     "GIST Seoul Office": "GIST 서울사무소",
     "Seoul": " ",
     "23, Sejong-daero, Jung-gu, Seoul": "서울특별시 중구 세종대로 23",
-    "Register now": "등록 사이트",
+    "Register now": "등록",
     "https://forms.gle/V22FsKEZS7BCbzuP7": "https://forms.gle/DaWMjkYDSiJNpDraA",
 
     "Research scope": "연구 주제",
@@ -71,17 +71,19 @@ const WORKSHOP_TRANSLATIONS = {
     "Morning": "오전",
     "Afternoon": "오후",
     "Semantic Communication & Physical-Layer Security for IoT": "IoT를 위한 시맨틱 통신 및 물리 계층 보안",
-    "Keynote I — (TBD) RF/EM Sensing for Trustworthy IoT": "기조강연 I — (가제) 신뢰할 수 있는 IoT를 위한 RF/EM 센싱",
-    "Keynote II — (TBD) Semantic Communication–Enabled Physical-Layer Security for Mission-Critical IoT":
-      "기조강연 II — (가제) 미션 크리티컬 IoT를 위한 시맨틱 통신 활용 물리 계층 보안",
-    "Student Talk — (TBD) Sensing-Driven IoT Systems: Toward Secure Device-Level Data Integrity":
-      "학생 발표 — (가제) 센싱 기반 IoT 시스템: 안전한 단말 수준 데이터 무결성을 향하여",
-    "Student Talk — (TBD) Session Binding for Bio-based Multi-modal Sensing via Homomorphic Encryption":
-      "학생 발표 — (가제) 동형암호를 활용한 생체 기반 멀티모달 센싱의 세션 바인딩",
+    "Keynote I — Privacy Preserved Sensing for Trustworthy IoT": "기조강연 I — 신뢰할 수 있는 IoT를 위한 프라이버시 보호형 센싱",
+    "Keynote II — Semantic Communication-Enabled Physical-Layer for Mission-Critical IoT":
+      "기조강연 II — 미션 크리티컬 IoT를 위한 시맨틱 통신 기반 물리계층 보안",
+    "Student Talk — SafeSpeaker: Voice Obfuscation for Resource-Constrained IoT Devices":
+      "학생 발표 — SafeSpeaker: 자원 제약형 IoT 기기를 위한 음성 난독화",
+    "Student Talk — Leveraging Heterogeneous Physical Unclonable Functions for security and authentication":
+      "학생 발표 — 보안 및 인증을 위한 이종 물리적 복제 방지 함수 활용",
     "Networking lunch": "점심 식사 및 교류",
     "Autonomous Security through Human–AI Collaboration": "인간–AI 협업을 통한 자율 보안",
-    "Invited Talk — (TBD) Human–AI Teaming Security: Overview": "초청강연 — (가제) 인간–AI 협업 보안 개요",
-    "Invited Talk — (TBD)": "초청강연 — 주제 추후 안내",
+    "Invited Talk — Human-AI Teaming Security: Overview": "초청강연 — 인간–AI 협업 보안: 개요",
+    "Invited Talk — Post-Quantum Cryptography for Secure and Autonomous AI Systems": "초청강연 — 안전한 자율형 AI 시스템을 위한 양자내성암호",
+    "Invited Talk — Secure DB Search and RAG": "초청강연 — 안전한 데이터베이스 검색 및 RAG",
+    "Invited Talk — Human-Centric AI Govermence for Autonomous Security Systems": "초청강연 - 자율 보안 시스템을 위한 인간 중심 AI 거버넌스",
     "Panel Discussion & Closing — Toward Autonomous Cyber Defense": "패널 토론 및 폐회 — 자율 사이버 방어를 향하여",
     "All speakers": "전체 연사",
     "Closing session": "폐회 세션",
@@ -105,11 +107,14 @@ const WORKSHOP_TRANSLATIONS = {
     "Professor · Keynote II": "교수 · 기조강연 II",
     "Professor · Invited Talk": "교수 · 초청강연",
     "PhD Candidate · Student Talk": "박사과정 · 학생 발표",
-    "(TBD) RF/EM Sensing for Trustworthy IoT": "(가제) 신뢰할 수 있는 IoT를 위한 RF/EM 센싱",
-    "(TBD) Semantic Communication–Enabled Physical-Layer Security": "(가제) 시맨틱 통신을 활용한 물리 계층 보안",
-    "(TBD) Human–AI Teaming Security: Overview": "(가제) 인간–AI 협업 보안 개요",
-    "(TBD) Sensing-Driven IoT Systems": "(가제) 센싱 기반 IoT 시스템",
-    "(TBD) Session Binding for Bio-based Multi-modal Sensing via Homomorphic Encryption": "(가제) 동형암호화를 활용한 생체 기반 멀티모달 센싱의 세션 바인딩",
+    "Privacy Preserved Sensing for Trustworthy IoT": "신뢰할 수 있는 IoT를 위한 프라이버시 보호형 센싱",
+    "Semantic Communication-Enabled Physical-Layer for Mission-Critical IoT": "미션 크리티컬 IoT를 위한 시맨틱 통신 기반 물리계층 보안",
+    "Human-AI Teaming Security: Overview": "인간–AI 협업 보안: 개요",
+    "SafeSpeaker: Voice Obfuscation for Resource-Constrained IoT Devices": "SafeSpeaker: 자원 제약형 IoT 기기를 위한 음성 난독화",
+    "Leveraging Heterogeneous Physical Unclonable Functions for security and authentication": "보안 및 인증을 위한 이종 물리적 복제 방지 함수 활용",
+    "Post-Quantum Cryptography for Secure and Autonomous AI Systems": "안전한 자율형 AI 시스템을 위한 양자내성암호",
+    "Secure DB Search and RAG": "안전한 데이터베이스 검색 및 RAG",
+    "Human-Centric AI Govermence for Autonomous Security Systems": "자율 보안 시스템을 위한 인간 중심 AI 거버넌스",
     "(TBD)": "(추후 안내)",
     "Keynotes, student talks, invited talks & panel": "기조강연, 학생 발표, 초청강연 및 패널 토론",
     "Organizing committee": "조직위원회",
@@ -118,6 +123,7 @@ const WORKSHOP_TRANSLATIONS = {
     "Korea Institute of Energy Technology": "한국에너지공과대학교",
     "Daegu Gyeongbuk Institute of Science and Technology": "대구경북과학기술원",
     "Institute of Electrical and Electronics Engineers": "국제전기전자공학회",
-    "GIST AI Institute": "GIST AI연구소",
+    "GIST Department of Artificial Intelligence": "GIST AI학과",
+    "GIST AI": "GIST AI학과",
   },
 };

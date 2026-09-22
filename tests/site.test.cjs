@@ -41,6 +41,24 @@ test('program, full-card speaker links, institution counts and map render', () =
   assert.match(ids['venue-actions'].innerHTML, /Open in maps/);
 });
 
+test('organizers are removed and GIST AI appears only between GIST and Michigan in hosts', () => {
+  const data = loadData();
+  assert.doesNotMatch(read('index.html'), /id="organizers"|href="#organizers"|id="organizer-grid"/);
+  assert.doesNotMatch(read('script.js'), /renderContact/);
+  assert.equal(data.institutions.hosts.map(item => item.displayName).join(','),
+    'GIST,GIST AI,University of Michigan,KENTECH');
+  assert.equal(data.institutions.supporters.length, 1);
+  assert.equal(data.institutions.supporters[0].displayName, 'IEEE');
+  const site = loadSite();
+  for (const language of ['en', 'ko']) {
+    const hosts = site.ids['host-grid'].innerHTML;
+    assert.ok(hosts.indexOf('GIST.png') < hosts.indexOf('GIST_AI.png'));
+    assert.ok(hosts.indexOf('GIST_AI.png') < hosts.indexOf('Michigan.png'));
+    assert.ok(!site.ids['support-grid'].innerHTML.includes('GIST_AI.png'));
+    if (language === 'en') site.ids['language-toggle'].events.click();
+  }
+});
+
 test('empty optional fields retain placeholders and text is escaped', () => {
   const data = loadData();
   data.meta.registrationUrl = '';
@@ -132,11 +150,11 @@ test('language defaults to English, translates the whole page and restores the E
     .map(([id, item]) => [id, [item.innerHTML, item.textContent]])));
   const english = snapshot();
   assert.equal(document.documentElement.lang, 'en');
-  assert.equal(toggle.textContent, 'KO');
+  assert.equal(toggle.textContent, '한국어');
   const dictionary = loadTranslations().ko;
   toggle.events.click();
   assert.equal(document.documentElement.lang, 'ko');
-  assert.equal(toggle.textContent, 'EN');
+  assert.equal(toggle.textContent, 'English');
   assert.equal(toggle.getAttribute('aria-label'), 'Switch to English');
   assert.equal(toggle.getAttribute('lang'), 'en');
   assert.equal(ids['hero-theme'].textContent, dictionary[data.meta.themeTitle]);
@@ -146,9 +164,9 @@ test('language defaults to English, translates the whole page and restores the E
   assert.match(ids['program-list'].innerHTML, /기조강연 I/);
   assert.match(ids['program-list'].innerHTML, /패널 토론 및 폐회/);
   assert.match(ids['speaker-grid'].innerHTML, /교수 · 기조강연/);
-  assert.match(ids['organizer-grid'].innerHTML, /조직위원회/);
   assert.match(ids['host-grid'].innerHTML, /광주과학기술원 로고/);
-  assert.match(ids['support-grid'].innerHTML, /GIST AI연구소/);
+  assert.match(ids['host-grid'].innerHTML, /GIST AI학과/);
+  assert.doesNotMatch(ids['support-grid'].innerHTML, /GIST AI/);
   assert.ok(ids['venue-actions'].innerHTML.includes(dictionary['Open in maps']));
   assert.ok(ids['hero-actions'].innerHTML.includes(dictionary[data.meta.registrationLabel]));
   assert.match(ids['event-facts'].innerHTML, /날짜/);
@@ -260,14 +278,14 @@ test('language starts in English and survives reloads in the same tab in both di
 
   const koreanReload = loadSite({ storage });
   assert.equal(koreanReload.document.documentElement.lang, 'ko');
-  assert.equal(koreanReload.ids['language-toggle'].textContent, 'EN');
+  assert.equal(koreanReload.ids['language-toggle'].textContent, 'English');
   assert.equal(koreanReload.ids['hero-theme'].textContent, loadTranslations().ko[loadData().meta.themeTitle]);
   koreanReload.ids['language-toggle'].events.click();
   assert.equal(storage.get('iisl-workshop-language'), 'en');
 
   const englishReload = loadSite({ storage });
   assert.equal(englishReload.document.documentElement.lang, 'en');
-  assert.equal(englishReload.ids['language-toggle'].textContent, 'KO');
+  assert.equal(englishReload.ids['language-toggle'].textContent, '한국어');
   assert.equal(englishReload.ids['hero-theme'].textContent, loadData().meta.themeTitle);
   assert.equal(loadSite().document.documentElement.lang, 'en');
 });
@@ -323,23 +341,25 @@ test('hero location omits separators for empty or whitespace-only city names', (
 });
 
 test('blank Korean hero subtitle is hidden and English subtitle is restored', () => {
-  const site = loadSite();
+  const data = loadData();
+  data.meta.themeTitle = ' ';
+  const site = loadSite({ data });
   const subtitle = site.ids['hero-theme'];
   assert.equal(subtitle.hidden, false);
   site.ids['language-toggle'].events.click();
   assert.equal(subtitle.textContent.trim(), '');
   assert.equal(subtitle.hidden, true);
-  const reloaded = loadSite({ storage: site.storage });
+  const reloaded = loadSite({ data, storage: site.storage });
   assert.equal(reloaded.ids['hero-theme'].hidden, true);
   site.ids['language-toggle'].events.click();
   assert.equal(subtitle.hidden, false);
-  assert.equal(subtitle.textContent, loadData().meta.themeTitle);
+  assert.equal(subtitle.textContent, data.meta.themeTitle);
 
-  const data = loadData();
-  data.meta.themeTitle = 'Updated theme';
-  const withSubtitle = loadSite({ data });
+  const withSubtitle = loadSite();
   withSubtitle.ids['language-toggle'].events.click();
   assert.equal(withSubtitle.ids['hero-theme'].hidden, false);
+  assert.equal(withSubtitle.ids['hero-theme'].textContent,
+    loadTranslations().ko[loadData().meta.themeTitle]);
 });
 
 test('browser tab title stays in English across language switches and Korean reloads', () => {

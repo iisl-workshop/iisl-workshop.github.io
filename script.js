@@ -79,7 +79,7 @@
       element.setAttribute("aria-label", translate(element.getAttribute("data-i18n-aria-label")));
     });
     var toggle = byId("language-toggle");
-    toggle.textContent = language === "en" ? "KO" : "EN";
+    toggle.textContent = language === "en" ? "한국어" : "English";
     toggle.setAttribute("lang", language === "en" ? "ko" : "en");
     toggle.setAttribute("aria-label", language === "en" ? "한국어로 전환" : "Switch to English");
     var menuOpen = document.querySelector(".menu-button").getAttribute("aria-expanded") === "true";
@@ -349,34 +349,6 @@
       : '<span class="text-link is-disabled">' + escapeHtml(translate("Map link coming soon")) + '</span>';
   }
 
-  function renderContact() {
-    setText("contact-copy", data.contact.copy);
-    byId("contact-action").innerHTML = data.meta.contactEmail
-      ? '<a class="button button-primary" href="mailto:' +
-        escapeHtml(data.meta.contactEmail) +
-        '">' + escapeHtml(translate("Email the organizers")) + '</a>'
-      : "";
-    byId("organizer-grid").innerHTML = data.contact.organizers
-      .map(function (organizer) {
-        return (
-          '<div class="organizer-person"><strong>' +
-          escapeHtml(organizer.name) +
-          "</strong><span>" +
-          escapeHtml(organizer.affiliation) +
-          "</span>" +
-          (organizer.email
-            ? '<a href="mailto:' +
-              escapeHtml(organizer.email) +
-              '">' +
-              escapeHtml(organizer.email) +
-              "</a>"
-            : "") +
-          "</div>"
-        );
-      })
-      .join("");
-  }
-
   function renderInstitutionVisual(institution) {
     var logoClass = "institution-logo";
     var supportedScales = ["large", "expanded", "small", "extra-large"];
@@ -603,7 +575,6 @@
     renderProgram();
     renderSpeakers();
     renderVenue();
-    renderContact();
     renderInstitutions();
     renderFooter();
     cleanupReveal = setupReveal();

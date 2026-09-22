@@ -6,11 +6,9 @@
  * program에서 프로그램 일정
  * speakers에서 연사 정보(연사 작성 순서 결정 필요)
  * venue에 구글맵 연동(원하는 지도 api 차후 연동 가능)
- * contac에 커미티 정보(여기 부분 유지할지/유지하면 누굴 넣을지)
  * hosts에 호스트, supporters에 후원자
  * 
  * 웹사이트 제목 organization, repository 이름 바꾸면 수정 가능
- * committee 부분 넣을지, 뺄지 + 넣는다면 누구를 넣을지 정해야 함.
  */
 
 const WORKSHOP_DATA = {
@@ -87,7 +85,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "10:00",
         endTime: "10:30",
-        title: "Keynote I — (TBD) RF/EM Sensing for Trustworthy IoT",
+        title: "Keynote I — Privacy Preserved Sensing for Trustworthy IoT",
         speaker: "Prof. Alanson Sample",
         affiliation: "University of Michigan",
       },
@@ -96,7 +94,7 @@ const WORKSHOP_DATA = {
         time: "10:30",
         endTime: "11:00",
         title:
-          "Keynote II — (TBD) Semantic Communication–Enabled Physical-Layer Security for Mission-Critical IoT",
+          "Keynote II — Semantic Communication-Enabled Physical-Layer for Mission-Critical IoT",
         speaker: "Prof. Euiseok Hwang",
         affiliation: "GIST",
       },
@@ -105,7 +103,7 @@ const WORKSHOP_DATA = {
         time: "11:00",
         endTime: "11:20",
         title:
-          "Student Talk — (TBD) Sensing-Driven IoT Systems: Toward Secure Device-Level Data Integrity",
+          "Student Talk — SafeSpeaker: Voice Obfuscation for Resource-Constrained IoT Devices",
         speaker: "Cameron Daniel Haire",
         affiliation: "PhD Candidate · University of Michigan",
       },
@@ -114,7 +112,7 @@ const WORKSHOP_DATA = {
         time: "11:20",
         endTime: "11:40",
         title:
-          "Student Talk — (TBD) Session Binding for Bio-based Multi-modal Sensing via Homomorphic Encryption",
+          "Student Talk — Leveraging Heterogeneous Physical Unclonable Functions for security and authentication",
         speaker: "Heehun Jung",
         affiliation: "PhD Candidate · GIST",
       },
@@ -133,7 +131,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:00",
         endTime: "13:20",
-        title: "Invited Talk — (TBD) Human–AI Teaming Security: Overview",
+        title: "Invited Talk — Human-AI Teaming Security: Overview",
         speaker: "Prof. Hyuk Lim",
         affiliation: "KENTECH",
       },
@@ -141,7 +139,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:20",
         endTime: "13:35",
-        title: "Invited Talk — (TBD)",
+        title: "Invited Talk — Post-Quantum Cryptography for Secure and Autonomous AI Systems",
         speaker: "Prof. Youngsik Kim",
         affiliation: "DGIST",
       },
@@ -149,7 +147,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:35",
         endTime: "13:50",
-        title: "Invited Talk — (TBD)",
+        title: "Invited Talk — Secure DB Search and RAG",
         speaker: "Prof. Yongwoo Lee",
         affiliation: "Inha University",
       },
@@ -157,7 +155,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:50",
         endTime: "14:05",
-        title: "Invited Talk — (TBD)",
+        title: "Invited Talk — Human-Centric AI Govermence for Autonomous Security Systems",
         speaker: "Prof. Duk-jo Kong",
         affiliation: "GIST",
       },
@@ -177,7 +175,7 @@ const WORKSHOP_DATA = {
       name: "Alanson Sample",
       affiliation: "University of Michigan",
       role: "Professor · Keynote I",
-      talk: "(TBD) RF/EM Sensing for Trustworthy IoT",
+      talk: "Privacy Preserved Sensing for Trustworthy IoT",
       image: "assets/speakers/Alanson-Sample.jpeg",
       url: "https://alansonsample.com/",
     },
@@ -185,7 +183,7 @@ const WORKSHOP_DATA = {
       name: "Euiseok Hwang",
       affiliation: "GIST",
       role: "Professor · Keynote II",
-      talk: "(TBD) Semantic Communication–Enabled Physical-Layer Security",
+      talk: "Semantic Communication-Enabled Physical-Layer for Mission-Critical IoT",
       image: "assets/speakers/Euiseok-Hwang.png",
       url: "https://iis.gist.ac.kr/prog/gsPerson/isp/P/view.do?siteCode=isp&mno=sub02_01_01&tmplId=template_d1&personId=P00001644",
     },
@@ -193,7 +191,7 @@ const WORKSHOP_DATA = {
       name: "Hyuk Lim",
       affiliation: "KENTECH",
       role: "Professor · Invited Talk",
-      talk: "(TBD) Human–AI Teaming Security: Overview",
+      talk: "Human-AI Teaming Security: Overview",
       image: "assets/speakers/Hyuk-Lim.jpg",
       url: "https://hlim.kentech.ac.kr/",
     },
@@ -201,7 +199,7 @@ const WORKSHOP_DATA = {
       name: "Youngsik Kim",
       affiliation: "DGIST",
       role: "Professor · Invited Talk",
-      talk: "(TBD)",
+      talk: "Post-Quantum Cryptography for Secure and Autonomous AI Systems",
       image: "assets/speakers/Youngsik-Kim.jpg",
       url: "https://sites.google.com/site/mypurist/",
     },
@@ -209,7 +207,7 @@ const WORKSHOP_DATA = {
       name: "Yongwoo Lee",
       affiliation: "Inha University",
       role: "Professor · Invited Talk",
-      talk: "(TBD)",
+      talk: "Secure DB Search and RAG",
       image: "assets/speakers/Youngwoo-Lee.png",
       url: "https://yongwoo-lee-ccl.github.io/online-cv/",
     },
@@ -217,7 +215,7 @@ const WORKSHOP_DATA = {
       name: "Duk-jo Kong",
       affiliation: "GIST",
       role: "Professor · Invited Talk",
-      talk: "(TBD)",
+      talk: "Human-Centric AI Govermence for Autonomous Security Systems",
       image: "assets/speakers/Duk-jo-Kong.png",
       url: "https://impact.gist.ac.kr/team/professor.php",
     },
@@ -225,7 +223,7 @@ const WORKSHOP_DATA = {
       name: "Cameron Daniel Haire",
       affiliation: "University of Michigan",
       role: "PhD Candidate · Student Talk",
-      talk: "(TBD) Sensing-Driven IoT Systems",
+      talk: "SafeSpeaker: Voice Obfuscation for Resource-Constrained IoT Devices",
       image: "assets/speakers/Cameron-Haire.jpeg",
       url: "https://callmeron7.github.io/about/",
     },
@@ -233,7 +231,7 @@ const WORKSHOP_DATA = {
       name: "Heehun Jung",
       affiliation: "GIST",
       role: "PhD Candidate · Student Talk",
-      talk: "(TBD) Session Binding for Bio-based Multi-modal Sensing via Homomorphic Encryption",
+      talk: "Leveraging Heterogeneous Physical Unclonable Functions for security and authentication",
       image: "assets/speakers/Heehun-Jung.jpg",
       url: "https://me.gist.ac.kr/prog/gsPerson/isp/S/B000000056829Rv7dW0b/sub02_01_02/view.do",
     },
@@ -247,18 +245,6 @@ const WORKSHOP_DATA = {
       "https://www.google.com/maps?q=23%20Sejong-daero%2C%20Jung-gu%2C%20Seoul&z=17&output=embed",
   },
 
-  contact: {
-    copy:
-      "Organazers 부분(지금 이 part)을 넣을지 안 넣을지 궁금합니다!\ 넣는다면 인원 구성을 어떻게 할까요?",
-    organizers: [
-      {
-        name: "Organizing committee",
-        affiliation: "Contact details to be announced",
-        email: "",
-      },
-    ],
-  },
-
   institutions: {
     hosts: [
       {
@@ -267,6 +253,13 @@ const WORKSHOP_DATA = {
         logo: "assets/logos/GIST.png?v=49",
         logoScale: "small",
         url: "https://www.gist.ac.kr/en/main.html",
+      },
+      {
+        name: "GIST Department of Artificial Intelligence",
+        displayName: "GIST AI",
+        logo: "assets/logos/GIST_AI.png",
+        logoScale: "large",
+        url: "https://mseeng.gist.ac.kr/aieng/index.do",
       },
       {
         name: "University of Michigan",
@@ -303,13 +296,6 @@ const WORKSHOP_DATA = {
         logo: "assets/logos/IEEE.png",
         logoScale: "small",
         url: "https://www.ieee.org/",
-      },
-      {
-        name: "GIST AI Institute",
-        displayName: "GIST AI Institute",
-        logo: "assets/logos/GIST_AI.png",
-        logoScale: "large",
-        url: "https://mseeng.gist.ac.kr/aieng/index.do",
       },
     ],
   },
