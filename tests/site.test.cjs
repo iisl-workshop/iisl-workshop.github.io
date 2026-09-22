@@ -59,6 +59,21 @@ test('organizers are removed and GIST AI appears only between GIST and Michigan 
   }
 });
 
+test('language toggle is outside the collapsible links and before the mobile menu button', () => {
+  const html = read('index.html');
+  const linksStart = html.indexOf('id="nav-links"');
+  const linksEnd = html.indexOf('</div>', linksStart);
+  const toggleStart = html.indexOf('id="language-toggle"');
+  const menuStart = html.indexOf('class="menu-button"');
+  assert.ok(linksStart >= 0 && linksEnd < toggleStart && toggleStart < menuStart);
+  assert.equal((html.match(/id="language-toggle"/g) || []).length, 1);
+  const site = loadSite();
+  site.ids['language-toggle'].events.click();
+  assert.equal(site.document.documentElement.lang, 'ko');
+  assert.equal(site.button.getAttribute('aria-expanded'), 'false');
+  assert.equal(site.ids['nav-links'].classList.contains('is-open'), false);
+});
+
 test('empty optional fields retain placeholders and text is escaped', () => {
   const data = loadData();
   data.meta.registrationUrl = '';

@@ -110,6 +110,7 @@ button {
 }
 
 
+.nav-actions,
 .nav-links {
   display: flex;
   align-items: center;
@@ -126,6 +127,8 @@ button {
 }
 
 .language-toggle {
+  flex-shrink: 0;
+  white-space: nowrap;
   padding: 6px 0 6px 20px;
   border: 0;
   border-left: 1px solid var(--rule-dark);
@@ -1239,13 +1242,6 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   gap: 10px;
 }
 
-@media (max-width: 860px) {
-  .institution-grid {
-    max-width: 480px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 .institution-card {
   min-height: 96px;
   display: flex;
@@ -1324,12 +1320,19 @@ a.institution-card:hover {
     width: 50%;
   }
 
-  .speaker-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 860px) {
+  .nav {
+    gap: 12px;
+  }
+
+  .nav-actions {
+    gap: 12px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
   .nav-links {
     position: absolute;
     top: 72px;
@@ -1353,10 +1356,9 @@ a.institution-card:hover {
   }
 
   .language-toggle {
-    padding: 12px 0;
+    min-height: 44px;
+    padding: 8px 4px;
     border-left: 0;
-    border-top: 1px solid var(--rule-dark);
-    text-align: left;
   }
 
   .nav-links a::after {
@@ -1396,7 +1398,84 @@ a.institution-card:hover {
   }
 
   .speaker-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(4px, 1.2vw, 10px);
+  }
+
+  .speaker-card {
+    padding: clamp(4px, 1vw, 8px);
+    overflow-wrap: anywhere;
+  }
+
+  .speaker-meta {
+    padding: clamp(8px, 2vw, 17px) 0 clamp(6px, 1.5vw, 13px);
+  }
+
+  .speaker-meta p,
+  html[lang="ko"] .speaker-meta p {
+    margin-bottom: 5px;
+    font-size: clamp(7px, 1.2vw, 9px);
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+
+  .speaker-meta h3 {
+    font-size: clamp(10px, 2.2vw, 18px);
+    line-height: 1.2;
+  }
+
+  .speaker-meta > span {
+    display: block;
+    font-size: clamp(7px, 1.25vw, 10px);
+    line-height: 1.4;
+  }
+
+  .speaker-talk {
+    min-height: 0;
+    margin-inline: 0;
+    padding-top: clamp(6px, 1.5vw, 12px);
+    font-size: clamp(8px, 1.4vw, 12px);
+    line-height: 1.45;
+  }
+
+  .speaker-initials {
+    font-size: clamp(20px, 5vw, 43px);
+  }
+
+  .institution-grid {
+    gap: clamp(4px, 1.2vw, 10px);
+  }
+
+  .institution-card {
+    min-width: 0;
+    min-height: clamp(44px, 9vw, 78px);
+    padding: clamp(4px, 1.2vw, 10px);
+  }
+
+  .institution-logo {
+    height: clamp(20px, 4.3vw, 37px);
+  }
+
+  .institution-logo-small {
+    height: clamp(16px, 3.5vw, 30px);
+  }
+
+  .institution-logo-large {
+    height: clamp(24px, 5.3vw, 46px);
+  }
+
+  .institution-logo-expanded {
+    width: clamp(48px, 11.4vw, 98px);
+    height: auto;
+    transform: translateY(-2px);
+  }
+
+  .institution-logo-extra-large {
+    height: clamp(29px, 6.5vw, 56px);
+  }
+
+  .institution-wordmark {
+    font-size: clamp(9px, 1.65vw, 14px);
+    overflow-wrap: anywhere;
   }
 
   .map-card {
@@ -1555,15 +1634,6 @@ a.institution-card:hover {
     gap: 13px;
   }
 
-  .speaker-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .speaker-card {
-    width: min(100%, 390px);
-    justify-self: center;
-  }
-
   .venue-layout {
     gap: 38px;
   }
@@ -1588,31 +1658,11 @@ a.institution-card:hover {
     flex-direction: column;
   }
 
-  .institution-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .institutions-section {
     padding-top: 64px;
     padding-bottom: 58px;
   }
 
-  .institution-card {
-    min-height: 88px;
-    padding: 10px;
-  }
-
-  .institution-wordmark {
-    font-size: 0.9rem;
-  }
-}
-
-
-@media (max-width: 410px) {
-  .institution-grid,
-  .support-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

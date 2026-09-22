@@ -50,7 +50,7 @@ const WORKSHOP_TRANSLATIONS = {
     "GIST Seoul Office": "GIST 서울사무소",
     "Seoul": " ",
     "23, Sejong-daero, Jung-gu, Seoul": "서울특별시 중구 세종대로 23",
-    "Register now": "등록",
+    "Register now": "등록 사이트",
     "https://forms.gle/V22FsKEZS7BCbzuP7": "https://forms.gle/DaWMjkYDSiJNpDraA",
 
     "Research scope": "연구 주제",
