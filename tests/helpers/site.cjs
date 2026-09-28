@@ -93,7 +93,8 @@ function loadSite(options = {}) {
     requestAnimationFrame: handler => handler(),
     scrollTo(x, y) { this.scrollPosition = [x, y]; },
     location: {
-      hash: options.hash || '', pathname: '/', search: '?preview=1',
+      hash: options.hash || '', pathname: '/',
+      search: Object.hasOwn(options, 'search') ? options.search : '?preview=1',
       assign(url) { this.assigned = url; },
     },
     history: {
@@ -110,7 +111,7 @@ function loadSite(options = {}) {
   if (options.observer !== false) window.IntersectionObserver = IntersectionObserver;
   vm.runInNewContext(options.script || read('script.js'), {
     WORKSHOP_DATA: options.data || loadData(), WORKSHOP_TRANSLATIONS: loadTranslations(),
-    document, window, IntersectionObserver,
+    document, window, IntersectionObserver, URLSearchParams,
   });
   return {
     ids, button, metas, document, window, sectionLink, skipLink, homeLink, reveals,

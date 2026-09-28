@@ -26,6 +26,15 @@
   };
 
   function readLanguage() {
+    var requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+    if (requestedLanguage === "en" || requestedLanguage === "ko") {
+      try {
+        window.sessionStorage.setItem(languageStorageKey, requestedLanguage);
+      } catch (error) {
+        // The URL still selects the language when storage is unavailable.
+      }
+      return requestedLanguage;
+    }
     try {
       return window.sessionStorage.getItem(languageStorageKey) === "ko" ? "ko" : "en";
     } catch (error) {
@@ -40,6 +49,23 @@
     } catch (error) {
       // Switching still works on the current page when storage is blocked.
     }
+  }
+
+  function syncLanguageUrl() {
+    var params = new URLSearchParams(window.location.search);
+    if (language === "ko") {
+      params.set("lang", "ko");
+    } else {
+      params.delete("lang");
+    }
+    var query = params.toString();
+    window.history.replaceState(
+      null,
+      "",
+      window.location.pathname +
+        (query ? "?" + query : "") +
+        (window.location.hash || "")
+    );
   }
 
   function translate(value, replacements) {
@@ -158,7 +184,6 @@
       .filter(Boolean)
       .join(", "));
     setText("hero-summary", meta.summary);
-    setText("footer-tagline", meta.summary);
 
     byId("theme-chips").innerHTML = (meta.themeLabels || [])
       .map(function (label) {
@@ -415,10 +440,15 @@
 
   function renderInstitutions() {
     renderInstitutionList("host-grid", data.institutions.hosts);
-    renderInstitutionList("support-grid", data.institutions.supporters);
   }
 
   function renderFooter() {
+    setText(
+      "funding-acknowledgment",
+      translate(
+        "This workshop is supported by MOTIE Industrial Technology Alchemist Project & NRF Mid-career Researcher Program"
+      )
+    );
     setText(
       "copyright",
       "© " +
@@ -584,6 +614,7 @@
   byId("language-toggle").addEventListener("click", function () {
     language = language === "en" ? "ko" : "en";
     saveLanguage();
+    syncLanguageUrl();
     renderPage();
   });
   setupNavigation();

@@ -6,7 +6,7 @@
  * program에서 프로그램 일정
  * speakers에서 연사 정보(연사 작성 순서 결정 필요)
  * venue에 구글맵 연동(원하는 지도 api 차후 연동 가능)
- * hosts에 호스트, supporters에 후원자
+ * hosts에 주최 기관
  * 
  * 웹사이트 제목 organization, repository 이름 바꾸면 수정 가능
  */
@@ -15,8 +15,8 @@ const WORKSHOP_DATA = {
   meta: {
     shortName: "IISL Workshop",
     year: "2026",
-    eyebrow: "IISL · Joint research workshop",
-    title: "2026 Joint",
+    eyebrow: "IISL · Global Joint research workshop",
+    title: "2026 Global",
     titleAccent: "Workshop",
     themeTitle: "AI-Driven Autonomous Security",
     summary:
@@ -30,7 +30,7 @@ const WORKSHOP_DATA = {
     time: "10:00–14:30",
     location: "GIST Seoul Office",
     cityName: "Seoul",
-    city: "23, Sejong-daero, Jung-gu, Seoul",
+    city: "23, Sejong-daero, Jung-gu, Seoul (Changhwa Building 10F)",
     registrationUrl: "https://forms.gle/V22FsKEZS7BCbzuP7",
     registrationLabel: "Register now",
     contactEmail: "",
@@ -131,7 +131,7 @@ const WORKSHOP_DATA = {
         type: "session",
         time: "13:00",
         endTime: "13:20",
-        title: "Invited Talk — Human-AI Teaming Security: Overview",
+        title: "Invited Talk — Development of Human-AI Teaming-based Autonomous Security System for Future Cyber Threats",
         speaker: "Prof. Hyuk Lim",
         affiliation: "KENTECH",
       },
@@ -191,7 +191,7 @@ const WORKSHOP_DATA = {
       name: "Hyuk Lim",
       affiliation: "KENTECH",
       role: "Professor · Invited Talk",
-      talk: "Human-AI Teaming Security: Overview",
+      talk: "Development of Human-AI Teaming-based Autonomous Security System for Future Cyber Threats",
       image: "assets/speakers/Hyuk-Lim.jpg",
       url: "https://hlim.kentech.ac.kr/",
     },
@@ -288,8 +288,6 @@ const WORKSHOP_DATA = {
       //   logoScale: "extra-large",
       //   url: "https://www.inha.ac.kr/eng/index.do",
       // },
-    ],
-    supporters: [
       {
         name: "Institute of Electrical and Electronics Engineers",
         displayName: "IEEE",

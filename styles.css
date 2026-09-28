@@ -1131,43 +1131,56 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   text-decoration: none;
 }
 
+.page-surface {
+  background:
+    linear-gradient(rgba(93, 228, 242, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(93, 228, 242, 0.028) 1px, transparent 1px),
+    #050e19;
+  background-size: 42px 42px;
+}
+
 .site-footer {
-  padding: 61px 0 24px;
-  border-top: 1px solid var(--rule-dark);
-  background: var(--night);
+  padding: 0 0 24px;
+  border-top: 0;
+  background: transparent;
   color: var(--white);
 }
 
 .footer-top {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 70px;
-  padding-bottom: 49px;
+  padding-bottom: 8px;
 }
 
 .footer-brand {
-  margin-bottom: 19px;
+  margin-bottom: 0;
+  color: rgba(248, 251, 251, 0.66);
+  font-size: 10px;
 }
-
-.footer-top p {
-  max-width: 580px;
-  margin: 0;
-  color: rgba(248, 251, 251, 0.47);
-  font-size: 13px;
-  line-height: 1.62;
-}
-
 
 .footer-bottom {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  gap: 20px;
-  padding-top: 21px;
-  border-top: 1px solid var(--rule-dark);
+  gap: 7px;
+  padding-top: 0;
+  border-top: 0;
   color: rgba(248, 251, 251, 0.31);
   font-family: var(--mono);
   font-size: 8px;
   letter-spacing: 0.02em;
+}
+
+.funding-acknowledgment {
+  max-width: 920px;
+  margin: 0;
+  color: rgba(248, 251, 251, 0.48);
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: 1.65;
+}
+
+html[lang="ko"] .funding-acknowledgment {
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans CJK KR", "Noto Sans KR", sans-serif;
 }
 
 .reveal {
@@ -1204,18 +1217,19 @@ a.speaker-card:focus-visible .speaker-meta h3 {
 }
 
 .institutions-section {
-  padding-top: 88px;
-  padding-bottom: 76px;
+  padding-top: 60px;
+  padding-bottom: 0;
+  border-bottom: 0;
   color: var(--white);
-  background:
-    linear-gradient(rgba(93, 228, 242, 0.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(93, 228, 242, 0.028) 1px, transparent 1px),
-    #050e19;
-  background-size: 42px 42px;
+  background: transparent;
 }
 
 .institutions-section .section-heading {
-  margin-bottom: 32px;
+  margin-bottom: 18px;
+}
+
+.institutions-section .section-heading h2 {
+  font-size: clamp(1.55rem, 2.4vw, 2.25rem);
 }
 
 .institution-groups {
@@ -1224,8 +1238,8 @@ a.speaker-card:focus-visible .speaker-meta h3 {
 }
 
 .institution-group {
-  padding-top: 16px;
-  border-top: 1px solid rgba(93, 228, 242, 0.3);
+  padding: 18px 0 22px;
+  border-top: 1px solid rgba(199, 233, 238, 0.1);
 }
 
 .institution-group .card-label {
@@ -1242,12 +1256,17 @@ a.speaker-card:focus-visible .speaker-meta h3 {
   gap: 10px;
 }
 
+.host-grid {
+  max-width: 100%;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .institution-card {
-  min-height: 96px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 16px;
+  padding: 8px 12px;
   border: 1px solid transparent;
   background: transparent;
   color: rgba(248, 251, 251, 0.82);
@@ -1264,7 +1283,7 @@ a.institution-card:hover {
 .institution-logo {
   width: auto;
   max-width: 94%;
-  height: 52px;
+  height: 44px;
   max-height: none;
   object-fit: contain;
   filter: none;
@@ -1272,12 +1291,12 @@ a.institution-card:hover {
 
 .institution-logo-large {
   max-width: 94%;
-  height: 64px;
+  height: 52px;
   max-height: none;
 }
 
 .institution-logo-small {
-  height: 42px;
+  height: 34px;
 }
 
 .institution-logo-expanded {
@@ -1290,7 +1309,7 @@ a.institution-card:hover {
 }
 
 .institution-logo-extra-large {
-  height: 78px;
+  height: 62px;
 }
 
 .institution-wordmark {
@@ -1441,22 +1460,26 @@ a.institution-card:hover {
     gap: clamp(4px, 1.2vw, 10px);
   }
 
+  .host-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .institution-card {
     min-width: 0;
-    min-height: clamp(44px, 9vw, 78px);
+    min-height: clamp(40px, 8vw, 64px);
     padding: clamp(4px, 1.2vw, 10px);
   }
 
   .institution-logo {
-    height: clamp(20px, 4.3vw, 37px);
+    height: clamp(18px, 3.8vw, 32px);
   }
 
   .institution-logo-small {
-    height: clamp(16px, 3.5vw, 30px);
+    height: clamp(15px, 3.2vw, 26px);
   }
 
   .institution-logo-large {
-    height: clamp(24px, 5.3vw, 46px);
+    height: clamp(21px, 4.6vw, 38px);
   }
 
   .institution-logo-expanded {
@@ -1466,7 +1489,7 @@ a.institution-card:hover {
   }
 
   .institution-logo-extra-large {
-    height: clamp(29px, 6.5vw, 56px);
+    height: clamp(25px, 5.6vw, 46px);
   }
 
   .institution-wordmark {
@@ -1475,11 +1498,8 @@ a.institution-card:hover {
   }
 
   .institutions-section {
-    padding-bottom: 28px;
-  }
-
-  .site-footer {
-    padding-top: 20px;
+    padding-top: 52px;
+    padding-bottom: 0;
   }
 
   .footer-top {
@@ -1489,6 +1509,11 @@ a.institution-card:hover {
   .footer-bottom {
     padding-top: 0;
     border-top: 0;
+  }
+
+  .funding-acknowledgment {
+    font-size: 10px;
+    line-height: 1.6;
   }
 
   .map-card {
@@ -1663,17 +1688,13 @@ a.institution-card:hover {
     padding: 25px 20px;
   }
 
-  .footer-top {
-    gap: 29px;
-  }
-
   .footer-bottom {
     flex-direction: column;
   }
 
   .institutions-section {
-    padding-top: 64px;
-    padding-bottom: 28px;
+    padding-top: 44px;
+    padding-bottom: 0;
   }
 
 }
@@ -1693,6 +1714,6 @@ a.institution-card:hover {
   }
 }
 
-.support-grid .institution-logo[src$="/IEEE.png"] {
+.host-grid .institution-logo[src$="/IEEE.png"] {
   transform: translateX(-4px);
 }

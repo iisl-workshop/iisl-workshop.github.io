@@ -14,7 +14,7 @@ const click = (site, link) => {
 test('content has no initials fields and all local assets exist', () => {
   const data = loadData();
   for (const speaker of data.speakers) assert.equal('initials' in speaker, false);
-  for (const item of [...data.speakers, ...data.institutions.hosts, ...data.institutions.supporters]) {
+  for (const item of [...data.speakers, ...data.institutions.hosts]) {
     const asset = item.image || item.logo;
     if (asset) assert.ok(fs.existsSync(path.join(root, asset.split('?')[0])), asset);
   }
@@ -26,6 +26,8 @@ test('content has no initials fields and all local assets exist', () => {
   }
   assert.match(read('index.html'), /rel="icon" href="data:,"/);
   assert.doesNotMatch(read('index.html') + read('script.js') + read('styles.css'), /assets\/favicon/);
+  assert.doesNotMatch(read('index.html') + read('script.js'), /footer-tagline/);
+  assert.match(read('index.html'), /id="footer-brand">IISL Workshop 2026/);
 });
 
 test('program, full-card speaker links, institution counts and map render', () => {
@@ -34,27 +36,26 @@ test('program, full-card speaker links, institution counts and map render', () =
   assert.equal((ids['speaker-grid'].innerHTML.match(/class="speaker-card /g) || []).length, data.speakers.length);
   assert.equal((ids['speaker-grid'].innerHTML.match(/target="_blank" rel="noopener noreferrer"/g) || []).length, data.speakers.length);
   assert.doesNotMatch(ids['program-list'].innerHTML, /<details|<summary/);
-  for (const [id, items] of [['host-grid', data.institutions.hosts], ['support-grid', data.institutions.supporters]]) {
-    assert.equal((ids[id].innerHTML.match(/class="institution-card/g) || []).length, items.length);
-  }
+  assert.equal((ids['host-grid'].innerHTML.match(/class="institution-card/g) || []).length,
+    data.institutions.hosts.length);
   assert.equal(ids['venue-map'].src, data.venue.mapEmbedUrl);
   assert.match(ids['venue-actions'].innerHTML, /Open in maps/);
 });
 
-test('organizers are removed and GIST AI appears only between GIST and Michigan in hosts', () => {
+test('organizers are removed and all institution logos share one hosted group', () => {
   const data = loadData();
   assert.doesNotMatch(read('index.html'), /id="organizers"|href="#organizers"|id="organizer-grid"/);
   assert.doesNotMatch(read('script.js'), /renderContact/);
   assert.equal(data.institutions.hosts.map(item => item.displayName).join(','),
-    'GIST,GIST AI,University of Michigan,KENTECH');
-  assert.equal(data.institutions.supporters.length, 1);
-  assert.equal(data.institutions.supporters[0].displayName, 'IEEE');
+    'GIST,GIST AI,University of Michigan,KENTECH,IEEE');
+  assert.equal('supporters' in data.institutions, false);
+  assert.doesNotMatch(read('index.html'), /support-grid|Supported by|Hosted and supported by/);
   const site = loadSite();
   for (const language of ['en', 'ko']) {
     const hosts = site.ids['host-grid'].innerHTML;
     assert.ok(hosts.indexOf('GIST.png') < hosts.indexOf('GIST_AI.png'));
     assert.ok(hosts.indexOf('GIST_AI.png') < hosts.indexOf('Michigan.png'));
-    assert.ok(!site.ids['support-grid'].innerHTML.includes('GIST_AI.png'));
+    assert.ok(hosts.includes('IEEE.png'));
     if (language === 'en') site.ids['language-toggle'].events.click();
   }
 });
@@ -164,6 +165,8 @@ test('language defaults to English, translates the whole page and restores the E
   const snapshot = () => JSON.stringify(Object.fromEntries(Object.entries(ids)
     .map(([id, item]) => [id, [item.innerHTML, item.textContent]])));
   const english = snapshot();
+  assert.equal(ids['funding-acknowledgment'].textContent,
+    'This workshop is supported by MOTIE Industrial Technology Alchemist Project & NRF Mid-career Researcher Program');
   assert.equal(document.documentElement.lang, 'en');
   assert.equal(toggle.textContent, '한국어');
   const dictionary = loadTranslations().ko;
@@ -172,6 +175,8 @@ test('language defaults to English, translates the whole page and restores the E
   assert.equal(toggle.textContent, 'English');
   assert.equal(toggle.getAttribute('aria-label'), 'Switch to English');
   assert.equal(toggle.getAttribute('lang'), 'en');
+  assert.equal(ids['funding-acknowledgment'].textContent,
+    '본 워크숍은 산업통상자원부 산업기술알키미스트프로젝트 및 한국연구재단 중견연구사업의 지원으로 개최됩니다.');
   assert.equal(ids['hero-theme'].textContent, dictionary[data.meta.themeTitle]);
   assert.equal(ids['hero-title-accent'].textContent, dictionary[data.meta.titleAccent]);
   assert.equal(ids['hero-date'].textContent, '2026년 10월 12일');
@@ -181,7 +186,7 @@ test('language defaults to English, translates the whole page and restores the E
   assert.match(ids['speaker-grid'].innerHTML, /교수 · 기조강연/);
   assert.match(ids['host-grid'].innerHTML, /광주과학기술원 로고/);
   assert.match(ids['host-grid'].innerHTML, /GIST AI학과/);
-  assert.doesNotMatch(ids['support-grid'].innerHTML, /GIST AI/);
+  assert.match(ids['host-grid'].innerHTML, /국제전기전자공학회 로고/);
   assert.ok(ids['venue-actions'].innerHTML.includes(dictionary['Open in maps']));
   assert.ok(ids['hero-actions'].innerHTML.includes(dictionary[data.meta.registrationLabel]));
   assert.match(ids['event-facts'].innerHTML, /날짜/);
@@ -303,6 +308,27 @@ test('language starts in English and survives reloads in the same tab in both di
   assert.equal(englishReload.ids['language-toggle'].textContent, '한국어');
   assert.equal(englishReload.ids['hero-theme'].textContent, loadData().meta.themeTitle);
   assert.equal(loadSite().document.documentElement.lang, 'en');
+});
+
+test('poster QR language parameters override storage and stay in sync with the toggle', () => {
+  const storage = new Map([['iisl-workshop-language', 'en']]);
+  const koreanQr = loadSite({ storage, search: '?utm_source=korean-poster&lang=ko' });
+  assert.equal(koreanQr.document.documentElement.lang, 'ko');
+  assert.equal(koreanQr.ids['language-toggle'].textContent, 'English');
+  assert.equal(storage.get('iisl-workshop-language'), 'ko');
+
+  koreanQr.ids['language-toggle'].events.click();
+  assert.equal(koreanQr.document.documentElement.lang, 'en');
+  assert.equal(koreanQr.window.history.url, '/?utm_source=korean-poster');
+  koreanQr.ids['language-toggle'].events.click();
+  assert.match(koreanQr.window.history.url, /[?&]lang=ko(?:&|$)/);
+
+  const englishQr = loadSite({ storage, search: '?lang=en' });
+  assert.equal(englishQr.document.documentElement.lang, 'en');
+  assert.equal(storage.get('iisl-workshop-language'), 'en');
+
+  const noStorage = loadSite({ search: '?lang=ko', storageUnavailable: true });
+  assert.equal(noStorage.document.documentElement.lang, 'ko');
 });
 
 test('Korean professor names appear in speaker cards and match the program translations', () => {

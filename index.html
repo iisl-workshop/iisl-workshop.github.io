@@ -15,11 +15,11 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;family=Roboto+Condensed:wght@300;400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=79" />
+    <link rel="stylesheet" href="styles.css?v=92" />
     <link rel="icon" href="data:," />
-    <script src="content.js?v=64" defer></script>
-    <script src="translations.js?v=11" defer></script>
-    <script src="script.js?v=69" defer></script>
+    <script src="content.js?v=66" defer></script>
+    <script src="translations.js?v=13" defer></script>
+    <script src="script.js?v=75" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content" data-i18n="Skip to content">Skip to content</a>
@@ -47,6 +47,7 @@
       </nav>
     </header>
 
+    <div class="page-surface">
     <main id="main-content">
       <section class="hero">
         <div class="hero-pattern" aria-hidden="true"></div>
@@ -133,16 +134,11 @@
         <div class="shell">
           <div class="section-heading reveal">
             <p class="section-label" data-i18n="Institutions">Institutions</p>
-            <h2 data-i18n="Hosted and supported by.">Hosted and supported by.</h2>
+            <h2 data-i18n="Hosted by">Hosted by</h2>
           </div>
           <div class="institution-groups">
             <div class="institution-group reveal">
-              <p class="card-label" data-i18n="Hosted by">Hosted by</p>
               <div class="institution-grid host-grid" id="host-grid"></div>
-            </div>
-            <div class="institution-group reveal">
-              <p class="card-label" data-i18n="Supported by">Supported by</p>
-              <div class="institution-grid support-grid" id="support-grid"></div>
             </div>
           </div>
         </div>
@@ -151,16 +147,15 @@
 
     <footer class="site-footer">
       <div class="shell footer-top">
-        <div>
-          <a class="brand footer-brand" href="./">
-            <span id="footer-brand">IISL Workshop 2026</span>
-          </a>
-          <p id="footer-tagline"></p>
-        </div>
+        <a class="brand footer-brand" href="./">
+          <span id="footer-brand">IISL Workshop 2026</span>
+        </a>
       </div>
       <div class="shell footer-bottom">
+        <p class="funding-acknowledgment" id="funding-acknowledgment"></p>
         <span id="copyright"></span>
       </div>
     </footer>
+    </div>
   </body>
 </html>
