@@ -138,7 +138,7 @@ button {
 }
 
 .language-toggle:hover {
-  color: var(--white);
+  color: var(--cyan);
 }
 
 .language-toggle:focus-visible {
