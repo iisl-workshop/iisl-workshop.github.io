@@ -1461,7 +1461,16 @@ a.institution-card:hover {
   }
 
   .host-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(1px, 0.75vw, 6px);
+  }
+
+  .host-grid .institution-card {
+    padding-inline: clamp(1px, 0.8vw, 6px);
+  }
+
+  .host-grid .institution-logo {
+    max-width: 100%;
   }
 
   .institution-card {
