@@ -79,7 +79,7 @@ const WORKSHOP_DATA = {
       {
         type: "track",
         label: "Morning",
-        title: "Semantic Communication & Physical-Layer Security for IoT",
+        title: "Semantic Communication & Physical-Layer Security for IoT (English)",
       },
       {
         type: "session",
@@ -125,7 +125,7 @@ const WORKSHOP_DATA = {
       {
         type: "track",
         label: "Afternoon",
-        title: "Autonomous Security through Human–AI Collaboration",
+        title: "Autonomous Security through Human–AI Collaboration (Korean)",
       },
       {
         type: "session",

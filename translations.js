@@ -70,7 +70,7 @@ const WORKSHOP_TRANSLATIONS = {
     "Welcome & opening": "환영 인사 및 개회",
     "Morning": "오전",
     "Afternoon": "오후",
-    "Semantic Communication & Physical-Layer Security for IoT": "IoT를 위한 시맨틱 통신 및 물리 계층 보안",
+    "Semantic Communication & Physical-Layer Security for IoT (English)": "IoT를 위한 시맨틱 통신 및 물리 계층 보안 (영어)",
     "Keynote I — Privacy Preserved Sensing for Trustworthy IoT": "기조강연 I — 신뢰할 수 있는 IoT를 위한 프라이버시 보호형 센싱",
     "Keynote II — Semantic Communication-Enabled Physical-Layer for Mission-Critical IoT":
       "기조강연 II — 미션 크리티컬 IoT를 위한 시맨틱 통신 기반 물리계층 보안",
@@ -79,7 +79,7 @@ const WORKSHOP_TRANSLATIONS = {
     "Student Talk — Leveraging Heterogeneous Physical Unclonable Functions for security and authentication":
       "학생 발표 — 보안 및 인증을 위한 이종 물리적 복제 방지 함수 활용",
     "Networking lunch": "점심 식사 및 교류",
-    "Autonomous Security through Human–AI Collaboration": "인간–AI 협업을 통한 자율 보안",
+    "Autonomous Security through Human–AI Collaboration (Korean)": "인간–AI 협업을 통한 자율 보안 (한국어)",
     "Invited Talk — Development of Human-AI Teaming-based Autonomous Security System for Future Cyber Threats": "초청강연 — 미래 사이버 위협 대응을 위한 인간—AI 협력 기반 자율 보안 시스템",
     "Invited Talk — Post-Quantum Cryptography for Secure and Autonomous AI Systems": "초청강연 — 안전한 자율형 AI 시스템을 위한 양자내성암호",
     "Invited Talk — Secure DB Search and RAG": "초청강연 — 안전한 데이터베이스 검색 및 RAG",
